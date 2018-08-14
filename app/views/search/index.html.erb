@@ -1,0 +1,38 @@
+<% count = 0 %> <!-- 출력시 번호 매기기 위해서 -->
+
+<%= @search_itm %>(으)로 검색한 결과입니다.</br>
+<%= @category %>중에서 검색한 결과입니다. </br></br>
+
+<% if @category == "Bakery" %> <%# 빵집에서 찾았을 때 %>
+    <% @bakery_search_result.each do |result| %>
+        <% count += 1 %>
+        <%= count %>번 빵
+        <p> 빵 이름 : <%= result.bread_name %></p>
+        <p> 빵 종류 : <%= result.category %></p>
+        <p> 잔여 개수 : <%= result.amount %></p>
+        <p> 예약 가능 : <%= result.bookable_num %></p>
+        <p> 가격 : <%= result.price %></p>
+        </br>
+    <% end %>
+
+<% elsif @category == "Bread_name" %> <%# 빵 이름으로 찾았을 때 %>
+    <p> 빵집 : <%= @search_result.bakery_name %></p>
+    <p> 빵 이름 : <%= @search_result.bread_name %></p>
+    <p> 빵 종류 : <%= @search_result.category %></p>
+    <p> 잔여 개수 : <%= @search_result.amount %></p>
+    <p> 예약 가능 : <%= @search_result.bookable_num %></p>
+    <p> 가격 : <%= @search_result.price %></p>
+
+<% else %> <%# 빵 종류로 찾았을 때 %>
+    <% @bread_search_result.each do |result| %>
+        <% count += 1 %>
+        <%= count %>번 빵
+        <p> 빵집 : <%= result.bakery_name %></p>
+        <p> 빵 이름 : <%= result.bread_name %></p>
+        <p> 빵 종류 : <%= result.category %></p>
+        <p> 잔여 개수 : <%= result.amount %></p>
+        <p> 예약 가능 : <%= result.bookable_num %></p>
+        <p> 가격 : <%= result.price %></p>
+        </br>
+    <% end %>
+<%end%>
