@@ -3,6 +3,16 @@
 <%= @search_itm %>(으)로 검색한 결과입니다.</br>
 <%= @category %>중에서 검색한 결과입니다. </br></br>
 
+<form action = "/search/index" method = "get">
+    <div class = "box">
+        <div class = "container-4">
+            <input type = "search" id = "search" name = "keyword" placeholder = "Search..."></input>
+            <button class="icon"><i class="fa fa-search"></i></button>
+        </div>
+    </div>
+</form>
+
+
 <% if @category == "Bakery" %> <%# 빵집에서 찾았을 때 %>
     <% @bakery_search_result.each do |result| %>
         <% count += 1 %>

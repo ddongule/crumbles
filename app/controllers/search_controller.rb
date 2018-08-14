@@ -1,5 +1,9 @@
 class SearchController < ApplicationController
   def index
+    search_DB()
+  end
+
+  def search_DB
     @search_itm = params[:keyword]
     search_Bakery = Bakery.all
     isExist = false
