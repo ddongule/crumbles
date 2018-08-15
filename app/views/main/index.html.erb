@@ -2,19 +2,22 @@
     <%= image_tag 'catbread.jpg' %>
 </div>
 
-<p>오늘의 추천 빵!</p>
-<ul>
-    <% @recommend_bread_arr.each do |rb| %>
-        <li>
-            <p> 빵집 : <%= rb.bakery_name %></p>
-            <p> 빵 이름 : <%= rb.bread_name %></p>
-            <p> 빵 종류 : <%= rb.category %></p>
-            <p> 잔여 개수 : <%= rb.amount %></p>
-            <p> 예약 가능 : <%= rb.bookable_num %></p>
-            <p> 가격 : <%= rb.price %></p>
-        </li>
-    <% end %>
-</ul>
+
+<p>오늘의 추천 빵!</p><br>
+<div class="recom-bread">
+    <ul>
+        <% @recommend_bread_arr.each do |rb| %>
+            <li>
+                <p> 빵집 : <%= rb.bakery_name %></p>
+                <p> 빵 이름 : <%= rb.bread_name %></p>
+                <p> 빵 종류 : <%= rb.category %></p>
+                <p> 잔여 개수 : <%= rb.amount %></p>
+                <p> 예약 가능 : <%= rb.bookable_num %></p>
+                <p> 가격 : <%= rb.price %></p>
+            </li>
+        <% end %>
+    </ul>
+</div>
 
 <div class = "catbread">
     <% @recommend_category.each do |r| %>
