@@ -1,0 +1,373 @@
+
+/*
+ *= require_tree .
+ *= require_self
+ */
+@font-face { font-family: 'KoPubDotumMedium'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/KoPubDotumMedium.woff') format('woff'); font-weight: normal; font-style: normal; }
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Poppins');
+// @import "bootstrap";
+
+.box{
+  margin: 100px auto;
+  width: 300px;
+  height: 50px;
+}
+  
+.catbread{
+  text-align: center;  
+}
+
+.container-4{
+overflow: hidden;
+width: 300px;
+vertical-align: middle;
+white-space: nowrap;
+}
+
+.container-4 input#search{
+width: 300px;
+height: 50px;
+background: #FF7F00;
+border: none;
+font-size: 10pt;
+float: left;
+color: #fff;
+padding-left: 15px;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+}
+
+.container-4 input#search::-webkit-input-placeholder {
+color: #65737e;
+}
+
+.container-4 input#search:-moz-placeholder { /* Firefox 18- */
+color: #65737e;  
+}
+
+.container-4 input#search::-moz-placeholder {  /* Firefox 19+ */
+color: #65737e;  
+}
+
+.container-4 input#search:-ms-input-placeholder {  
+color: #65737e;  
+}
+
+.container-4 button.icon{
+-webkit-border-top-right-radius: 5px;
+-webkit-border-bottom-right-radius: 5px;
+-moz-border-radius-topright: 5px;
+-moz-border-radius-bottomright: 5px;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+
+border: none;
+background: #232833;
+height: 50px;
+width: 50px;
+color: #4f5b66;
+opacity: 0;
+font-size: 10pt;
+
+-webkit-transition: all .55s ease;
+-moz-transition: all .55s ease;
+-ms-transition: all .55s ease;
+-o-transition: all .55s ease;
+transition: all .55s ease;
+}
+
+.container-4:hover button.icon, .container-4:active button.icon, .container-4:focus button.icon{
+outline: none;
+opacity: 1;
+margin-left: -50px;
+}
+
+.container-4:hover button.icon:hover{
+background: white;
+}
+
+
+// ////////////////////////////////////////////////////////
+
+
+* {
+   // font-family: 'Arita-dotum-Medium', sans-serif !important; 
+  font-family: 'Poppins', 'KoPubDotumMedium' !important; 
+  line-height: 1.8rem;
+  letter-spacing: 1px;
+ }
+
+ html, body, div, span, applet, object, iframe,
+ h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+ a, abbr, acronym, address, big, cite, code,
+ del, dfn, em, img, ins, kbd, q, s, samp,
+ small, strike, strong, sub, sup, tt, var,
+ b, u, i, center,
+ dl, dt, dd, ol, ul, li,
+ fieldset, form, label, legend,
+ table, caption, tbody, tfoot, thead, tr, th, td,
+ article, aside, canvas, details, embed,
+ figure, figcaption, footer, header, hgroup,
+ menu, nav, output, ruby, section, summary,
+ time, mark, audio, video {
+ 	margin: 0;
+ 	padding: 0;
+ 	border: 0;
+ 	font-size: 100%;
+ 	font: inherit;
+ 	vertical-align: baseline;
+ }
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+  margin: 120px 50px;
+  padding: 50px 50px 50px 10px;
+  line-height: 1;
+  width:100%;
+  background-color: #ffffff;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  font-size: 1em;
+  line-height: 1.2em;
+
+}
+/* 여기까지 reset css  */
+
+
+/* 민경 css */
+
+* {
+  font-family: sans-serif;
+}
+
+body {
+  //첫 화면에 margin이 생기면 안되기 때문에 지움
+  margin: 120px 0px;
+  padding: 50px 0px 50px 0px;
+  background-color: #ffffff;
+}
+
+body .container {
+	margin-right: -0.75rem;
+	margin-left: -0.75rem;
+}
+
+.link {
+  color: #000;
+  text-decoration: none;
+
+  &:hover {
+    background: none;
+    color: rgba(177, 0, 60, 1);
+  }
+}
+
+
+/* navigation bar with header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: #ffffff;
+  // border-bottom: 1px solid rgba(177, 0, 60, 1);
+  border-bottom: 1px solid gainsboro;
+  // box-shadow: 0 0 8px rgba(0,0,0,0.6);
+  z-index: 9999999;
+}
+
+/* header div 안의 item */
+
+.header .logo .logo-link {
+  margin: 30px 0px 0px 70px;
+  float: left;
+  width: 110px;
+  height: 35px;
+}
+
+.header .logo .logo-link:hover {
+  background: none;
+}
+
+.header .header-item-container {
+  // float: right;
+  margin: 20px 50px;
+  vertical-align: middle;
+}
+.header .header-item-container .nav{
+  // flex-wrap: wrap;
+  padding-left: 0;
+  list-style: none;
+  display: block;
+}
+
+.header .header-item-container .navigation {
+  // test
+  // 원래 코드
+  position: relative;
+  display: block;
+  float: right;
+}
+///////////////////test
+.header .header-item-container .navigation a { 
+  float: right;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
+
+
+
+.header .header-item-container .navigation .item-right .nav-up{
+  display: block;
+  padding: 0;
+  position: absolute;
+  top: 8px;
+  right: 15px;
+  font-size: 14px;
+}
+// .header .navigation .item-left {
+//   float: left;
+// }
+.header .navigation .item-right {
+  float: right;
+  font-size: 20px;
+}
+// .header .navigation .item-right-up {
+//   // display: inline;
+//   float: right;
+//   font-size: 16px;
+// }
+
+.header .navigation .item-right ul {
+  // test
+  display: block;
+  padding: 0;
+  position: relative;
+  top: 40px;
+  right: 15px;
+  font-size: 18px;
+}
+
+// .header .navigation .item-right-up ul {
+//   // test
+//   display: block;
+//   padding: 0;
+//   position: absolute;
+//   top: 0;
+// }
+
+.header .navigation .nav-link {
+  padding: 0px 5px 0px 10px;
+  color: black;
+}
+
+
+#menu-icon {
+	display: none;
+	width: 25px;
+	height: 25px;
+  padding: 0 0 5px 0;
+}
+
+li {
+	display: inline-block;
+	float: left;
+  padding: 5px;
+  
+}
+.item-left li,
+.item-right li {
+  font-size: 1.1em;
+}
+.item-left li:first-child {
+  padding: 5px 5px 5px 45px;
+}
+
+// devise css
+.sign-up-layout {
+  padding: 50px 100px;
+  text-align: left;
+
+}
+
+
+@media (min-width: 768px) {
+  .font-item {
+    float: left;
+    width: 48%;
+  }
+}
+
+@media (min-width: 1024px) {
+
+}
+
+@media (min-width: 1366px) {
+
+}
+
+@media only screen and (max-width : 720px) {
+
+  nav ul, nav:active ul {
+    display: none;
+    // position: absolute;
+    // padding: 20px;
+    // background: #fff;
+
+    // right: 10px;
+    // top: 42px;
+    // width: 140px;
+    // border-radius: 10px 0 10px 10px;
+  }
+	nav li {
+		text-align: center;
+		width: 100%;
+		padding: 10px 0;
+		margin: 0;
+	}
+
+  nav:hover ul {
+    display: block;
+  }
+
+  #menu-icon {
+    // display:inline-block;
+    position: absolute;
+    height: 35px;
+    top: 40px;
+    right: 40px;
+    display: block;  
+  }
+   .header .header-item-container .navigation a {
+    overflow: hidden;
+    display: none;
+  }
+}
+
+  @media only screen and (max-width : 400px) {
+    #menu-icon {
+      display: none;   
+    }
+  }
