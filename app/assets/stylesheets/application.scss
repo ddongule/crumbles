@@ -7,90 +7,6 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Poppins');
 // @import "bootstrap";
 
-.box{
-  margin: 100px auto;
-  width: 300px;
-  height: 50px;
-}
-  
-.catbread{
-  text-align: center;  
-}
-
-.container-4{
-overflow: hidden;
-width: 300px;
-vertical-align: middle;
-white-space: nowrap;
-}
-
-.container-4 input#search{
-width: 300px;
-height: 50px;
-background: #FF7F00;
-border: none;
-font-size: 10pt;
-float: left;
-color: #fff;
-padding-left: 15px;
--webkit-border-radius: 5px;
--moz-border-radius: 5px;
-border-radius: 5px;
-}
-
-.container-4 input#search::-webkit-input-placeholder {
-color: #65737e;
-}
-
-.container-4 input#search:-moz-placeholder { /* Firefox 18- */
-color: #65737e;  
-}
-
-.container-4 input#search::-moz-placeholder {  /* Firefox 19+ */
-color: #65737e;  
-}
-
-.container-4 input#search:-ms-input-placeholder {  
-color: #65737e;  
-}
-
-.container-4 button.icon{
--webkit-border-top-right-radius: 5px;
--webkit-border-bottom-right-radius: 5px;
--moz-border-radius-topright: 5px;
--moz-border-radius-bottomright: 5px;
-border-top-right-radius: 5px;
-border-bottom-right-radius: 5px;
-
-border: none;
-background: #232833;
-height: 50px;
-width: 50px;
-color: #4f5b66;
-opacity: 0;
-font-size: 10pt;
-
--webkit-transition: all .55s ease;
--moz-transition: all .55s ease;
--ms-transition: all .55s ease;
--o-transition: all .55s ease;
-transition: all .55s ease;
-}
-
-.container-4:hover button.icon, .container-4:active button.icon, .container-4:focus button.icon{
-outline: none;
-opacity: 1;
-margin-left: -50px;
-}
-
-.container-4:hover button.icon:hover{
-background: white;
-}
-
-
-// ////////////////////////////////////////////////////////
-
-
 * {
    // font-family: 'Arita-dotum-Medium', sans-serif !important; 
   font-family: 'Poppins', 'KoPubDotumMedium' !important; 
@@ -156,10 +72,6 @@ h1, h2, h3, h4, h5, h6, p {
 
 /* 민경 css */
 
-* {
-  font-family: sans-serif;
-}
-
 body {
   //첫 화면에 margin이 생기면 안되기 때문에 지움
   margin: 120px 0px;
@@ -218,11 +130,25 @@ body .container {
 .header .header-item-container .nav{
   // flex-wrap: wrap;
   padding-left: 0;
-  list-style: none;
-  display: block;
+  float: right;
+  position: relative;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  align-items: center; 
+  
+  .search-bar {
+  // position: relative;
+  // float: center;
+  // align-content: center;
 }
 
-.header .header-item-container .navigation {
+}
+
+
+.header .header-item-container .nav .navigation {
   // test
   // 원래 코드
   position: relative;
@@ -230,16 +156,15 @@ body .container {
   float: right;
 }
 ///////////////////test
-.header .header-item-container .navigation a { 
+
+.header .header-item-container .nav .navigation a { 
   float: right;
   display: block;
   text-align: center;
   text-decoration: none;
 }
 
-
-
-.header .header-item-container .navigation .item-right .nav-up{
+.header .header-item-container .nav .navigation .item-right .nav-up{
   display: block;
   padding: 0;
   position: absolute;
@@ -250,9 +175,14 @@ body .container {
 // .header .navigation .item-left {
 //   float: left;
 // }
-.header .navigation .item-right {
-  float: right;
-  font-size: 20px;
+.header .header-item-container .nav .navigation .item-right {
+  // float: right;
+  // font-size: 20px;
+    float: right;
+    font-size: 20px;
+    height: 70px;
+    // border: 1px solid black;
+    padding: 10px;
 }
 // .header .navigation .item-right-up {
 //   // display: inline;
@@ -260,7 +190,7 @@ body .container {
 //   font-size: 16px;
 // }
 
-.header .navigation .item-right ul {
+.header .header-item-container .nav .navigation .item-right ul {
   // test
   display: block;
   padding: 0;
@@ -270,15 +200,7 @@ body .container {
   font-size: 18px;
 }
 
-// .header .navigation .item-right-up ul {
-//   // test
-//   display: block;
-//   padding: 0;
-//   position: absolute;
-//   top: 0;
-// }
-
-.header .navigation .nav-link {
+.header .header-item-container .nav .navigation .nav-link {
   padding: 0px 5px 0px 10px;
   color: black;
 }
@@ -295,15 +217,18 @@ li {
 	display: inline-block;
 	float: left;
   padding: 5px;
-  
 }
-.item-left li,
+
 .item-right li {
   font-size: 1.1em;
 }
-.item-left li:first-child {
-  padding: 5px 5px 5px 45px;
-}
+
+// .item-right li:first-child {
+//   align-items: center;
+// }
+// .item-right li:nth-child(2) {
+//   padding: 5px 5px 5px 45px;
+// }
 
 // devise css
 .sign-up-layout {
@@ -311,6 +236,97 @@ li {
   text-align: left;
 
 }
+
+
+.container-4{
+  overflow: hidden;
+  width: 60%;
+  vertical-align: middle;
+  white-space: nowrap;
+  border: none;
+  position: relative;
+}
+
+.container-4 input#search{
+  width: 100%;
+  height: 40px;
+  background: #ffffff;
+  border-radius: 6rem;
+  border: 1px solid rgb(160, 160, 160);
+  font-size: 1em;
+  float: left;
+  color: #232833;
+  padding-left: 15px;
+  -webkit-border-radius: 6rem;
+  -moz-border-radius: 6rem;
+}
+
+.container-4 input#search::-webkit-input-placeholder {
+color: #65737e;
+}
+
+.container-4 input#search:-moz-placeholder { /* Firefox 18- */
+color: #65737e;  
+}
+
+.container-4 input#search::-moz-placeholder {  /* Firefox 19+ */
+color: #65737e;  
+}
+
+.container-4 input#search:-ms-input-placeholder {  
+color: #65737e;  
+}
+
+
+.container-4 button.icon{
+-webkit-border-top-right-radius: 6rem;
+-webkit-border-bottom-right-radius: 6rem;
+-moz-border-radius-topright: 6rem;
+-moz-border-radius-bottomright: 6rem;
+border-top-right-radius: 6rem;
+border-bottom-right-radius: 6rem;
+
+border: none;
+background: #232833;
+height: 40px;
+width: 50px;
+color: #4f5b66;
+opacity: 0;
+font-size: 10pt;
+
+-webkit-transition: all .55s ease;
+-moz-transition: all .55s ease;
+-ms-transition: all .55s ease;
+-o-transition: all .55s ease;
+transition: all .55s ease;
+}
+
+.container-4:hover button.icon, .container-4:active button.icon, .container-4:focus button.icon{
+outline: none;
+opacity: 1;
+margin-left: -50px;
+border: none;
+}
+
+.container-4:hover button.icon:hover{
+// background: red;
+border: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @media (min-width: 768px) {
