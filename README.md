@@ -1,24 +1,11 @@
-# README
+# 오늘의 빵(가제)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+>대한민국 작은 카페 및 디저트 가게를 운영하는 소상공인들과 소비자들을 위한 재고 관리 및 예약 플렛폼!  
 
-Things you may want to cover:
+### 기능
+1. 지역별, 종류별, 매장별 검색  
+2. 원하는 제품 예약가능  
+3. 지도를 통한 지점 위치 파악
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+**with 세련된 남매들**  
+Since 2018-08-14~

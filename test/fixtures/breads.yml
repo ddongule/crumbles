@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bakery_name: MyString
+  bread_name: MyString
+  category: MyString
+  amount: 1
+  bookable_num: 1
+  price: 1
+
+two:
+  bakery_name: MyString
+  bread_name: MyString
+  category: MyString
+  amount: 1
+  bookable_num: 1
+  price: 1
