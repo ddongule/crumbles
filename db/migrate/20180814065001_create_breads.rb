@@ -7,6 +7,7 @@ class CreateBreads < ActiveRecord::Migration[5.1]
       t.integer :amount
       t.integer :bookable_num
       t.integer :price
+      t.float :star_point
       t.belongs_to :bakery
       
       t.timestamps

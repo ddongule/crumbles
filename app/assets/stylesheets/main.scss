@@ -1,3 +1,141 @@
 // Place all the styles related to the main controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.box{
+  width: 100px;
+  height: 100px;
+  padding: 10px; /* 콘텐츠와 박스 사이의 간격 */
+  border: 1px solid #000;  /*1px 굵기의 실선(solid), 색상 */
+  margin: 10px; /* 박스와 박스 사이 간격, 배경색이 투명색 */
+}
+  
+.catbread{
+  text-align: center;  
+}
+
+// faq 따온거
+.wrap{
+  margin: 60px 30px;
+  padding: 50px;
+}
+
+// .qa-wrap{
+//   width:80%;
+//   margin:auto;
+// 	max-width: 2000px;
+// 	min-height:300px;
+// 	position:relative;
+// 	background-color: #fff;
+// 	box-shadow:0 2px 5px 0 rgba(0, 0, 0, 0.24), 0 15px 18px 0 rgba(0, 0, 0, 0.19);
+//   z-index: 1;
+// }
+
+
+// .collapsible:after {
+//   color: black;
+//   font-weight: bold;
+//   float: right;
+//   margin-left: 5px;
+// }
+
+.collapsible img {
+  max-width: 400px;
+  min-height:50px;
+  
+}
+
+.collapsible li{
+  float: left;
+  display: contents;
+}
+
+.content {
+  padding: 0px 30px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #fff;
+}
+
+.content p {
+  padding: 13px;
+}
+
+.qa .item{
+  text-align: collapsible;
+  justify-content: center;
+}
+
+.font-list {
+  justify-content: center;
+  text-align: center;
+}
+
+
+.recom-bread-list{  
+  margin: 2rem;
+  position: inherit;
+  display: table;
+  align-items: center;
+  vertical-align: middle;
+  width: 100%;
+}
+
+
+.bread-item { /* 각 아이템의 기본 폰트사이즈를 사전에 정해둔다. */
+  font-size: 1em; /* 16px */
+  line-height: 1.2em; /* 19.2px */
+  padding: 10px 0;
+  // border-top: 1px solid #000;
+  position: relative;
+  justify-content: center;
+  display: flex;
+  margin: 20px 0px;
+}
+
+.btn-add {
+  position: absolute; 
+  /* 절대 좌표 이동, 좌표의 기준점 */
+  top: 10px;
+  right: 10px;
+}
+.catbread-1 {
+  display: block;
+}
+/*
+* 해상도 따라서 아이템이 2개였따가 3개였다가 4개였다기
+* 미디어쿼리
+*/
+
+/* 만약 브라우저의 크기가 768px 이상이라면 */
+@media (min-width: 768px) {
+  .bread-item {
+    float: left;
+    width: 100%;
+    position: inherit;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+  }
+}
+
+/* 만약 브라우저의 크기가 1024px 이상이라면 */
+@media (min-width: 1024px) {
+  .bread-item {
+    width: 50%;
+    position: inherit;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+  }
+}
+
+/* 만약 브라우저의 크기가 1366px 이상이라면 */
+@media (min-width: 1366px) {
+  .bread-item {
+    width: 33%;
+  }
+}
+
+

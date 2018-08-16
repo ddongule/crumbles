@@ -41,6 +41,7 @@ class SearchController < ApplicationController
 
     if isExist == false                 # 결과 값이 아예 없다면
       @search_result = "결과값이 없습니다."
+      @category = "nil"
     end
   end
 end
