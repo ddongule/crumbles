@@ -23,8 +23,8 @@
 
 
  <div class="recom-bread-list">
-      <section class="bread-item">
-        <% @recommend_bread_arr.each do |rb| %>
+    <% @recommend_bread_arr.each do |rb| %>
+        <section class="bread-item">
             <div class = "item">
                 <button class="collapsible">
                     <ul>
@@ -46,37 +46,38 @@
                     <a href = "/detail_item/index/<%=rb.bread_name%>">빵 더보기...</a>
                 </div>
             </div>
-        <% end %>
-      </section>
+        </section>
+    <% end %>
 
 
-<div class="wrap">
-    <div class="qa">
-        <% @recommend_bread_arr.each do |rb| %>
-            <div class = "item">
+
+<%# <div class="wrap"> %>
+    <%# <div class="qa"> %>
+        <%# @recommend_bread_arr.each do |rb| %>
+            <%# <div class = "item">
                 <button class="collapsible">
                     <ul>
-                        <li>
-                            <%= image_tag 'defult_bakery.jpg' %>
-                        </li>
-                        <li>
-                            <p> 빵집 : <%= rb.bakery_name %></p>
-                            <p> 빵 이름 : <%= rb.bread_name %></p>
-                        </li>
-                    </ul>
-                </button>
-                <div class = "content">
-                    <p> 빵 종류 : <%= rb.category %></p>
-                    <p> 잔여 개수 : <%= rb.amount %></p>
-                    <p> 예약 가능 : <%= rb.bookable_num %></p>
-                    <p> 가격 : <%= rb.price %></p>
-                    <p> 별점 : <%= rb.star_point %></p>
-                    <a href = "/detail_item/index/<%=rb.bread_name%>">빵 더보기...</a>
-                </div>
-            </div>
-        <% end %>
-    </div>
-</div>
+                        <li> %>
+                            <%#= image_tag 'defult_bakery.jpg' %>
+                        <%# </li> %>
+                        <%# <li> %>
+                            <%# <p> 빵집 : <%= rb.bakery_name %></p> %>
+                            <%# <p> 빵 이름 : <%= rb.bread_name %></p> %>
+                        <%# </li> %>
+                    <%# </ul> %>
+                <%# </button> %>
+                <%# <div class = "content"> %>
+                    <%# <p> 빵 종류 : <%= rb.category %></p> %>
+                    <%# <p> 잔여 개수 : <%= rb.amount %></p> %>
+                    <%# <p> 예약 가능 : <%= rb.bookable_num %></p> %>
+                    <%# <p> 가격 : <%= rb.price %></p> %>
+                    <%# <p> 별점 : <%= rb.star_point %></p> %>
+                    <%# <a href = "/detail_item/index/<%=rb.bread_name%>">빵 더보기...</a> %>
+                <%# </div> %>
+            <%# </div> %>
+        <%# <% end %> %>
+    <%# </div> %>
+<%# </div> %>
 
 <div class = "catbread">
     <% @recommend_category.each do |r| %>
