@@ -1,3 +1,81 @@
 // Place all the styles related to the search controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.wrap{
+    margin: 60px 30px;
+    padding: 50px 50px 50px 10px;
+  }
+  
+.qa-wrap{
+    width:80%;
+    margin:auto;
+    max-width: 2000px;
+    min-height:300px;
+    position:relative;
+    background-color: #fff;
+    box-shadow:0 2px 5px 0 rgba(0, 0, 0, 0.24), 0 15px 18px 0 rgba(0, 0, 0, 0.19);
+    z-index: 1;
+}
+.qa {
+    display: flex;
+    flex-direction: left;
+    align-items: center;
+    padding: 30px 20px 50px 20px;
+    // margin: 70px 20px;
+}
+  
+.qa .collapsible {
+    // background-color: #ba0000;
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 15px;
+  
+    background-color: #fff0d3;
+    color: black;
+    cursor: pointer;
+  
+    width: 85%;
+    border: 0.5px solid rgba(210, 210, 210, 0.2);
+    border-radius: 30px;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+      box-shadow:0 1px 1px 0 rgba(0, 0, 0, 0.24), 0 1px 6px 0 rgba(0, 0, 0, 0.19);
+}
+  
+.active, .collapsible:hover {
+    background-color: rgba(186, 0, 0, 0.2);
+}
+  
+.collapsible:after {
+    color: black;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+ 
+.collapsible img {
+    max-width: 100px;
+      min-height:50px;
+}
+  
+.collapsible li{
+    float: left;
+}
+  
+.content {
+    padding: 0px 30px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #fff;
+}
+  
+.content p {
+    padding: 13px;
+}
+  
+.qa .item{
+    text-align: collapsible;
+}
