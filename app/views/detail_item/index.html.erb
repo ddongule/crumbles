@@ -1,0 +1,35 @@
+<%= @bread.bread_name %> 상세보기 페이지입니당~~
+
+<div class = "bread_img">
+    <%= image_tag 'defult_bakery.jpg' %>
+</div>
+
+<p> 빵집 : <%= @bread.bakery_name %></p>
+<p> 빵 이름 : <%= @bread.bread_name %></p>
+<p> 빵 종류 : <%= @bread.category %></p>
+<p> 잔여 개수 : <%= @bread.amount %></p>
+<p> 예약 가능 : <%= @bread.bookable_num %></p>
+<p> 가격 : <%= @bread.price %></p>
+</br></br>
+
+<h1>리뷰 작성!</h1>
+<form action='/detail_item/index/<%= @bread.id %>/reviews/create' method='post'>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    작성자: <input type ='text' name='input_user'></input></br>
+    내용 : <textarea name="input_content" cols="80" rows="1"></textarea> <br/>
+    별점 : <input type = 'number' name = 'input_starPoint'></input></br>
+    이미지 : <input type = 'text' name = "input_img"></input></br>
+    <input type='submit' value='작성'></input>
+</form>
+</br></br>
+
+<p> 리뷰 </p>
+<% @review.each do |reviews| %>
+    <p>작성자 :<%= reviews.user=%></p>
+    <p>내용 : <%= reviews.content %></p>
+    <p>별점 : <%= reviews.starPoint %></p>
+    <p>이미지 : <%= reviews.img %></p>
+    <a href="/detail_item/index/<%= @bread.id %>/reviews/destroy/<%= reviews.id%>" data-confirm='리뷰을 삭제합니다.'>
+       [X]</a><br>
+       <hr>
+<% end %>

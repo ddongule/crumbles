@@ -15,15 +15,17 @@
                             <ul>
                                 <li><%= image_tag 'defult_bakery.jpg' %></li>
                                 <li>
+                                    <p> 빵집 : <%= result.bakery_name %></p>
                                     <p> 빵 이름 : <%= result.bread_name %></p>
-                                    <p> 빵 종류 : <%= result.category %></p>
                                 </li>
                             </ul>
                         </button>
                         <div class = "content">
+                            <p> 빵 종류 : <%= result.category %></p>
                             <p> 잔여 개수 : <%= result.amount %></p>
                             <p> 예약 가능 : <%= result.bookable_num %></p>
                             <p> 가격 : <%= result.price %></p>
+                            <a href = "/detail_item/index/<%=result.bread_name%>">빵 더보기...</a>
                             </br>
                         </div>
                     </div>
@@ -45,6 +47,7 @@
                         <p> 잔여 개수 : <%= @search_result.amount %></p>
                         <p> 예약 가능 : <%= @search_result.bookable_num %></p>
                         <p> 가격 : <%= @search_result.price %></p>
+                        <a href = "/detail_item/index/<%=@search_result.bread_name%>">빵 더보기...</a>
                     </div>
                 <div>
 
@@ -67,6 +70,7 @@
                             <p> 잔여 개수 : <%= result.amount %></p>
                             <p> 예약 가능 : <%= result.bookable_num %></p>
                             <p> 가격 : <%= result.price %></p>
+                            <a href = "/detail_item/index/<%=result.bread_name%>">빵 더보기...</a>
                             </br>
                         </div>
                     </div>
