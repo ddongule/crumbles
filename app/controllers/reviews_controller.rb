@@ -32,15 +32,16 @@ class ReviewsController < ApplicationController
         temp = Review.all
         temp.each do |t|
             if t.bread_id == id
-                temp_arr.push(id)
+                temp_arr.push(t.id)
             end
         end
         i = 0
         sum = 0.0
-        for i in 1..temp_arr.length
-            star = Review.find(i)
-            sum += star.star_point
+
+        temp.each do |t|
+            sum += t.star_point.to_f
         end
+
         length = temp_arr.length.to_f
         return sum/length
     end
