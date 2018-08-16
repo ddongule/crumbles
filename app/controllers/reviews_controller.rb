@@ -36,9 +36,10 @@ class ReviewsController < ApplicationController
             end
         end
         i = 0
-        sum = 0.0
+        # sum = 0.0
 
         temp.each do |t|
+            sum = 0.0
             sum += t.star_point.to_f
         end
 

@@ -15,19 +15,19 @@
 // faq 따온거
 .wrap{
   margin: 60px 30px;
-  padding: 50px 50px 50px 10px;
+  padding: 50px;
 }
 
-.qa-wrap{
-  width:80%;
-  margin:auto;
-	max-width: 2000px;
-	min-height:300px;
-	position:relative;
-	background-color: #fff;
-	box-shadow:0 2px 5px 0 rgba(0, 0, 0, 0.24), 0 15px 18px 0 rgba(0, 0, 0, 0.19);
-  z-index: 1;
-}
+// .qa-wrap{
+//   width:80%;
+//   margin:auto;
+// 	max-width: 2000px;
+// 	min-height:300px;
+// 	position:relative;
+// 	background-color: #fff;
+// 	box-shadow:0 2px 5px 0 rgba(0, 0, 0, 0.24), 0 15px 18px 0 rgba(0, 0, 0, 0.19);
+//   z-index: 1;
+// }
 .qa {
   display: flex;
   flex-direction: left;
@@ -60,12 +60,12 @@
   background-color: rgba(186, 0, 0, 0.2);
 }
 
-.collapsible:after {
-  color: black;
-  font-weight: bold;
-  float: right;
-  margin-left: 5px;
-}
+// .collapsible:after {
+//   color: black;
+//   font-weight: bold;
+//   float: right;
+//   margin-left: 5px;
+// }
 
 .collapsible img {
   max-width: 100px;
@@ -90,4 +90,5 @@
 
 .qa .item{
   text-align: collapsible;
+  justify-content: center;
 }
