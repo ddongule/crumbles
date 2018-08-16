@@ -1,3 +1,4 @@
+
 <%= @bread.bread_name %> 상세보기 페이지입니당~~
 
 <div class = "bread_img">
@@ -13,11 +14,11 @@
 </br></br>
 
 <h1>리뷰 작성!</h1>
-<form action='/detail_item/index/<%= @bread.id %>/reviews/create' method='post'>
+<form action='/detail_item/index/<%= @bread.id %>/reviews/create' method='post' onsubmit = "return isCorrect()">
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
     작성자: <input type ='text' name='input_user'></input></br>
     내용 : <textarea name="input_content" cols="80" rows="1"></textarea> <br/>
-    별점 : <input type = 'number' name = 'input_starPoint'></input></br>
+    별점 : <input type = 'number' name = 'input_starPoint' id = "star"></input></br>
     이미지 : <input type = 'text' name = "input_img"></input></br>
     <input type='submit' value='작성'></input>
 </form>
@@ -33,3 +34,14 @@
        [X]</a><br>
        <hr>
 <% end %>
+
+<script>
+    function isCorrect(){
+        var sp = parseInt(document.getElementById('star').value);
+
+        if (sp > 6 || sp < 0){
+            alert("별점은 0~5까지만 매길 수 있습니다.");
+            return false;
+        }
+    }
+</script>
