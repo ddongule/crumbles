@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  devise_for :models
+  
   root "main#index"
   
   get 'search/index'
@@ -12,4 +14,5 @@ Rails.application.routes.draw do
 
   get '/detail_item/index/:bread_id/reviews/destroy/:review_id' => 'reviews#destroy'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
 end
