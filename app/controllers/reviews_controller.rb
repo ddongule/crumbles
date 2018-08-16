@@ -10,11 +10,9 @@ class ReviewsController < ApplicationController
         @review.bread_id = params[:bread_id]
         @review.save
 
-        star_avg = star_cal(params[:bread_id].to_i).to_f
+        star_avg = star_cal(params[:bread_id].to_i)
         bread_r.star_point = star_avg
         bread_r.save
-
-
 
         redirect_to "/detail_item/index/#{bread_r.bread_name}"
     end
@@ -23,26 +21,27 @@ class ReviewsController < ApplicationController
         bread = Bread.find(params[:bread_id])
         @review = Review.find(params[:review_id])
         @review.destroy
-
+        star_avg = star_cal(params[:bread_id].to_i)
+        bread.star_point = star_avg
+        bread.save
+        
         redirect_to "/detail_item/index/#{bread.bread_name}"
     end
 
     def star_cal(id)
         temp_arr = Array.new()
         temp = Review.all
-        temp.each do |t|
-            if t.bread_id == id
-                temp_arr.push(t.id)
-            end
-        end
         i = 0
         sum = 0.0
 
         temp.each do |t|
-            sum += t.star_point.to_f
+            if t.bread_id == id
+                sum += t.star_point.to_f
+                i += 1
+            end
         end
 
-        length = temp_arr.length.to_f
+        length = i.to_f
         return sum/length
     end
 end
