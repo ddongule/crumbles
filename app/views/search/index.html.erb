@@ -3,38 +3,101 @@
 <%= @search_itm %>(으)로 검색한 결과입니다.</br>
 <%= @category %>중에서 검색한 결과입니다. </br></br>
 
-<% if @category == "Bakery" %> <%# 빵집에서 찾았을 때 %>
-    <% @bakery_search_result.each do |result| %>
-        <% count += 1 %>
-        <%= count %>번 빵
-        <p> 빵 이름 : <%= result.bread_name %></p>
-        <p> 빵 종류 : <%= result.category %></p>
-        <p> 잔여 개수 : <%= result.amount %></p>
-        <p> 예약 가능 : <%= result.bookable_num %></p>
-        <p> 가격 : <%= result.price %></p>
-        </br>
-    <% end %>
+<div class="wrap">
+    <div class="qa-wrap">
+        <div class="qa">
+            <% if @category == "Bakery" %> <%# 빵집에서 찾았을 때 %>
+                <% @bakery_search_result.each do |result| %>
+                    <% count += 1 %>
+                    <div class = "item">
+                        <button class="collapsible">
+                            <%= count %>번 빵
+                            <ul>
+                                <li><%= image_tag 'defult_bakery.jpg' %></li>
+                                <li>
+                                    <p> 빵집 : <%= result.bakery_name %></p>
+                                    <p> 빵 이름 : <%= result.bread_name %></p>
+                                </li>
+                            </ul>
+                        </button>
+                        <div class = "content">
+                            <p> 빵 종류 : <%= result.category %></p>
+                            <p> 잔여 개수 : <%= result.amount %></p>
+                            <p> 예약 가능 : <%= result.bookable_num %></p>
+                            <p> 가격 : <%= result.price %></p>
+                            <p> 별점 : <%= result.star_point %></p>
+                            <a href = "/detail_item/index/<%=result.bread_name%>">빵 더보기...</a>
+                            </br>
+                        </div>
+                    </div>
+                <% end %>
 
-<% elsif @category == "Bread_name" %> <%# 빵 이름으로 찾았을 때 %>
-    <p> 빵집 : <%= @search_result.bakery_name %></p>
-    <p> 빵 이름 : <%= @search_result.bread_name %></p>
-    <p> 빵 종류 : <%= @search_result.category %></p>
-    <p> 잔여 개수 : <%= @search_result.amount %></p>
-    <p> 예약 가능 : <%= @search_result.bookable_num %></p>
-    <p> 가격 : <%= @search_result.price %></p>
+            <% elsif @category == "Bread_name" %> <!-- 빵 이름으로 찾았을 때 -->
+                <div class = "item">
+                    <button class="collapsible">
+                        <ul>
+                            <li><%= image_tag 'defult_bakery.jpg' %></li>
+                            <li>
+                                <p> 빵집 : <%= @search_result.bakery_name %></p>
+                                <p> 빵 이름 : <%= @search_result.bread_name %></p>
+                            </li>
+                        </ul>
+                    </button>
+                    <div class = "content">
+                        <p> 빵 종류 : <%= @search_result.category %></p>
+                        <p> 잔여 개수 : <%= @search_result.amount %></p>
+                        <p> 예약 가능 : <%= @search_result.bookable_num %></p>
+                        <p> 가격 : <%= @search_result.price %></p>
+                        <p> 별점 : <%= @search_result.star_point %></p>
+                        <a href = "/detail_item/index/<%=@search_result.bread_name%>">빵 더보기...</a>
+                    </div>
+                <div>
 
-<% else %> <%# 빵 종류로 찾았을 때 %>
-    <% @bread_search_result.each do |result| %>
-        <% count += 1 %>
-        <%= count %>번 빵
-        <p> 빵집 : <%= result.bakery_name %></p>
-        <p> 빵 이름 : <%= result.bread_name %></p>
-        <p> 빵 종류 : <%= result.category %></p>
-        <p> 잔여 개수 : <%= result.amount %></p>
-        <p> 예약 가능 : <%= result.bookable_num %></p>
-        <p> 가격 : <%= result.price %></p>
-        </br>
-    <% end %>
-<%end%>
+            <% elsif @category == "Bread_category" %> <%# 빵 종류로 찾았을 때 %>
+                <% @bread_search_result.each do |result| %>
+                    <% count += 1 %>
+                    <div class = "item">
+                        <button class="collapsible">
+                            <%= count %>번 빵
+                            <ul>
+                                <li><%= image_tag 'defult_bakery.jpg' %></li>
+                                <li>
+                                    <p> 빵집 : <%= result.bakery_name %></p>
+                                    <p> 빵 이름 : <%= result.bread_name %></p>
+                                </li>
+                            </ul>
+                        </button>
+                        <div class = "content">
+                            <p> 빵 종류 : <%= result.category %></p>
+                            <p> 잔여 개수 : <%= result.amount %></p>
+                            <p> 예약 가능 : <%= result.bookable_num %></p>
+                            <p> 가격 : <%= result.price %></p>
+                            <p> 별점 : <%= result.star_point %></p>
+                            <a href = "/detail_item/index/<%=result.bread_name%>">빵 더보기...</a>
+                            </br>
+                        </div>
+                    </div>
+                <% end %>
+            <% else %>
+                <p> 아쉽게도 그런건 이세상에 존재하지 않습니다 ㅜㅜ 힝... </p>
+            <% end%>
+        </div>
+    </div>
+    <script>
+    var item = document.getElementsByClassName("collapsible");
+    var i;
 
-
+    for (i = 0; i < item.length; i++) {
+        item[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight){
+                content.style.maxHeight = null;
+            }
+            else {
+            content.style.maxHeight = content.scrollHeight + "px";
+            } 
+        });
+    }
+    </script>
+</div>
