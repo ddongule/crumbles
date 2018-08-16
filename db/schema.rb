@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20180816071306) do
     t.integer "amount"
     t.integer "bookable_num"
     t.integer "price"
+    t.float "star_point"
     t.integer "bakery_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -42,7 +43,7 @@ ActiveRecord::Schema.define(version: 20180816071306) do
   create_table "reviews", force: :cascade do |t|
     t.string "user"
     t.text "content"
-    t.integer "starPoint"
+    t.integer "star_point"
     t.string "img"
     t.integer "bread_id"
     t.datetime "created_at", null: false

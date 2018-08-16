@@ -1,6 +1,5 @@
 
 <%= @bread.bread_name %> 상세보기 페이지입니당~~
-
 <div class = "bread_img">
     <%= image_tag 'defult_bakery.jpg' %>
 </div>
@@ -11,6 +10,7 @@
 <p> 잔여 개수 : <%= @bread.amount %></p>
 <p> 예약 가능 : <%= @bread.bookable_num %></p>
 <p> 가격 : <%= @bread.price %></p>
+<p> 별점 : <%= @bread.star_point %></p>
 </br></br>
 
 <h1>리뷰 작성!</h1>
@@ -28,7 +28,7 @@
 <% @review.each do |reviews| %>
     <p>작성자 :<%= reviews.user=%></p>
     <p>내용 : <%= reviews.content %></p>
-    <p>별점 : <%= reviews.starPoint %></p>
+    <p>별점 : <%= reviews.star_point %></p>
     <p>이미지 : <%= reviews.img %></p>
     <a href="/detail_item/index/<%= @bread.id %>/reviews/destroy/<%= reviews.id%>" data-confirm='리뷰을 삭제합니다.'>
        [X]</a><br>
