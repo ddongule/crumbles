@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
     
     def create
-        @bread_r = Bread.find(params[:bread_id])
+        bread_r = Bread.find(params[:bread_id])
         @review = Review.new
         @review.user = params[:input_user]
         @review.content = params[:input_content]
@@ -9,12 +9,14 @@ class ReviewsController < ApplicationController
         @review.img = params[:input_img]
         @review.bread_id = params[:bread_id]
         @review.save
-        
-        star_avg = star_cal(params[:bread_id])
-        @bread_r.star_point = star_avg
-        @bread_r.save
 
-        redirect_to "/detail_item/index/#{@bread_r.bread_name}"
+        star_avg = star_cal(params[:bread_id].to_i).to_f
+        bread_r.star_point = star_avg
+        bread_r.save
+
+
+
+        redirect_to "/detail_item/index/#{bread_r.bread_name}"
     end
 
     def destroy
@@ -39,6 +41,7 @@ class ReviewsController < ApplicationController
             star = Review.find(i)
             sum += star.star_point
         end
-        return sum/temp_arr.length
+        length = temp_arr.length.to_f
+        return sum/length
     end
 end
