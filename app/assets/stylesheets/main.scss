@@ -3,9 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .box{
-  margin: 100px auto;
-  width: 600px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
+  padding: 10px; /* 콘텐츠와 박스 사이의 간격 */
+  border: 1px solid #000;  /*1px 굵기의 실선(solid), 색상 */
+  margin: 10px; /* 박스와 박스 사이 간격, 배경색이 투명색 */
 }
   
 .catbread{
@@ -92,3 +94,55 @@
   text-align: collapsible;
   justify-content: center;
 }
+
+
+
+
+
+
+
+.bread-item { /* 각 아이템의 기본 폰트사이즈를 사전에 정해둔다. */
+  font-size: 1em; /* 16px */
+  line-height: 1.2em; /* 19.2px */
+  padding: 10px 0;
+  border-top: 1px solid #000;
+  position: relative;
+
+}
+
+.btn-add {
+  position: absolute; 
+  /* 절대 좌표 이동, 좌표의 기준점 */
+  top: 10px;
+  right: 10px;
+}
+
+
+/*
+* 해상도 따라서 아이템이 2개였따가 3개였다가 4개였다기
+* 미디어쿼리
+*/
+
+/* 만약 브라우저의 크기가 768px 이상이라면 */
+@media (min-width: 768px) {
+  .bread-item {
+    float: left;
+    width: 48%;
+  }
+}
+
+/* 만약 브라우저의 크기가 1024px 이상이라면 */
+@media (min-width: 1024px) {
+  .bread-item {
+    width: 31.333333%;
+  }
+}
+
+/* 만약 브라우저의 크기가 1366px 이상이라면 */
+@media (min-width: 1366px) {
+  .bread-item {
+    width: 23%;
+  }
+}
+
+
