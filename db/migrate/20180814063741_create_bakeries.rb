@@ -5,7 +5,7 @@ class CreateBakeries < ActiveRecord::Migration[5.1]
       t.text :address
       t.string :telephone_number
       t.string :business_license
-      t.string :emaile
+      t.string :email
       t.time :open_time
       t.time :close_time
       t.integer :seat
