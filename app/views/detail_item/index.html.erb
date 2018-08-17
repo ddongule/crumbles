@@ -17,15 +17,17 @@
 <a href = "/search/bakery/<%=@bread.bakery_name%>">빵집 상세보기</a>
 </br></br>
 
-<h1>리뷰 작성!</h1>
-<form action='/detail_item/index/<%= @bread.id %>/reviews/create' method='post' onsubmit = "return isCorrect()">
-    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-    작성자: <input type ='text' name='input_user'></input></br>
-    내용 : <textarea name="input_content" cols="80" rows="1"></textarea> <br/>
-    별점 : <input type = 'number' name = 'input_starPoint' id = "star"></input></br>
-    이미지 : <input type = 'text' name = "input_img"></input></br>
-    <input type='submit' value='작성'></input>
-</form>
+<% if user_signed_in? %>
+    <h1>리뷰 작성!</h1>
+    <form action='/detail_item/index/<%= @bread.id %>/reviews/create' method='post' onsubmit = "return isCorrect()">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        작성자: <label name='input_user'><%= current_user.name%></label></br>
+        내용 : <textarea name="input_content" cols="80" rows="1"></textarea> <br/>
+        별점 : <input type = 'number' name = 'input_starPoint' id = "star"></input></br>
+        이미지 : <input type = 'text' name = "input_img"></input></br>
+        <input type='submit' value='작성'></input>
+    </form>
+<% end %>
 </br></br>
 
 <p> 리뷰 </p>
@@ -34,9 +36,12 @@
     <p>내용 : <%= reviews.content %></p>
     <p>별점 : <%= reviews.star_point %></p>
     <p>이미지 : <%= reviews.img %></p>
-    <a href="/detail_item/index/<%= @bread.id %>/reviews/destroy/<%= reviews.id%>" data-confirm='리뷰을 삭제합니다.'>
-       [X]</a><br>
-       <hr>
+    <% if user_signed_in? %>
+        <% if reviews.user_email == current_user.email %>
+            <a href = '/detail_item/index/<%=@bread.id%>/reviews/destroy/<%=reviews.id%>'>[삭제]</a>
+        <% end %>
+    <% end %>
+    <br><hr>
 <% end %>
 
 <script>
