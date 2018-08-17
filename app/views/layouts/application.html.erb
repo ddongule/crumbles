@@ -43,7 +43,7 @@
 
               <ul class="nav-up">
                 <% if user_signed_in? %>
-                    <%# <li><%= link_to "Roles : " + user_roles(current_user), '#', :class => "link nav-link" %></li> %>
+                    <li><%= link_to user_roles(current_user), '#', :class => "link nav-link" %></li>
                     <li><%= link_to current_user.name + "님", '/', :class => "link nav-link" %></li>
                     <li><%= link_to '로그아웃', destroy_user_session_path, :method => :delete, :class => "link nav-link" %></li>
                 <% else %>

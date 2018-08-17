@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   post '/detail_item/index/:bread_id/reviews/create' => 'reviews#create'
 
-  get '/detail_item/index/:bread_id/reviews/destroy/:review_id' => 'reviews#destroy'
+  get '/detail_item/index/:bread_id/reviews/destroy/:review_id' => 'reviews#destroy' , as: 'review_destroy'
 
   get 'itemlist/index' => "itemlist#index"
 
