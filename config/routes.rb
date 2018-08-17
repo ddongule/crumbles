@@ -26,9 +26,7 @@ Rails.application.routes.draw do
 
   get 'itemlist/bakery' => "itemlist#bakery"
 
-  get 'itemlist/bread_name' => "itemlist#bread_name"
-
-  get 'itemlist/bread_category' => "itemlist#bread_category"
+  get 'itemlist/bread' => "itemlist#bread"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

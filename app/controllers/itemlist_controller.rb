@@ -7,9 +7,8 @@ class ItemlistController < ApplicationController
     @bakery = Bakery.all
   end
 
-  def bread_name
+  def bread
+    @bread = Bread.all
   end
 
-  def bread_category
-  end
 end
