@@ -2,18 +2,7 @@ class SearchController < ApplicationController
 
   def index
     category = search_DB()
-
-    if category == "bakery"
-      redirect_to "/search/bakery/#{params[:keyword]}"
-    elsif category == "bread_name"
-      redirect_to "/search/bread_name/#{params[:keyword]}"
-    elsif category == "bread_category"
-      redirect_to "/search/bread_category/#{params[:keyword]}"
-    else
-      redirect_to "/search/nonexist/#{params[:keyword]}"
-    end
-
-    #redirect_to "/search/#{category}/#{params[:keyword]}"
+    redirect_to "/search/#{category}/#{params[:keyword]}"
   end
 
   def search_DB
