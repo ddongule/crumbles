@@ -6,4 +6,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :posts, dependent: :destroy
+
+  after_create :set_default_role
+
+  private
+
+  def set_default_role
+    add_role :user
+  end
+
 end
