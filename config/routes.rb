@@ -1,12 +1,21 @@
 Rails.application.routes.draw do
 
   devise_for :users
+  
   root "main#index"
   
-  get 'search/index'
-
   get 'main/index'
+
+  get 'search/index' => "search#index"
+
+  get '/search/bakery/:keyword' => "search#bakery"
+
+  get '/search/bread_name/:keyword' => "search#bread_name"
+
+  get '/search/bread_category/:keyword' => "search#bread_category"
   
+  get '/search/nonexist/:keyword' => "search#nonexist"
+
   get 'detail_item/index/:bread_name' => "detail_item#index"
 
   post '/detail_item/index/:bread_id/reviews/create' => 'reviews#create'
