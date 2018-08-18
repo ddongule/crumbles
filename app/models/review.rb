@@ -6,4 +6,6 @@ class Review < ApplicationRecord
     belongs_to :owner, required: false
     belongs_to :user, required: false
 
+    mount_uploader :image, ImageUploader
+
 end

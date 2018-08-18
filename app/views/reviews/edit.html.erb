@@ -4,7 +4,7 @@
     작성자: <label name='input_user'><%= current_user.name%></label></br>
     내용 : <textarea name="input_content" cols="80" rows="1"><%=@review.content%></textarea> <br/>
     별점 : <input type = 'number' name = 'input_starPoint' id = "star" value = "<%=@review.star_point%>"></input></br>
-    이미지 : <input type = 'text' name = "input_img" value = "<%=@review.img%>"></input></br>
+    이미지 : <input type = 'file' name = "input_img"></input></br>
     <input type='submit' value='작성'></input>
 </form>
 

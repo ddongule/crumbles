@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
         review.user_email = current_user.email
         review.content = params[:input_content]
         review.star_point = params[:input_starPoint]
-        review.img = params[:input_img]
+        review.image = params[:input_img]
         review.bread_id = params[:bread_id]
         if user_signed_in? 
             review.user_id = current_user.id
@@ -36,7 +36,8 @@ class ReviewsController < ApplicationController
         review = Review.find(params[:review_id])
         review.content = params[:input_content]
         review.star_point = params[:input_starPoint]
-        review.img = params[:input_img]
+        review.image = params[:input_img]
+        
         review.save
 
         bread = Bread.find(params[:bread_id])

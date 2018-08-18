@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 20180818045041) do
     t.string "user_email"
     t.text "content"
     t.integer "star_point"
-    t.string "img"
+    t.string "image"
     t.integer "bread_id"
     t.integer "user_id"
     t.integer "owner_id"
