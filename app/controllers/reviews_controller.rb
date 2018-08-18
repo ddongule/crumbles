@@ -27,6 +27,26 @@ class ReviewsController < ApplicationController
         redirect_to "/detail_item/index/#{bread_r.bread_name}"
     end
 
+    def edit
+        @bread = params[:bread_id]
+        @review = Review.find(params[:review_id])
+    end
+  
+    def update
+        review = Review.find(params[:review_id])
+        review.content = params[:input_content]
+        review.star_point = params[:input_starPoint]
+        review.img = params[:input_img]
+        review.save
+
+        bread = Bread.find(params[:bread_id])
+        star_avg = star_cal(params[:bread_id].to_i)
+        bread.star_point = star_avg
+        bread.save
+
+        redirect_to "/detail_item/index/#{review.bread_name}"
+    end
+
     def destroy
         bread = Bread.find(params[:bread_id])
         review = Review.find(params[:review_id])

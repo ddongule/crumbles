@@ -1,0 +1,20 @@
+<h1>리뷰 수정!</h1>
+<form action='/detail_item/index/<%= @bread %>/reviews/update/<%=@review.id%>' method='post' onsubmit = "return isCorrect()">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    작성자: <label name='input_user'><%= current_user.name%></label></br>
+    내용 : <textarea name="input_content" cols="80" rows="1"><%=@review.content%></textarea> <br/>
+    별점 : <input type = 'number' name = 'input_starPoint' id = "star" value = "<%=@review.star_point%>"></input></br>
+    이미지 : <input type = 'text' name = "input_img" value = "<%=@review.img%>"></input></br>
+    <input type='submit' value='작성'></input>
+</form>
+
+<script>
+    function isCorrect(){
+        var sp = parseInt(document.getElementById('star').value);
+
+        if (sp > 6 || sp < 0){
+            alert("별점은 0~5까지만 매길 수 있습니다.");
+            return false;
+        }
+    }
+</script>
