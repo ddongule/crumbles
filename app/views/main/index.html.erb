@@ -1,21 +1,3 @@
-<script>
-    var item = document.getElementsByClassName("collapsible");
-    var i;
-
-    for (i = 0; i < item.length; i++) {
-        item[i].addEventListener("click", function() {
-            this.classList.toggle("active");
-            var content = this.nextElementSibling;
-            if (content.style.maxHeight){
-                content.style.maxHeight = null;
-            }
-            else {
-            content.style.maxHeight = content.scrollHeight + "px";
-            } 
-        });
-    }
-</script>
-
 <div class = "catbread">
     <%= image_tag 'catbread.jpg' %></br>
     <p>식빵 고양이가 추천해주는 오늘의 추천 빵!</p><br>
@@ -60,3 +42,21 @@
         </form>
     <% end %>
 </div>
+
+<script>
+    var item = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < item.length; i++) {
+        item[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight){
+                content.style.maxHeight = null;
+            }
+            else {
+            content.style.maxHeight = content.scrollHeight + "px";
+            } 
+        });
+    }
+</script>

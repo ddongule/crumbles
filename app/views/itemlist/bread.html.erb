@@ -1,0 +1,57 @@
+<% count = 0 %>
+
+우리 같이 빵을 찾아보아요~~~
+
+<form action = '#' method = "get">
+    지역명으로 검색하고 싶으시면 입력해주세요 : <input type = "text" name = "place"></input>
+    <input type = "submit" value = "검색"></input>
+</form>
+
+<div class="wrap">
+    <div class="qa-wrap">
+        <div class="qa">
+            <% @bread.each do |result| %>
+                <% count += 1 %>
+                <div class = "item">
+                    <button class="collapsible">
+                        <%= count %>번 빵
+                        <ul>
+                            <li><%= image_tag 'defult_bakery.jpg' %></li>
+                            <li>
+                                <p> 빵 이름 : <%= result.bread_name %> </p>
+                                <p> 종류 : <%= result.category %></p>
+                                <p> 가격 : <%= result.price %></p>
+                            </li>
+                        </ul>
+                    </button>
+                    <div class = "content">
+                      <p> 빵집 : <%= result.bakery_name %></p> 
+                      <p> 잔여개수 : <%= result.amount %></p>
+                      <p> 예약가능 : <%= result.bookable_num %></p>
+                      <p> 별점 : <%= result.star_point %></p>
+                      <a href = "/search/bakery/<%=result.bread_name%>">빵 더보기...</a>
+                      </br>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>
+
+<script>
+    var item = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < item.length; i++) {
+    item[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight){
+            content.style.maxHeight = null;
+        }
+        else {
+        content.style.maxHeight = content.scrollHeight + "px";
+        } 
+    });
+    }
+</script>
