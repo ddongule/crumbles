@@ -75,4 +75,7 @@ class MainController < ApplicationController
       isExist = false
     end
   end
+
+  def sign
+  end
 end

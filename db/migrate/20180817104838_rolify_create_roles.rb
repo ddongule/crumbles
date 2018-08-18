@@ -12,8 +12,15 @@ class RolifyCreateRoles < ActiveRecord::Migration[5.1]
       t.references :role
     end
     
+    create_table(:owners_roles, :id => false) do |t|
+      t.references :owner
+      t.references :role
+    end
+
     add_index(:roles, :name)
     add_index(:roles, [ :name, :resource_type, :resource_id ])
     add_index(:users_roles, [ :user_id, :role_id ])
+    add_index(:owners_roles, [ :owner_id, :role_id ])
+
   end
 end

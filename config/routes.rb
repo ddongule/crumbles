@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
 
+  devise_for :owners
   devise_for :users
   
   root "main#index"
   
   get 'main/index'
+
+  get 'main/sign' => 'main#sign'
 
   get 'search/index' => "search#index"
 
@@ -22,11 +25,23 @@ Rails.application.routes.draw do
 
   get '/detail_item/index/:bread_id/reviews/destroy/:review_id' => 'reviews#destroy' , as: 'review_destroy'
 
+  get '/detail_item/index/:bread_id/reviews/edit/:review_id' => "reviews#edit"
+
+  post '/detail_item/index/:bread_id/reviews/update/:review_id' => "reviews#update"
+
   get 'itemlist/index' => "itemlist#index"
 
   get 'itemlist/bakery' => "itemlist#bakery"
 
   get 'itemlist/bread' => "itemlist#bread"
+  
+  get 'info_user/index'
+
+  get 'info_user/reservations/:user_id' => "info_user#reservations"
+
+  get 'info_user/reviews' => 'info_user#reviews'
+
+  get 'info_owner/index' => 'info_owner#index'
 
   get 'itemlist/bakery_detail' => 'itemlist#bakery_detail'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

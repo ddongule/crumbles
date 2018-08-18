@@ -1,4 +1,11 @@
-<h2>Log in</h2>
+<% address = request.fullpath %>
+<% if address.include? "users" %>
+  <% sign_case = "고객" %>
+<% else %>
+  <% sign_case = "점주" %>
+<% end %>
+
+<h2><%= sign_case %> 로그인</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
@@ -8,7 +15,7 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
+    <%= f.button :submit, "로그인" %>
   </div>
 <% end %>
 

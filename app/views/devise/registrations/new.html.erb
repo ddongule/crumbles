@@ -1,4 +1,11 @@
-<h2>Sign up</h2>
+<% address = request.fullpath %>
+<% if address.include? "users" %>
+  <% sign_case = "고객" %>
+<% else %>
+  <% sign_case = "점주" %>
+<% end %>
+
+<h2><%=sign_case%> 회원가입</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
@@ -11,7 +18,7 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "회원가입" %>
   </div>
 <% end %>
 
