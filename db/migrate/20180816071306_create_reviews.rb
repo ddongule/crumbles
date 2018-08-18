@@ -1,7 +1,8 @@
 class CreateReviews < ActiveRecord::Migration[5.1]
   def change
     create_table :reviews do |t|
-      t.string :user
+      t.string :bread_name
+      t.string :user_name
       t.string :user_email
       t.text :content
       t.integer :star_point

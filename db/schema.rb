@@ -69,7 +69,8 @@ ActiveRecord::Schema.define(version: 20180818045041) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.string "user"
+    t.string "bread_name"
+    t.string "user_name"
     t.string "user_email"
     t.text "content"
     t.integer "star_point"

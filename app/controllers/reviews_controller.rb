@@ -2,15 +2,23 @@ class ReviewsController < ApplicationController
     
     def create
         bread_r = Bread.find(params[:bread_id])
-        @review = Review.new
-        @review.user = current_user.name
-        @review.user_email = current_user.email
-        @review.content = params[:input_content]
-        @review.star_point = params[:input_starPoint]
-        @review.img = params[:input_img]
-        @review.bread_id = params[:bread_id]
-        @review.user_id = current_user.id
-        @review.save
+        review = Review.new
+        review.bread_name = bread_r.bread_name
+        review.user_name = current_user.name
+        review.user_email = current_user.email
+        review.content = params[:input_content]
+        review.star_point = params[:input_starPoint]
+        review.img = params[:input_img]
+        review.bread_id = params[:bread_id]
+        if user_signed_in? 
+            review.user_id = current_user.id
+            review.owner_id = 0
+        else
+            review.owner_id = current_user.id
+            review.user_id = 0
+        end
+
+        review.save
 
         star_avg = star_cal(params[:bread_id].to_i)
         bread_r.star_point = star_avg
@@ -21,8 +29,8 @@ class ReviewsController < ApplicationController
 
     def destroy
         bread = Bread.find(params[:bread_id])
-        @review = Review.find(params[:review_id])
-        @review.destroy
+        review = Review.find(params[:review_id])
+        review.destroy
         star_avg = star_cal(params[:bread_id].to_i)
         bread.star_point = star_avg
         bread.save

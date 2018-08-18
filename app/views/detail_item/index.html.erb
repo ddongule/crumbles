@@ -32,7 +32,7 @@
 
 <p> 리뷰 </p>
 <% @review.each do |reviews| %>
-    <p>작성자 :<%= reviews.user=%></p>
+    <p>작성자 :<%= reviews.user_name %></p>
     <p>내용 : <%= reviews.content %></p>
     <p>별점 : <%= reviews.star_point %></p>
     <p>이미지 : <%= reviews.img %></p>

@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   
   get 'main/index'
 
+  get 'main/sign' => 'main#sign'
+
   get 'search/index' => "search#index"
 
   get '/search/bakery/:keyword' => "search#bakery"
@@ -28,6 +30,14 @@ Rails.application.routes.draw do
   get 'itemlist/bakery' => "itemlist#bakery"
 
   get 'itemlist/bread' => "itemlist#bread"
+  
+  get 'info_user/index'
+
+  get 'info_user/reservations/:user_id' => "info_user#reservations"
+
+  get 'info_user/reviews' => 'info_user#reviews'
+
+  get 'info_owner/index' => 'info_owner#index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
