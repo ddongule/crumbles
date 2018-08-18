@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20180816142116) do
     t.text "address"
     t.string "telephone_number"
     t.string "business_license"
-    t.string "email"
+    t.string "emaile"
     t.time "open_time"
     t.time "close_time"
     t.integer "seat"

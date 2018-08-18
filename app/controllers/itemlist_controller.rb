@@ -6,6 +6,9 @@ class ItemlistController < ApplicationController
   def bakery
     @bakery = Bakery.all
   end
+  def bakery_detail
+  end
+  
 
   def bread_name
   end
