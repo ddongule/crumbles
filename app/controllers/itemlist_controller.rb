@@ -10,9 +10,8 @@ class ItemlistController < ApplicationController
   end
   
 
-  def bread_name
+  def bread
+    @bread = Bread.all
   end
 
-  def bread_category
-  end
 end

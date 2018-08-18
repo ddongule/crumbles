@@ -40,3 +40,6 @@ Bread.create(bakery_name: "오늘의빵빵", bread_name: "내일만들꺼", cate
 Bread.create(bakery_name: "그냥날이좋아서", bread_name: "따뜻행", category: "쿠키", amount: 42,bookable_num: 9, price: 1000, star_point: 0.0, bakery_id: 8)
 Bread.create(bakery_name: "그냥날이좋아서", bread_name: "시원혀", category: "도넛", amount: 41,bookable_num: 4, price: 3000, star_point: 0.0, bakery_id: 8)
 Bread.create(bakery_name: "달콤살벌", bread_name: "히잉", category: "케이크", amount: 23,bookable_num: 10, price: 2000, star_point: 0.0, bakery_id: 9)
+
+admin_user = User.create( name: "관리자", email: 'admin@email.com', password: '12345678' )
+admin_user.add_role :admin

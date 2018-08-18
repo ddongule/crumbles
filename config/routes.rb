@@ -20,15 +20,13 @@ Rails.application.routes.draw do
 
   post '/detail_item/index/:bread_id/reviews/create' => 'reviews#create'
 
-  get '/detail_item/index/:bread_id/reviews/destroy/:review_id' => 'reviews#destroy'
+  get '/detail_item/index/:bread_id/reviews/destroy/:review_id' => 'reviews#destroy' , as: 'review_destroy'
 
   get 'itemlist/index' => "itemlist#index"
 
   get 'itemlist/bakery' => "itemlist#bakery"
 
-  get 'itemlist/bread_name' => "itemlist#bread_name"
-
-  get 'itemlist/bread_category' => "itemlist#bread_category"
+  get 'itemlist/bread' => "itemlist#bread"
 
   get 'itemlist/bakery_detail' => 'itemlist#bakery_detail'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -3,11 +3,13 @@ class ReviewsController < ApplicationController
     def create
         bread_r = Bread.find(params[:bread_id])
         @review = Review.new
-        @review.user = params[:input_user]
+        @review.user = current_user.name
+        @review.user_email = current_user.email
         @review.content = params[:input_content]
         @review.star_point = params[:input_starPoint]
         @review.img = params[:input_img]
         @review.bread_id = params[:bread_id]
+        @review.user_id = current_user.id
         @review.save
 
         star_avg = star_cal(params[:bread_id].to_i)
