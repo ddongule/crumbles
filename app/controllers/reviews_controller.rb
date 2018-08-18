@@ -37,7 +37,7 @@ class ReviewsController < ApplicationController
         review.content = params[:input_content]
         review.star_point = params[:input_starPoint]
         review.image = params[:input_img]
-        
+
         review.save
 
         bread = Bread.find(params[:bread_id])

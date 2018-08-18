@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Bakery.create(name: "동규네 빵집", address: "경기도 안산시 단원구 이삭3길 30", telephone_number: "010-9196-9896", business_license: "11-11-11", email: "ehdrbchd@naver.com", open_time: Time.now+(60*60*1), close_time: Time.now+(60*60*13), seat: 100)
+Bakery.create(name: "동규네 빵집", address: "경기도 안산시 단원구 이삭3길 30", telephone_number: "010-9196-9896", business_license: "11-11-11", email: "ehdrbchd@naver.com", open_time: Time.now+(60*60*1), close_time: Time.now+(60*60*13), seat: 100, owner_id: 1)
 Bakery.create(name: "민경이네 카페", address: "경기 과천시 경마공원대로 107", telephone_number: "010-5161-5998", business_license: "22-22-22", email: "alsrud@gmail.com", open_time: Time.now+(60*60*2), close_time: Time.now+(60*60*7), seat: 1000)
 Bakery.create(name: "서울바게트", address: "서울 용산구 남산공원길 105", telephone_number: "010-1111-1111", business_license: "33-33-33", email: "skek@daum.net", open_time: Time.now+(60*60*3), close_time: Time.now+(60*60*6), seat: 35)
 Bakery.create(name: "또래주르", address: "서울 동작구 남부순환로 2089", telephone_number: "010-2222-2222", business_license: "44-44-44", email: "qkqh@hanmail.net", open_time: Time.now+(60*60*4), close_time: Time.now+(60*60*5), seat: 30)
