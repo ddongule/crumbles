@@ -8,6 +8,7 @@ class CreateReviews < ActiveRecord::Migration[5.1]
       t.string :img
       t.belongs_to :bread
       t.belongs_to :user
+      t.belongs_to :owner
       
       t.timestamps
     end
