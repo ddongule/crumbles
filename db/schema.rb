@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180817104838) do
+ActiveRecord::Schema.define(version: 20180818045041) do
 
   create_table "bakeries", force: :cascade do |t|
     t.string "name"
@@ -40,18 +40,41 @@ ActiveRecord::Schema.define(version: 20180817104838) do
     t.index ["bakery_id"], name: "index_breads_on_bakery_id"
   end
 
+  create_table "owners", force: :cascade do |t|
+    t.string "name", default: "", null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_owners_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_owners_on_reset_password_token", unique: true
+  end
+
+  create_table "owners_roles", id: false, force: :cascade do |t|
+    t.integer "owner_id"
+    t.integer "role_id"
+    t.index ["owner_id", "role_id"], name: "index_owners_roles_on_owner_id_and_role_id"
+    t.index ["owner_id"], name: "index_owners_roles_on_owner_id"
+    t.index ["role_id"], name: "index_owners_roles_on_role_id"
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.string "user"
-    t.string "user_email"
     t.text "content"
     t.integer "star_point"
     t.string "img"
     t.integer "bread_id"
-    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["bread_id"], name: "index_reviews_on_bread_id"
-    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "roles", force: :cascade do |t|

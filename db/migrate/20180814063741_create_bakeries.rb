@@ -10,6 +10,7 @@ class CreateBakeries < ActiveRecord::Migration[5.1]
       t.time :close_time
       t.integer :seat
       t.string :img
+      t.belongs_to :owner
       
       t.timestamps
     end
