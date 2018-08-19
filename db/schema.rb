@@ -22,10 +22,8 @@ ActiveRecord::Schema.define(version: 20180818045041) do
     t.time "close_time"
     t.integer "seat"
     t.string "img"
-    t.integer "owner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["owner_id"], name: "index_bakeries_on_owner_id"
   end
 
   create_table "breads", force: :cascade do |t|
@@ -69,20 +67,14 @@ ActiveRecord::Schema.define(version: 20180818045041) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.string "bread_name"
-    t.string "user_name"
-    t.string "user_email"
+    t.string "user"
     t.text "content"
     t.integer "star_point"
-    t.string "image"
+    t.string "img"
     t.integer "bread_id"
-    t.integer "user_id"
-    t.integer "owner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["bread_id"], name: "index_reviews_on_bread_id"
-    t.index ["owner_id"], name: "index_reviews_on_owner_id"
-    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "roles", force: :cascade do |t|
