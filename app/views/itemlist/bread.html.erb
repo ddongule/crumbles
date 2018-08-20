@@ -1,11 +1,17 @@
 <% count = 0 %>
+<% bread_category = category() %>
 
 우리 같이 빵을 찾아보아요~~~
 
-<form action = '#' method = "get">
+<form action = '/itemlist/bread/' method = "get">
     지역명으로 검색하고 싶으시면 입력해주세요 : <input type = "text" name = "place"></input>
+    <% bread_category.each do |bc| %>
+        <input type="checkbox" name= "<%=bc.category>" value="<%=bc.category>"></input>
+    <% end %>
     <input type = "submit" value = "검색"></input>
 </form>
+
+<a href = "/itemlist/bakery">빵집 기준으로 검색하기!</a>
 
 <div class="wrap">
     <div class="qa-wrap">
@@ -43,15 +49,15 @@
     var i;
 
     for (i = 0; i < item.length; i++) {
-    item[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
-        if (content.style.maxHeight){
-            content.style.maxHeight = null;
-        }
-        else {
-        content.style.maxHeight = content.scrollHeight + "px";
-        } 
-    });
+        item[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight){
+                content.style.maxHeight = null;
+            }
+            else {
+            content.style.maxHeight = content.scrollHeight + "px";
+            } 
+        });
     }
 </script>
