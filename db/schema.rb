@@ -10,20 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180818045041) do
+ActiveRecord::Schema.define(version: 20180820054850) do
 
   create_table "bakeries", force: :cascade do |t|
     t.string "name"
     t.text "address"
     t.string "telephone_number"
     t.string "business_license"
-    t.string "emaile"
+    t.string "email"
     t.time "open_time"
     t.time "close_time"
     t.integer "seat"
-    t.string "img"
+    t.string "image"
+    t.integer "owner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["owner_id"], name: "index_bakeries_on_owner_id"
   end
 
   create_table "breads", force: :cascade do |t|
@@ -38,6 +40,15 @@ ActiveRecord::Schema.define(version: 20180818045041) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["bakery_id"], name: "index_breads_on_bakery_id"
+  end
+
+  create_table "end_reservations", force: :cascade do |t|
+    t.integer "bread_id"
+    t.integer "user_id"
+    t.integer "amount"
+    t.date "order_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "owners", force: :cascade do |t|
@@ -66,15 +77,29 @@ ActiveRecord::Schema.define(version: 20180818045041) do
     t.index ["role_id"], name: "index_owners_roles_on_role_id"
   end
 
+  create_table "reservations", force: :cascade do |t|
+    t.integer "bread_id"
+    t.integer "user_id"
+    t.integer "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "reviews", force: :cascade do |t|
-    t.string "user"
+    t.string "bread_name"
+    t.string "user_name"
+    t.string "user_email"
     t.text "content"
     t.integer "star_point"
-    t.string "img"
+    t.string "image"
     t.integer "bread_id"
+    t.integer "user_id"
+    t.integer "owner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["bread_id"], name: "index_reviews_on_bread_id"
+    t.index ["owner_id"], name: "index_reviews_on_owner_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "roles", force: :cascade do |t|
