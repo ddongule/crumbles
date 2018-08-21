@@ -17,15 +17,13 @@ ActiveRecord::Schema.define(version: 20180820054850) do
     t.text "address"
     t.string "telephone_number"
     t.string "business_license"
-    t.string "email"
+    t.string "emaile"
     t.time "open_time"
     t.time "close_time"
     t.integer "seat"
-    t.string "image"
-    t.integer "owner_id"
+    t.string "img"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["owner_id"], name: "index_bakeries_on_owner_id"
   end
 
   create_table "breads", force: :cascade do |t|
@@ -86,20 +84,14 @@ ActiveRecord::Schema.define(version: 20180820054850) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.string "bread_name"
-    t.string "user_name"
-    t.string "user_email"
+    t.string "user"
     t.text "content"
     t.integer "star_point"
-    t.string "image"
+    t.string "img"
     t.integer "bread_id"
-    t.integer "user_id"
-    t.integer "owner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["bread_id"], name: "index_reviews_on_bread_id"
-    t.index ["owner_id"], name: "index_reviews_on_owner_id"
-    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "roles", force: :cascade do |t|
