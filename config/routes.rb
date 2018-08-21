@@ -29,6 +29,10 @@ Rails.application.routes.draw do
 
   post '/detail_item/index/:bread_id/reviews/update/:review_id' => "reviews#update"
 
+  get 'detail_item/reservation/:bread_id' => 'detail_item#reservation'
+
+  get '/detail_item/cancle/:bread_id' => 'detail_item#cancle'
+
   get 'itemlist/index' => "itemlist#index"
 
   get 'itemlist/bakery' => "itemlist#bakery"
@@ -37,7 +41,7 @@ Rails.application.routes.draw do
   
   get 'info_user/index'
 
-  get 'info_user/reservations/:user_id' => "info_user#reservations"
+  get 'info_user/reservations' => "info_user#reservations"
 
   get 'info_user/reviews' => 'info_user#reviews'
 
