@@ -42,11 +42,11 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-  margin: 120px 50px;
-  padding: 50px 50px 50px 10px;
-  line-height: 1;
-  width:100%;
-  background-color: #ffffff;
+  // margin: 120px 0px;
+  // padding: 50px 50px 50px 10px;
+  // line-height: 1;
+  // width:100%;
+  // background-color: #ffffff;
 }
 ol, ul {
 	list-style: none;
@@ -79,6 +79,8 @@ body {
   //첫 화면에 margin이 생기면 안되기 때문에 지움
   margin: 120px 0px;
   padding: 50px 0px 50px 0px;
+  line-height: 1;
+  width:100%;
   background-color: #ffffff;
 }
 
