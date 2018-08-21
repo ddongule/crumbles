@@ -1,16 +1,23 @@
 module ItemlistHelper
 
+  def category
     bread_all = Bread.all
-    @bread_category_arr = Array.new()
+    bread_category_arr = Array.new()
+
     bread_all.each do |b|
       i = 0 
-      while i < @bread_category_arr.length
-        if @bread_category_arr[i] == b.category
-          i += 1
-          next
+      isExist = false
+      for i in 0..bread_category_arr.length
+        if bread_category_arr[i] == b.category
+          isExist = true
         end
-        @bread_category_arr.push(b.category)
-        i += 1
+      end
+
+      if isExist == false
+        bread_category_arr.push(b.category)
       end
     end
+    
+    return bread_category_arr
+  end
 end
