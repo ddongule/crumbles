@@ -54,10 +54,14 @@ class MainController < ApplicationController
     isExist = false
     i = 0
     
-    if Bread.last.id < 6
-      item_num = Bread.last.id
+    if Bread.last == nil 
+      item_num = 0
     else
-      item_num = 6
+      if Bread.last.id < 6
+        item_num = Bread.last.id
+      else
+        item_num = 6
+      end
     end
 
     while i < item_num

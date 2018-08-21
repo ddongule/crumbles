@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180818045041) do
+ActiveRecord::Schema.define(version: 20180820054850) do
 
   create_table "bakeries", force: :cascade do |t|
     t.string "name"
@@ -40,6 +40,15 @@ ActiveRecord::Schema.define(version: 20180818045041) do
     t.index ["bakery_id"], name: "index_breads_on_bakery_id"
   end
 
+  create_table "end_reservations", force: :cascade do |t|
+    t.integer "bread_id"
+    t.integer "user_id"
+    t.integer "amount"
+    t.date "order_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "owners", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.string "email", default: "", null: false
@@ -64,6 +73,14 @@ ActiveRecord::Schema.define(version: 20180818045041) do
     t.index ["owner_id", "role_id"], name: "index_owners_roles_on_owner_id_and_role_id"
     t.index ["owner_id"], name: "index_owners_roles_on_owner_id"
     t.index ["role_id"], name: "index_owners_roles_on_role_id"
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.integer "bread_id"
+    t.integer "user_id"
+    t.integer "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "reviews", force: :cascade do |t|

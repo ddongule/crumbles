@@ -9,7 +9,7 @@ class CreateBakeries < ActiveRecord::Migration[5.1]
       t.time :open_time
       t.time :close_time
       t.integer :seat
-      t.string :img
+      t.string :image
       t.belongs_to :owner
       
       t.timestamps

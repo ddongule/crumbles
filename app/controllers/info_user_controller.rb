@@ -16,5 +16,13 @@ class InfoUserController < ApplicationController
   end
 
   def reservations
+    reservations = Reservation.all
+    @reservations_arr = Array.new()
+
+    reservations.each do |r|
+      if r.user_id == current_user.id
+        @reservations_arr.push(r)
+      end
+    end
   end
 end
