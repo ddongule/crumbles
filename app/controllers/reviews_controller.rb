@@ -36,6 +36,8 @@ class ReviewsController < ApplicationController
         review = Review.find(params[:review_id])
         review.content = params[:input_content]
         review.star_point = params[:input_starPoint]
+        review.image = review_params.delete(:image)
+        review.update_attributes(review_params)
         review.image = params[:input_img]
 
         review.save
