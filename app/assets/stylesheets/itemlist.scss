@@ -1,6 +1,128 @@
-// Place all the styles related to the itemlist controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-.item-list-wrap {
-  padding: 20px 0px 50px 50px;
+.item-list-wrap{
+  padding: 0px 0px 0px 50px;
+}
+  
+
+.item {
+    text-align: center;
+}
+  
+.collapsible:after {
+    color: black;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+ 
+.collapsible img {
+    max-width: 400px;
+    min-height:50px;
+}
+
+.content {
+    padding: 0px 30px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #fff;
+}
+  
+.content p {
+    padding: 13px;
+}
+
+
+
+@media (max-width: 1024px) {
+  .bread-item {
+    float: left;
+    width: 100%;
+    position: inherit;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+  }
+  .search-bread-list > section > div > button > ul > li > img{
+    // height: 350px;
+    // width: 400px;
+    height: 100%;
+    width: 100%;
+  }
+  .search-bread-list{
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+
+
+/* 만약 브라우저의 크기가 768px 이상이라면 */
+@media (min-width: 1024px) {
+  .bread-item {
+    float: left;
+    width: 33.333333%;
+    position: inherit;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+  }
+  .search-bread-list > section > div > button > ul > li > img{
+    height: 60%;
+    width: 100%;
+  }
+  .search-bread-list{
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+// text-align : center
+
+.search-bread-list ul{
+  width: 100%;
+  list-style: none;
+  margin: auto;
+  padding: 0px;
+  display: block;
+  float: left;
+  overflow: hidden;
+}
+.search-bread-list ul li{
+  list-style: none;
+  margin: auto;
+  padding: 0px;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 2px 0px;
+  display: contents;
+}
+
+
+/* 만약 브라우저의 크기가 1366px 이상이라면 */
+@media (min-width: 1366px) {
+  .bread-item {
+    // width: 23.333333%;
+    width: 15.333333%;
+    // padding: 0 0.5%;
+    padding: 0 0.5%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+   .search-bread-list > section > div > button > ul > li > img{
+    // height: 60%;
+    // width: 100%;
+    height: 225px;
+    width: 220px;
+    margin: 0 5%;
+    overflow: auto;
+  }
+  .search-bread-list{
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

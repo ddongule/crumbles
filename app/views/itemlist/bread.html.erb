@@ -5,25 +5,28 @@
     우리 같이 빵을 찾아보아요~~~
 
     <form action = '/itemlist/bread/' method = "get">
-        지역명으로 검색하고 싶으시면 입력해주세요 : <input type = "text" name = "place"></input>
+        지역명으로 검색하고 싶으시면 입력해주세요 : <input type = "text" name = "place" value = "<%=@place%>"></input>
         <% bread_category.each do |bc| %>
-            <input type="checkbox" name= <%= bc.category %> value= <%= bc.category %> > </input>
+            <input type="checkbox" name="category[]" value = "<%=bc%>"><%=bc%></input>
         <% end %>
         <input type = "submit" value = "검색"></input>
     </form>
 
     <a href = "/itemlist/bakery">빵집 기준으로 검색하기!</a>
+        <div class="item-list">
 
-    <div class="wrap">
-        <div class="qa-wrap">
-            <div class="qa">
+                <% if @bread.length == 0 %>
+                    <p> 검색 결과가 없습니다. </p>
+                <% end %>
                 <% @bread.each do |result| %>
                     <% count += 1 %>
+                    <section class="bread-item">
+
                     <div class = "item">
                         <button class="collapsible">
                             <%= count %>번 빵
                             <ul>
-                                <li><%= image_tag 'defult_bakery.jpg' %></li>
+                                <li><%= image_tag 'scon.png' %></li>
                                 <li>
                                     <p> 빵 이름 : <%= result.bread_name %> </p>
                                     <p> 종류 : <%= result.category %></p>
@@ -36,14 +39,13 @@
                         <p> 잔여개수 : <%= result.amount %></p>
                         <p> 예약가능 : <%= result.bookable_num %></p>
                         <p> 별점 : <%= result.star_point %></p>
-                        <a href = "/search/bakery/<%=result.bread_name%>">빵 더보기...</a>
+                        <a href = "/search/bakery/<%=result.bakery_name%>">빵 더보기...</a>
                         </br>
                         </div>
                     </div>
                 <% end %>
-            </div>
         </div>
-    </div>
+
 </div>
 <script>
     var item = document.getElementsByClassName("collapsible");
@@ -57,7 +59,7 @@
                 content.style.maxHeight = null;
             }
             else {
-                content.style.maxHeight = content.scrollHeight + "px";
+            content.style.maxHeight = content.scrollHeight + "px";
             } 
         });
     }

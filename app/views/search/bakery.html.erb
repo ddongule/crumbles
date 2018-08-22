@@ -14,38 +14,36 @@
     <div id="map" style="width:300px;height:200px;"></div>
     </br></br>
 
+<div class="search-bread-list">
     <p>이 집의 따끈따끈 대표 빵들</p></br>
-    <div class="wrap">
-        <div class="qa-wrap">
-            <div class="qa">
-                <% @bakery_search_result.each do |result| %>
-                    <% count += 1 %>
-                    <div class = "item">
-                        <button class="collapsible">
-                            <%= count %>번 빵
-                            <ul>
-                                <li><%= image_tag 'defult_bakery.jpg' %></li>
-                                <li>
-                                    <p> 빵집 : <%= result.bakery_name %></p>
-                                    <p> 빵 이름 : <%= result.bread_name %></p>
-                                </li>
-                            </ul>
-                        </button>
-                        <div class = "content">
-                            <p> 빵 종류 : <%= result.category %></p>
-                            <p> 잔여 개수 : <%= result.amount %></p>
-                            <p> 예약 가능 : <%= result.bookable_num %></p>
-                            <p> 가격 : <%= result.price %></p>
-                            <p> 별점 : <%= result.star_point %></p>
-                            <a href = "/detail_item/index/<%=result.bread_name%>">빵 더보기...</a>
-                            </br>
-                        </div>
+        <% @bakery_search_result.each do |result| %>
+            <% count += 1 %>
+            <section class="bread-item">
+                <div class = "item">
+                    <button class="collapsible">
+                        <%= count %>번 빵
+                        <ul>
+                            <li><%= image_tag 'scon.png' %></li>
+                            <li>
+                                <p> 빵집 : <%= result.bakery_name %></p>
+                                <p> 빵 이름 : <%= result.bread_name %></p>
+                            </li>
+                        </ul>
+                    </button>
+                    <div class = "content">
+                        <p> 빵 종류 : <%= result.category %></p>
+                        <p> 잔여 개수 : <%= result.amount %></p>
+                        <p> 예약 가능 : <%= result.bookable_num %></p>
+                        <p> 가격 : <%= result.price %></p>
+                        <p> 별점 : <%= result.star_point %></p>
+                        <a href = "/detail_item/index/<%=result.bread_name%>">빵 더보기...</a>
+                        </br>
                     </div>
-                <% end %>
-            </div>
-        </div>
-    </div>
-</div>
+                </div>
+            </section>
+        <% end %>
+
+
     <script>
         var item = document.getElementsByClassName("collapsible");
         var i;
@@ -96,3 +94,4 @@
         } 
     });    
     </script>
+</div>
