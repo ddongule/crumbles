@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20180820054850) do
     t.integer "bookable_num"
     t.integer "price"
     t.float "star_point"
+    t.string "image"
     t.integer "bakery_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

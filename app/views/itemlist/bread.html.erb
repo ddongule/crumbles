@@ -13,38 +13,39 @@
     </form>
 
     <a href = "/itemlist/bakery">빵집 기준으로 검색하기!</a>
+        <% if @bread.length == 0 %>
+            <p> 검색 결과가 없습니다. </p>
+        <% end %>
+
         <div class="item-list">
-
-                <% if @bread.length == 0 %>
-                    <p> 검색 결과가 없습니다. </p>
-                <% end %>
-                <% @bread.each do |result| %>
-                    <% count += 1 %>
-                    <section class="bread-item">
-
-                    <div class = "item">
-                        <button class="collapsible">
-                            <%= count %>번 빵
-                            <ul>
-                                <li><%= image_tag 'scon.png' %></li>
-                                <li>
-                                    <p> 빵 이름 : <%= result.bread_name %> </p>
-                                    <p> 종류 : <%= result.category %></p>
-                                    <p> 가격 : <%= result.price %></p>
-                                </li>
-                            </ul>
-                        </button>
-                        <div class = "content">
-                        <p> 빵집 : <%= result.bakery_name %></p> 
-                        <p> 잔여개수 : <%= result.amount %></p>
-                        <p> 예약가능 : <%= result.bookable_num %></p>
-                        <p> 별점 : <%= result.star_point %></p>
-                        <a href = "/search/bakery/<%=result.bakery_name%>">빵 더보기...</a>
-                        </br>
+            <% @bread.each do |result| %>
+                <% count += 1 %>
+                <section class="bread-item">
+                    <%# <p><%= count %><%#번 빵</p> %>
+                        <div class = "item">
+                            <button class="collapsible">
+                                <ul>
+                                    <li><%= image_tag 'scon.png' %></li>
+                                    <li>
+                                        <p> 빵 이름 : <%= result.bread_name %> </p>
+                                        <p> 종류 : <%= result.category %></p>
+                                        <p> 가격 : <%= result.price %></p>
+                                    </li>
+                                </ul>
+                            </button>
+                            <div class = "content">
+                                <p> 빵집 : <%= result.bakery_name %></p> 
+                                <p> 잔여개수 : <%= result.amount %></p>
+                                <p> 예약가능 : <%= result.bookable_num %></p>
+                                <p> 별점 : <%= result.star_point %></p>
+                                <a href = "/search/bakery/<%=result.bakery_name%>">빵 더보기...</a>
+                                </br>
+                            </div>
                         </div>
-                    </div>
+                    </section>
                 <% end %>
-        </div>
+            </div>
+        
 
 </div>
 <script>

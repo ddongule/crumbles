@@ -8,6 +8,7 @@ class CreateBreads < ActiveRecord::Migration[5.1]
       t.integer :bookable_num
       t.integer :price
       t.float :star_point
+      t.string :image
       t.belongs_to :bakery
       
       t.timestamps
