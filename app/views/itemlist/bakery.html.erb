@@ -9,10 +9,11 @@
     </form>
 
     <a href = "/itemlist/bread">빵 기준으로 검색하기!</a>
+        
         <div class="item-list">
             <% @bakery.each do |result| %>
-                <section class="bread-item">
                 <% count += 1 %>
+                <section class="bread-item">
                     <div class = "item">
                         <button class="collapsible">
                             <%= count %>번 빵집
@@ -33,8 +34,8 @@
                             </br>
                         </div>
                     </div>
-                <% end %>
-            </section>
+                </section>
+            <% end %>
         </div>
 </div>
     <script>
