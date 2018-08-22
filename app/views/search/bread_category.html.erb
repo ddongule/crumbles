@@ -1,52 +1,54 @@
-<% count = 0 %> <!-- 출력시 번호 매기기 위해서 -->
+<div class="search-wrap">
+    <% count = 0 %> <!-- 출력시 번호 매기기 위해서 -->
 
-<p>빵 종류 중 <%= @search_itm %>(으)로 검색한 결과입니다.</p></br>
+    <p>빵 종류 중 <%= @search_itm %>(으)로 검색한 결과입니다.</p></br>
 
-<div class="wrap">
-    <div class="qa-wrap">
-        <div class="qa">
-            <% @bread_search_result.each do |result| %>
-                <% count += 1 %>
-                <div class = "item">
-                    <button class="collapsible">
-                        <%= count %>번 빵
-                        <ul>
-                            <li><%= image_tag 'defult_bakery.jpg' %></li>
-                            <li>
-                                <p> 빵집 : <%= result.bakery_name %></p>
-                                <p> 빵 이름 : <%= result.bread_name %></p>
-                            </li>
-                        </ul>
-                    </button>
-                    <div class = "content">
-                        <p> 빵 종류 : <%= result.category %></p>
-                        <p> 잔여 개수 : <%= result.amount %></p>
-                        <p> 예약 가능 : <%= result.bookable_num %></p>
-                        <p> 가격 : <%= result.price %></p>
-                        <p> 별점 : <%= result.star_point %></p>
-                        <a href = "/detail_item/index/<%=result.bread_name%>">빵 더보기...</a>
-                        </br>
+    <div class="wrap">
+        <div class="qa-wrap">
+            <div class="qa">
+                <% @bread_search_result.each do |result| %>
+                    <% count += 1 %>
+                    <div class = "item">
+                        <button class="collapsible">
+                            <%= count %>번 빵
+                            <ul>
+                                <li><%= image_tag 'defult_bakery.jpg' %></li>
+                                <li>
+                                    <p> 빵집 : <%= result.bakery_name %></p>
+                                    <p> 빵 이름 : <%= result.bread_name %></p>
+                                </li>
+                            </ul>
+                        </button>
+                        <div class = "content">
+                            <p> 빵 종류 : <%= result.category %></p>
+                            <p> 잔여 개수 : <%= result.amount %></p>
+                            <p> 예약 가능 : <%= result.bookable_num %></p>
+                            <p> 가격 : <%= result.price %></p>
+                            <p> 별점 : <%= result.star_point %></p>
+                            <a href = "/detail_item/index/<%=result.bread_name%>">빵 더보기...</a>
+                            </br>
+                        </div>
                     </div>
-                </div>
-            <% end %>
+                <% end %>
+            </div>
         </div>
     </div>
+
+    <script>
+        var item = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < item.length; i++) {
+            item[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight){
+                    content.style.maxHeight = null;
+                }
+                else {
+                content.style.maxHeight = content.scrollHeight + "px";
+                } 
+            });
+        }
+    </script>
 </div>
-
-<script>
-    var item = document.getElementsByClassName("collapsible");
-    var i;
-
-    for (i = 0; i < item.length; i++) {
-        item[i].addEventListener("click", function() {
-            this.classList.toggle("active");
-            var content = this.nextElementSibling;
-            if (content.style.maxHeight){
-                content.style.maxHeight = null;
-            }
-            else {
-            content.style.maxHeight = content.scrollHeight + "px";
-            } 
-        });
-    }
-</script>

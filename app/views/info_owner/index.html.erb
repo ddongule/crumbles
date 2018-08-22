@@ -1,15 +1,17 @@
-계정 정보
+<div class="info-owner-wrap">
+  계정 정보
 
-이름 : <%= current_owner.name %></br>
-이메일 : <%= current_owner.email %></br></br>
+  이름 : <%= current_owner.name %></br>
+  이메일 : <%= current_owner.email %></br></br>
 
-빵집 관리</br>
-<% @breads.each do |x| %>
-  빵 이름 : <%= x.bread_name%></br>
-  빵 종류 : <%= x.category %></br>
-  개수 : <%= x.amount %></br>
-  예약가능 : <%= x.bookable_num %></br>
-  가격 : <%= x.price %></br>
-  별점 : <%= x.star_point %></br>
-  </br>
-<% end %>
+  빵집 관리</br>
+  <% @breads.each do |x| %>
+    빵 이름 : <%= x.bread_name%></br>
+    빵 종류 : <%= x.category %></br>
+    개수 : <%= x.amount %></br>
+    예약가능 : <%= x.bookable_num %></br>
+    가격 : <%= x.price %></br>
+    별점 : <%= x.star_point %></br>
+    </br>
+  <% end %>
+</div>
