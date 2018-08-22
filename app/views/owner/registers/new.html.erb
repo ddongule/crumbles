@@ -3,17 +3,14 @@
     <div class="form-heading">회원가입</div>
     <div class="form users-form">
       <div class="form-body">
-        <% @user.errors.full_messages.each do |message| %>
-          <div class="form-error">
-            <%= message %>
-          </div>
-        <% end %>
-        <%= form_tag("/users") do %>
+        <%= form_tag("/owners") do %>
+          <p>점주 이름</p>
+          <input type = "string" name = "owner_name"></input>
           <p>메일 어드레스</p>
-          <input name="user[email]" value="<%= @user.email %>">
+          <input type = "string" name = "owner_email"></input>
           <p>패스워드</p>
-          <input type="password" name="user[password]" value="<%= @user.password %>">
-          <input type="submit" value="신규등록">
+          <input type = "password" name = "owner_password"></input>
+          <input type="submit" value="다음 페이지">
         <% end %>
       </div>
     </div>
