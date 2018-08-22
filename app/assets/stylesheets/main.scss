@@ -1,6 +1,9 @@
 // Place all the styles related to the main controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.main-wrap{
+  padding: 20px 0px 50px 0px;
+}
 
 .box{
   width: 100px;
@@ -10,15 +13,18 @@
   margin: 10px; /* 박스와 박스 사이 간격, 배경색이 투명색 */
 }
   
-.catbread{
+.main-text{
   text-align: center;  
+  font-size: 1.4rem;
 }
+
 
 // faq 따온거
 .wrap{
   margin: 60px 30px;
   padding: 50px;
 }
+
 
 // .qa-wrap{
 //   width:80%;
@@ -38,11 +44,14 @@
 //   float: right;
 //   margin-left: 5px;
 // }
+.collapsible {
+  border: none;
+  background-color: #ffffff;
+}
 
 .collapsible img {
   max-width: 400px;
   min-height:50px;
-  
 }
 
 .collapsible li{
@@ -74,7 +83,7 @@
 
 
 .recom-bread-list{  
-  margin: 2rem;
+  margin: 2rem 0;
   position: inherit;
   display: table;
   align-items: center;
