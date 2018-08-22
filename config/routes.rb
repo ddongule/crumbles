@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
 
-  devise_for :owners
   devise_for :users
-  
+  devise_for :owners, skip: [:registrations]
+  devise_scope :owner do
+    get '/owners/sign_up' => 'owner/registers#new', as: :new_owner_registration #회원가입
+    post 'owners' => 'owner/registers#create', as: :owner_registration #회원가입(POST)
+    get 'owner/registers/bakery/:owner_id' => 'owner/registers#bakery'
+    get 'owner/registers/bakery_create/:owner_id' => 'owner/registers#bakery_create'
+  end
+
   root "main#index"
   
   get 'main/index'
@@ -48,6 +54,8 @@ Rails.application.routes.draw do
   get 'info_owner/index' => 'info_owner#index'
 
   get 'itemlist/bakery_detail' => 'itemlist#bakery_detail'
+
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 end
