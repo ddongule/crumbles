@@ -11,18 +11,37 @@
 }
 
 // 메인 사진
-.containerFlexi {
-    overflow: hidden;
-    margin: 0px auto;
+
+
+// .containerFlexi {
+//     overflow: hidden;
+//     margin: 0px auto;
+// }
+
+.recom-bread-list img{
+  height: 300px;
+  width: 300px;
 }
 
-
-
-
-
-
-
-
+.recom-bread-list ul{
+  width: 100%;
+  list-style: none;
+  margin: 0.5%;
+  padding: 0px;
+  display: block;
+  float: left;
+  overflow: hidden;
+}
+.recom-bread-list ul li{
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 2px 0px;
+  display: contents;
+}
 
 
 
@@ -82,10 +101,10 @@
   
 }
 
-.collapsible li{
-  float: left;
-  display: contents;
-}
+// .collapsible li{
+//   float: left;
+//   display: contents;
+// }
 
 .content {
   padding: 0px 30px;
@@ -111,7 +130,7 @@
 
 
 .recom-bread-list{  
-  margin: 2rem;
+  margin: 2rem auto;
   position: inherit;
   display: table;
   align-items: center;
@@ -155,12 +174,16 @@
     align-items: center;
     vertical-align: middle;
   }
+  .recom-bread-list{
+    justify-content: center;
+    padding: 0px 1%;
+  }
 }
 
 /* 만약 브라우저의 크기가 1024px 이상이라면 */
 @media (min-width: 1024px) {
   .bread-item {
-    width: 50%;
+    width: 25.333333%;
     position: inherit;
     display: flex;
     align-items: center;
@@ -171,7 +194,9 @@
 /* 만약 브라우저의 크기가 1366px 이상이라면 */
 @media (min-width: 1366px) {
   .bread-item {
-    width: 33%;
+    // width: 23.333333%;
+    width: 15.333333%;
+    padding: 0 0.5%;
   }
 }
 
