@@ -13,20 +13,20 @@
     </form>
 
     <a href = "/itemlist/bakery">빵집 기준으로 검색하기!</a>
+        <div class="item-list">
 
-    <div class="wrap">
-        <div class="qa-wrap">
-            <div class="qa">
                 <% if @bread.length == 0 %>
                     <p> 검색 결과가 없습니다. </p>
                 <% end %>
                 <% @bread.each do |result| %>
                     <% count += 1 %>
+                    <section class="bread-item">
+
                     <div class = "item">
                         <button class="collapsible">
                             <%= count %>번 빵
                             <ul>
-                                <li><%= image_tag 'defult_bakery.jpg' %></li>
+                                <li><%= image_tag 'scon.png' %></li>
                                 <li>
                                     <p> 빵 이름 : <%= result.bread_name %> </p>
                                     <p> 종류 : <%= result.category %></p>
@@ -44,9 +44,8 @@
                         </div>
                     </div>
                 <% end %>
-            </div>
         </div>
-    </div>
+
 </div>
 <script>
     var item = document.getElementsByClassName("collapsible");
