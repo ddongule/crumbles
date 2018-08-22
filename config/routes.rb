@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
 
-  devise_for :owners
   devise_for :users
-  
+  devise_for :owners, skip: [:sessions, :registrations]
+  devise_scope :owner do
+    get 'login' => 'owner/sessions#new', as: :new_owner_session #로그인 화면
+    post 'login' => 'owner/sessions#create', as: :owner_session #로그인(POST)
+    delete '/owners/sign_out' => 'owner/sessions#destroy', as: :destroy_owner_session #로그아웃
+    get '/owners/sign_up' => 'owner/registers#new', as: :new_owner_registration #회원가입
+    post 'owners' => 'owner/registers#create', as: :owner_registration #회원가입(POST)
+  end
+
   root "main#index"
   
   get 'main/index'

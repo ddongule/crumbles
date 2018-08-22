@@ -1,0 +1,21 @@
+<div class="main users-new">
+  <div class="container">
+    <div class="form-heading">회원가입</div>
+    <div class="form users-form">
+      <div class="form-body">
+        <% @user.errors.full_messages.each do |message| %>
+          <div class="form-error">
+            <%= message %>
+          </div>
+        <% end %>
+        <%= form_tag("/users") do %>
+          <p>메일 어드레스</p>
+          <input name="user[email]" value="<%= @user.email %>">
+          <p>패스워드</p>
+          <input type="password" name="user[password]" value="<%= @user.password %>">
+          <input type="submit" value="신규등록">
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
