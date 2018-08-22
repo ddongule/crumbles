@@ -1,0 +1,12 @@
+빵 수정하기
+
+<form enctype="multipart/form-data" action = "/info_owner/bread_update/<%=params[:bread_id]%>" method = "post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  빵 이름 : <input type = "string" name = "bread_name" value = "<%=@bread.bread_name%>"></input></br>
+  빵 종류 : <input type = "string" name = "category" value = "<%=@bread.category%>"></input></br>
+  빵 잔고 : <input type = "number" name = "amount" value = "<%=@bread.amount%>"></input></br>
+  빵 예약가능 : <input type = "number" name = "bookable" value = "<%=@bread.bookable_num%>"></input></br>
+  빵 가격 : <input type = "number" name = "price" value = "<%=@bread.price%>"></input></br>
+  빵 이미지 : <input type = "file" name = "bread_image"></input></br>
+  <input type = "submit" value = "만들기"></input>
+</form>

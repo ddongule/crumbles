@@ -55,6 +55,13 @@ Rails.application.routes.draw do
 
   get 'itemlist/bakery_detail' => 'itemlist#bakery_detail'
 
+  get 'info_owner/bread_regist' => 'info_owner#bread_regist' 
+
+  post '/info_owner/bread_create' => 'info_owner#bread_create' 
+
+  get 'info_owner/bread_edit/:bread_id' => 'info_owner#bread_edit' 
+
+  post '/info_owner/bread_update/:bread_id' => 'info_owner#bread_update' 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
