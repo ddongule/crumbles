@@ -1,0 +1,18 @@
+<div class="main users-new">
+  <div class="container">
+    <div class="form-heading">회원가입</div>
+    <div class="form users-form">
+      <div class="form-body">
+        <%= form_tag("/owners") do %>
+          <p>점주 이름</p>
+          <input type = "string" name = "owner_name"></input>
+          <p>메일 어드레스</p>
+          <input type = "string" name = "owner_email"></input>
+          <p>패스워드</p>
+          <input type = "password" name = "owner_password"></input>
+          <input type="submit" value="다음 페이지">
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

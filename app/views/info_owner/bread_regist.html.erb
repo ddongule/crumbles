@@ -1,0 +1,12 @@
+빵 등록하기
+
+<form enctype="multipart/form-data" action = "/info_owner/bread_create" method = "post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  빵 이름 : <input type = "string" name = "bread_name"></input></br>
+  빵 종류 : <input type = "string" name = "category"></input></br>
+  빵 수량 : <input type = "number" name = "amount"></input></br>
+  예약가능 수량 : <input type = "number" name = "bookable"></input></br>
+  가격 : <input type = "number" name = "price"></input></br>
+  이미지 : <input type = "file" name = "bread_image"></input></br>
+  <input type = "submit" value = "만들기"></input>
+</form>
