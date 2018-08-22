@@ -60,19 +60,20 @@
 
 /* 만약 브라우저의 크기가 768px 이상이라면 */
 @media (min-width: 1024px) {
-  .bread-item {
+  .item-list .bread-item {
     float: left;
-    width: 33.333333%;
+    width: 32.333333%;
     position: inherit;
     display: flex;
     align-items: center;
     vertical-align: middle;
+    padding: 0 0.25%;
   }
-  .search-bread-list > section > div > button > ul > li > img{
+  .item-list > section > div > button > ul > li > img{
     height: 60%;
     width: 100%;
   }
-  .search-bread-list{
+  .item-list{
     width: 95%;
     margin-left: auto;
     margin-right: auto;
@@ -81,7 +82,7 @@
 
 // text-align : center
 
-.search-bread-list ul{
+.item-list ul{
   width: 100%;
   list-style: none;
   margin: auto;
@@ -90,7 +91,7 @@
   float: left;
   overflow: hidden;
 }
-.search-bread-list ul li{
+.item-list ul li{
   list-style: none;
   margin: auto;
   padding: 0px;
@@ -104,23 +105,23 @@
 
 /* 만약 브라우저의 크기가 1366px 이상이라면 */
 @media (min-width: 1366px) {
-  .bread-item {
+  .item-list .bread-item {
     // width: 23.333333%;
-    width: 15.333333%;
+    width: 19.333333%;
     // padding: 0 0.5%;
-    padding: 0 0.5%;
+    padding: 0 0.25%;
     margin-left: auto;
     margin-right: auto;
   }
-   .search-bread-list > section > div > button > ul > li > img{
+   .item-list > section > div > button > ul > li > img{
     // height: 60%;
     // width: 100%;
-    height: 225px;
-    width: 220px;
-    margin: 0 5%;
+    height: 100%;
+    width: 100%;
+    // margin: 0 5%;
     overflow: auto;
   }
-  .search-bread-list{
+  .item-list{
     width: 95%;
     margin-left: auto;
     margin-right: auto;

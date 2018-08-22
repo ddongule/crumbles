@@ -183,13 +183,14 @@
 
 /* 만약 브라우저의 크기가 768px 이상이라면 */
 @media (min-width: 1024px) {
-  .bread-item {
+  .recom-bread-list .bread-item {
     float: left;
-    width: 33.333333%;
+    width: 32.333333%;
     position: inherit;
     display: flex;
     align-items: center;
     vertical-align: middle;
+    padding: 0.5%;
   }
   .recom-bread-list > section > div > button > ul > li > img{
     // height: 350px;
