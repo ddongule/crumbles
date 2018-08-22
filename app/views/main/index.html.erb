@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="main-wrap">
     <div class = "main-text">
         식빵 고양이가 추천해주는 오늘의 추천 빵!<br>
@@ -78,10 +79,45 @@
         </div>
     </div>
 </div>
+=======
+<div class = "catbread">
+    <%= image_tag 'catbread.jpg' %></br>
+    <p>식빵 고양이가 추천해주는 오늘의 추천 빵!</p><br>
+</div>
+
+
+ <div class="recom-bread-list">
+    <% @recommend_bread_arr.each do |rb| %>
+        <section class="bread-item">
+            <div class = "item">
+                <button class="collapsible">
+                    <ul>
+                        <li>
+                            <%= image_tag 'defult_bakery.jpg' %>
+                        </li>
+                        <li>
+                            <p> 빵집 : <%= rb.bakery_name %></p>
+                            <p> 빵 이름 : <%= rb.bread_name %></p>
+                        </li>
+                    </ul>
+                </button>
+                <div class = "content">
+                    <p> 빵 종류 : <%= rb.category %></p>
+                    <p> 잔여 개수 : <%= rb.amount %></p>
+                    <p> 예약 가능 : <%= rb.bookable_num %></p>
+                    <p> 가격 : <%= rb.price %></p>
+                    <p> 별점 : <%= rb.star_point %></p>
+                    <a href = "/detail_item/index/<%=rb.bread_name%>">빵 더보기...</a>
+                </div>
+            </div>
+        </section>
+    <% end %>
+>>>>>>> c75c773b60f13aec99cb02179980dee95fa2af3a
 </div>
 
 
 
+<<<<<<< HEAD
 
     <div class="recom-bread-list">
         <% @recommend_bread_arr.each do |rb| %>
@@ -121,7 +157,17 @@
             </form>
         <% end %>
     </div>
+=======
+<div class = "catbread-1">
+    <% @recommend_category.each do |r| %>
+        <form action = "/search/index" method = "get">
+            <input type = "hidden" name = "keyword" value = <%= r %>></input>
+            <input type = "submit" value = #<%= r %>></input>
+        </form>
+    <% end %>
+>>>>>>> c75c773b60f13aec99cb02179980dee95fa2af3a
 </div>
+
 <script>
     var item = document.getElementsByClassName("collapsible");
     var i;

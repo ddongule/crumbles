@@ -1,12 +1,10 @@
-<div class="info-user-wrap">
-    예약 목록!
+예약 목록!
 
-    진행중인 예약!
-    <% @reservations_arr.each do |r| %>
-        예약한 빵 : <%= Bread.find(r.bread_id).bread_name %> </br>
-        빵집 : <%= Bread.find(r.bread_id).bakery_name %> </br>
-        개수 : <%= r.amount %> </br>
-        <a href = "/detail_item/cancle/<%=r.bread_id%>">취소하기</a></br>
-        <a href = "/detail_item/index/<%=Bread.find(r.bread_id).bread_name%>">보러가기!</a></br>
-    <% end %>
-</div>
+진행중인 예약!
+<% @reservations_arr.each do |r| %>
+    예약한 빵 : <%= Bread.find(r.bread_id).bread_name %> </br>
+    빵집 : <%= Bread.find(r.bread_id).bakery_name %> </br>
+    개수 : <%= r.amount %> </br>
+    <a href = "/detail_item/cancle/<%=r.bread_id%>">취소하기</a></br>
+    <a href = "/detail_item/index/<%=Bread.find(r.bread_id).bread_name%>">보러가기!</a></br>
+<% end %>

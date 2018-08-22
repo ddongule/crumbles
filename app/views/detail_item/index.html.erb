@@ -1,99 +1,97 @@
-<div class="detail-item-wrap">
-    <%= @bread.bread_name %> 상세보기 페이지입니당~~
 
-    <div class = "bread_img">
-        <%= image_tag 'defult_bakery.jpg' %>
-    </div>
-    <div id="map" style="width:300px;height:200px;"></div>
+<%= @bread.bread_name %> 상세보기 페이지입니당~~
 
-    <p> 빵집 : <%= @bread.bakery_name %></p>
-    <p> 빵 이름 : <%= @bread.bread_name %></p>
-    <p> 빵 종류 : <%= @bread.category %></p>
-    <p> 잔여 개수 : <%= @bread.amount %></p>
-    <p> 예약 가능 : <%= @bread.bookable_num %></p>
-    <p> 가격 : <%= @bread.price %></p>
-    <p id = "address"> 주소 : <%= @bakery.address %></p>
-    <p> 별점 : <%= @bread.star_point %></p>
-    <% if user_signed_in? %>
-        <% if isExist(@bread.id) %>
-            <a href = "/detail_item/cancle/<%=@bread.id%>">취소하기</a></br>
-        <% else %>
-            <a href = "/detail_item/reservation/<%=@bread.id%>" onclick = "return confirm('<%=@bread.bread_name%>을(를) 예약하시겠습니까?');">예약하기!</a>
-        <% end %>
-    <% end %>
-    <a href = "/search/bakery/<%=@bread.bakery_name%>">빵집 상세보기</a>
-    </br></br>
-
-    <% if user_signed_in? %>
-        <h1>리뷰 작성!</h1>
-        <form enctype="multipart/form-data" action='/detail_item/index/<%= @bread.id %>/reviews/create' method='post' onsubmit = "return isCorrect()">
-            <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-            작성자: <label name='input_user'><%= current_user.name%></label></br>
-            내용 : <textarea name="input_content" cols="80" rows="1"></textarea> <br/>
-            별점 : <input type = 'number' name = 'input_starPoint' id = "star"></input></br>
-            이미지 : <input type = 'file' name = "input_img"></input></br>
-            <input type='submit' value='작성'></input>
-        </form>
-    <% end %>
-    </br></br>
-
-    <p> 리뷰 </p>
-    <% @review.each do |reviews| %>
-        <p>작성자 :<%= reviews.user_name %></p>
-        <p>내용 : <%= reviews.content %></p>
-        <p>별점 : <%= reviews.star_point %></p>
-        <%# <p>이미지 : <img src="<%= reviews.image.url" width="200"></p> %> %>
-        <p>이미지 : <%= image_tag ("#{reviews.image.url}") %> </p>
-        <%# <%= reviews.image.url %> %>
-        <% if user_signed_in? %>
-            <% if reviews.user_email == current_user.email or current_user.has_role? :admin %>
-                <a href = '/detail_item/index/<%=@bread.id%>/reviews/edit/<%=reviews.id%>'>[수정]</a>
-                <a href = '/detail_item/index/<%=@bread.id%>/reviews/destroy/<%=reviews.id%>'>[삭제]</a>
-            <% end %>
-        <% end %>
-        <br><hr>
-    <% end %>
+<div class = "bread_img">
+    <%= image_tag 'defult_bakery.jpg' %>
 </div>
-    <script>
-        function isCorrect(){
-            var sp = parseInt(document.getElementById('star').value);
+<div id="map" style="width:300px;height:200px;"></div>
 
-            if (sp > 6 || sp < 0){
-                alert("별점은 0~5까지만 매길 수 있습니다.");
-                return false;
-            }
+<p> 빵집 : <%= @bread.bakery_name %></p>
+<p> 빵 이름 : <%= @bread.bread_name %></p>
+<p> 빵 종류 : <%= @bread.category %></p>
+<p> 잔여 개수 : <%= @bread.amount %></p>
+<p> 예약 가능 : <%= @bread.bookable_num %></p>
+<p> 가격 : <%= @bread.price %></p>
+<p id = "address"> 주소 : <%= @bakery.address %></p>
+<p> 별점 : <%= @bread.star_point %></p>
+<% if user_signed_in? %>
+    <% if isExist(@bread.id) %>
+        <a href = "/detail_item/cancle/<%=@bread.id%>">취소하기</a></br>
+    <% else %>
+        <a href = "/detail_item/reservation/<%=@bread.id%>" onclick = "return confirm('<%=@bread.bread_name%>을(를) 예약하시겠습니까?');">예약하기!</a>
+    <% end %>
+<% end %>
+<a href = "/search/bakery/<%=@bread.bakery_name%>">빵집 상세보기</a>
+</br></br>
+
+<% if user_signed_in? %>
+    <h1>리뷰 작성!</h1>
+    <form enctype="multipart/form-data" action='/detail_item/index/<%= @bread.id %>/reviews/create' method='post' onsubmit = "return isCorrect()">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        작성자: <label name='input_user'><%= current_user.name%></label></br>
+        내용 : <textarea name="input_content" cols="80" rows="1"></textarea> <br/>
+        별점 : <input type = 'number' name = 'input_starPoint' id = "star"></input></br>
+        이미지 : <input type = 'file' name = "input_img"></input></br>
+        <input type='submit' value='작성'></input>
+    </form>
+<% end %>
+</br></br>
+
+<p> 리뷰 </p>
+<% @review.each do |reviews| %>
+    <p>작성자 :<%= reviews.user_name %></p>
+    <p>내용 : <%= reviews.content %></p>
+    <p>별점 : <%= reviews.star_point %></p>
+    <p>이미지 : <img src="<%= reviews.image.url %>" width="200"></p>
+    <% if user_signed_in? %>
+        <% if reviews.user_email == current_user.email or current_user.has_role? :admin %>
+            <a href = '/detail_item/index/<%=@bread.id%>/reviews/edit/<%=reviews.id%>'>[수정]</a>
+            <a href = '/detail_item/index/<%=@bread.id%>/reviews/destroy/<%=reviews.id%>'>[삭제]</a>
+        <% end %>
+    <% end %>
+    <br><hr>
+<% end %>
+
+<script>
+    function isCorrect(){
+        var sp = parseInt(document.getElementById('star').value);
+
+        if (sp > 6 || sp < 0){
+            alert("별점은 0~5까지만 매길 수 있습니다.");
+            return false;
         }
-    </script>
+    }
+</script>
 
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1aff35522df41932aff1641ceb4b8039&libraries=services"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1aff35522df41932aff1641ceb4b8039&libraries=services"></script>
 
-    <script>
-    var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-        mapOption = {
-            center: new daum.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-            level: 3 // 지도의 확대 레벨
-        };  
-    // 지도를 생성합니다    
-    var map = new daum.maps.Map(mapContainer, mapOption); 
-    // 주소-좌표 변환 객체를 생성합니다
-    var geocoder = new daum.maps.services.Geocoder();
-    // 주소로 좌표를 검색합니다
-    geocoder.addressSearch("<%= @bakery.address %>", function(result, status) {
-        // 정상적으로 검색이 완료됐으면 
-        if (status === daum.maps.services.Status.OK) {
-            var coords = new daum.maps.LatLng(result[0].y, result[0].x);
-            // 결과값으로 받은 위치를 마커로 표시합니다
-            var marker = new daum.maps.Marker({
-                map: map,
-                position: coords
-            });
-            // 인포윈도우로 장소에 대한 설명을 표시합니다
-            var infowindow = new daum.maps.InfoWindow({
-                content: '<div style="width:150px;text-align:center;padding:6px 0;"><%= @bread.bakery_name %></div>'
-            });
-            infowindow.open(map, marker);
-            // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
-            map.setCenter(coords);
-        } 
-    });    
-    </script>
+<script>
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+    mapOption = {
+        center: new daum.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨
+    };  
+// 지도를 생성합니다    
+var map = new daum.maps.Map(mapContainer, mapOption); 
+// 주소-좌표 변환 객체를 생성합니다
+var geocoder = new daum.maps.services.Geocoder();
+// 주소로 좌표를 검색합니다
+geocoder.addressSearch("<%= @bakery.address %>", function(result, status) {
+    // 정상적으로 검색이 완료됐으면 
+     if (status === daum.maps.services.Status.OK) {
+        var coords = new daum.maps.LatLng(result[0].y, result[0].x);
+        // 결과값으로 받은 위치를 마커로 표시합니다
+        var marker = new daum.maps.Marker({
+            map: map,
+            position: coords
+        });
+        // 인포윈도우로 장소에 대한 설명을 표시합니다
+        var infowindow = new daum.maps.InfoWindow({
+            content: '<div style="width:150px;text-align:center;padding:6px 0;"><%= @bread.bakery_name %></div>'
+        });
+        infowindow.open(map, marker);
+        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+        map.setCenter(coords);
+    } 
+});    
+</script>
