@@ -1,15 +1,13 @@
-<div class ="info-user-wrap">
-    내가 작성한 리뷰
+내가 작성한 리뷰
 
-    <% @my_reviews.each do |r| %>    
-        <p>빵 이름 : <%= r.bread_name %></p>
-        <p>내용 : <%= r.content %></p>
-        <p>별점 : <%= r.star_point %></p>
-        <p>이미지 : <img src="<%= r.image.url %>" width="200"></p>
-        <a href = "/detail_item/index/<%=r.bread_name%>">보러가기!</a>
-        <a href = '/detail_item/index/<%=r.bread_id%>/reviews/edit/<%=r.id%>'>수정하기</a>
-        <a href = "/detail_item/index/<%=r.bread_id%>/reviews/edit/<%=r.id%>" onclick="window.open(this.href,'리뷰수정','width=800,height=800');return false;">
-            팝업창 열기 </a>
+<% @my_reviews.each do |r| %>    
+    <p>빵 이름 : <%= r.bread_name %></p>
+    <p>내용 : <%= r.content %></p>
+    <p>별점 : <%= r.star_point %></p>
+    <p>이미지 : <img src="<%= r.image.url %>" width="200"></p>
+    <a href = "/detail_item/index/<%=r.bread_name%>">보러가기!</a>
+    <a href = '/detail_item/index/<%=r.bread_id%>/reviews/edit/<%=r.id%>'>수정하기</a>
+    <a href = "/detail_item/index/<%=r.bread_id%>/reviews/edit/<%=r.id%>" onclick="window.open(this.href,'리뷰수정','width=800,height=800');return false;">
+        팝업창 열기 </a>
 
-    <% end %>
-</div>
+<% end %>

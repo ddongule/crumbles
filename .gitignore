@@ -7,9 +7,6 @@
 # Ignore bundler config.
 /.bundle
 
-# review comments image files
-public/uploads/*
-
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal

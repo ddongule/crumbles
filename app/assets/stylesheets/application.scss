@@ -13,7 +13,7 @@
   font-family: 'Poppins', 'KoPubDotumMedium' !important; 
   line-height: 1.8rem;
   letter-spacing: 1px;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
 
  }
 
@@ -42,11 +42,11 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-  // margin: 120px 0px;
-  // padding: 50px 50px 50px 10px;
-  // line-height: 1;
-  // width:100%;
-  // background-color: #ffffff;
+  margin: 120px 50px;
+  padding: 50px 50px 50px 10px;
+  line-height: 1;
+  width:100%;
+  background-color: #ffffff;
 }
 ol, ul {
 	list-style: none;
@@ -66,7 +66,7 @@ table {
 
 h1, h2, h3, h4, h5, h6, p {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   line-height: 1.2em;
 
 }
@@ -79,8 +79,6 @@ body {
   //첫 화면에 margin이 생기면 안되기 때문에 지움
   margin: 120px 0px;
   padding: 50px 0px 50px 0px;
-  line-height: 1;
-  width:100%;
   background-color: #ffffff;
 }
 
@@ -262,7 +260,7 @@ li {
 
 .container-4 input#search{
   width: 70%;
-  height: 40px;
+  height: 50px;
   background: #ffffff;
   border-radius: 6rem;
   border: 1px solid rgb(160, 160, 160);
@@ -301,7 +299,7 @@ border-bottom-right-radius: 6rem;
 
 border: none;
 background: #232833;
-height: 40px;
+height: 50px;
 width: 50px;
 color: #4f5b66;
 opacity: 0;
