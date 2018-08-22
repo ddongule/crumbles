@@ -1,5 +1,5 @@
 <h1>리뷰 수정!</h1>
-<form action='/detail_item/index/<%= @bread %>/reviews/update/<%=@review.id%>' method='post' onsubmit = "return isCorrect()">
+<form enctype="multipart/form-data" action='/detail_item/index/<%= @bread %>/reviews/update/<%=@review.id%>' method='post' onsubmit = "return isCorrect()">
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
     작성자: <label name='input_user'><%= current_user.name%></label></br>
     내용 : <textarea name="input_content" cols="80" rows="1"><%=@review.content%></textarea> <br/>
