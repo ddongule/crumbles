@@ -3,6 +3,19 @@
 }
   
 
+.item-list .bread-item .item .collapsible ul li .bread-name,
+.item-list .bread-item .item .collapsible ul li .bread-price{
+  font-size: 1.1rem;
+  color: #000;
+}
+.item-list .bread-item .item .collapsible ul li .bread-cat {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+
+
+
 .item {
     text-align: center;
 }
@@ -45,8 +58,11 @@
   .search-bread-list > section > div > button > ul > li > img{
     // height: 350px;
     // width: 400px;
-    height: 100%;
+    height: 200px;
     width: 100%;
+    margin: 0 5%;
+    overflow: auto;
+    object-fit: cover;
   }
   .search-bread-list{
     width: 95%;
@@ -70,8 +86,11 @@
     padding: 0 0.25%;
   }
   .item-list > section > div > button > ul > li > img{
-    height: 60%;
+    height: 200px;
     width: 100%;
+    margin: 0 5%;
+    overflow: auto;
+    object-fit: cover;
   }
   .item-list{
     width: 95%;
@@ -116,10 +135,11 @@
    .item-list > section > div > button > ul > li > img{
     // height: 60%;
     // width: 100%;
-    height: 100%;
+    height: 200px;
     width: 100%;
-    // margin: 0 5%;
+    margin: 0 5%;
     overflow: auto;
+    object-fit: cover;
   }
   .item-list{
     width: 95%;

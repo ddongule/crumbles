@@ -60,6 +60,14 @@
   }
 }
 
+.search-bread-list .bread-item .item .collapsible ul li .bread-name {
+  font-size: 1.1rem;
+  color: #000;
+}
+.search-bread-list .bread-item .item .collapsible ul li .bakery-name {
+  font-size: 0.9rem;
+  color: #777;
+}
 
 
 
@@ -74,8 +82,11 @@
     vertical-align: middle;
   }
   .search-bread-list > section > div > button > ul > li > img{
-    height: 60%;
+    height: 200px;
     width: 100%;
+    margin: 0 5%;
+    overflow: auto;
+    object-fit: cover;
   }
   .search-bread-list{
     width: 95%;
@@ -120,10 +131,15 @@
    .search-bread-list > section > div > button > ul > li > img{
     // height: 60%;
     // width: 100%;
-    height: 225px;
-    width: 220px;
+    // height: 225px;
+    // width: 220px;
+    // margin: 0 5%;
+    // overflow: auto;
+    height: 200px;
+    width: 100%;
     margin: 0 5%;
     overflow: auto;
+    object-fit: cover;
   }
   .search-bread-list{
     width: 95%;
