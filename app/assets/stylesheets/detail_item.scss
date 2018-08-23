@@ -53,9 +53,24 @@
     // background-color: #e36a00;
     border-radius: 10px;
 }
-.info-detail .reservation a{
-    font-size: 1.3rem;
+.info-detail .reservation {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: #ffffff;
+    color: #ffffff;
+    border-radius: .5rem;
+    transition: all 0.3s;
+    border: 1px solid #ddd;
+    margin: 2% 0;
 }
+
+.info-detail .reservation a{
+    font-size: 1.2rem;
+    color: #000000;
+    text-decoration: none;
+}
+
+
 
 
 // write-reviews
@@ -156,8 +171,25 @@ label[for="submit"] {
     text-align: right;
 
 }
+.reviews .review-btns{
+    text-align: right;
+}
+.reviews .review-btn {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: #ffffff;
+    color: #ffffff;
+    border-radius: .5rem;
+    transition: all 0.3s;
+    border: 1px solid #ddd;
+    margin: 0 1% 0 0 ;
+}
 
-
+.reviews .review-btn a{
+    font-size: 1.2rem;
+    color: #000000;
+    text-decoration: none;
+}
 
 @media screen and (max-width: 979px){
     .bread-img {

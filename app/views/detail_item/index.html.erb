@@ -72,8 +72,14 @@
                 <li><img src="<%= reviews.image.url %>" width="400"></li>
                 <% if user_signed_in? %>
                     <% if reviews.user_email == current_user.email or current_user.has_role? :admin %>
-                        <a href = '/detail_item/index/<%=@bread.id%>/reviews/edit/<%=reviews.id%>'>[수정]</a>
-                        <a href = '/detail_item/index/<%=@bread.id%>/reviews/destroy/<%=reviews.id%>'>[삭제]</a>
+                        <div class="review-btns">
+                            <button class="review-btn">
+                                <a href = '/detail_item/index/<%=@bread.id%>/reviews/edit/<%=reviews.id%>'>수정</a>
+                            </button>
+                            <button class="review-btn">
+                                <a href = '/detail_item/index/<%=@bread.id%>/reviews/destroy/<%=reviews.id%>'>삭제</a>
+                            </button>
+                        </div>
                     <% end %>
                 <% end %>
                 <br><hr>
