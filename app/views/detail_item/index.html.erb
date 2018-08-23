@@ -11,7 +11,7 @@
     <p> 빵 이름 : <%= @bread.bread_name %></p>
     <p> 빵 종류 : <%= @bread.category %></p>
     <p> 잔여 개수 : <%= @bread.amount %></p>
-    예약 가능 : <p id = "bookalbe_num"><%= @bread.bookable_num %></p>
+    <p> 예약 가능 : <%= @bread.bookable_num %></p>
     <p> 가격 : <%= @bread.price %></p>
     <p id = "address"> 주소 : <%= @bakery.address %></p>
     <p> 별점 : <%= @bread.star_point %></p>
@@ -19,7 +19,7 @@
         <% if isExist(@bread.id) %>
             <a href = "/detail_item/cancle/<%=@bread.id%>">취소하기</a></br>
         <% else %>
-            <form action = '/detail_item/reservation/<%=@bread.id%>' method = 'post' onsubmit = 'return isAble();'>
+            <form action = '/detail_item/reservation/<%=@bread.id%>' method='post' onsubmit="return isAble();">
             <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
             예약 수량 : <input type = "number" name = "reservation_amount" id = "reservation"></input>
                 <input type = "submit" value = "예약하기"></input>
@@ -59,9 +59,10 @@
 </div>
 <script>
     function isAble(){
-        var bookable_num = parseInt(document.getElementById('bookable_num').value);
+        var bookable_num = <%= @bread.bookable_num %>;
         var reservation = document.getElementById('reservation').value;
-
+        console.log(bookable_num);
+        console.log(reservation);
         if (bookable_num >= reservation){
             return true;
         }
