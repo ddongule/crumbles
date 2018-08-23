@@ -24,15 +24,16 @@ class Owner::RegistersController < Devise::RegistrationsController
         bakery.address = params[:owner_address]
         bakery.telephone_number = params[:owner_phone]
         bakery.business_license = params[:owner_business]
-        #bakery.email = params[:]
+        bakery.email = Owner.find(params[:owner_id]).email
         bakery.open_time = params[:owner_open_time]
         bakery.close_time = params[:owner_close_time]
         bakery.seat = params[:owner_seat]
         bakery.image = params[:owner_bakery_img]
         bakery.owner_id = owner_id
         bakery.save
-        session[:owner_id] = owner_id
 
-        redirect_to "/main/index"
+        session[:owner_id] = owner_id
+        
+        redirect_to "/owners/sign_in"
     end
 end

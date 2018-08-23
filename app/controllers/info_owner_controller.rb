@@ -10,7 +10,21 @@ class InfoOwnerController < ApplicationController
         @breads.push(b)
       end
     end
+  end
+
+  def save
+    bakery = Bakery.find(params[:bakery_id])
+    bakery.name = params[:name]
+    bakery.address = params[:address]
+    bakery.telephone_number = params[:phone]
+    bakery.business_license = params[:business]
+    bakery.open_time = params[:open_time]
+    bakery.close_time = params[:close_time]
+    bakery.seat = params[:seat]
+    bakery.image = params[:img]
+    bakery.save
     
+    redirect_to "/info_owner/index"
   end
 
   def bread_regist
