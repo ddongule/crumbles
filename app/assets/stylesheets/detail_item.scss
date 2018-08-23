@@ -19,8 +19,8 @@
     margin: 0px;
 }
 
-.detail-item-wrap .reviews{
-    width: 100%;
+.detail-item-wrap .write-reviews{
+    width: 96%;
     padding: 2%;
     float: left;
     color: #777;
@@ -58,23 +58,23 @@
 }
 
 
-// reviews
+// write-reviews
 
-.reviews li{
+.write-reviews li{
     list-style: none;
     padding: 1.5% 0;
     width: 100%;
 }
 
-.reviews .detail #map {
+.write-reviews .detail #map {
     width: 100%;
 }
-.reviews form label {
+.write-reviews form label {
     color: #000;
     font-size: 1.1em;
 }
 
-.reviews .detail input, textarea {
+.write-reviews .detail input, textarea {
 	display: block;
 	border: 1px solid #ddd;
 	border-radius: .5rem;

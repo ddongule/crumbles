@@ -33,7 +33,7 @@
         </br></br>
     </ul>
 
-    <div class="reviews">
+    <div class="write-reviews">
         <ul class="detail">
             <div id="map" style="width:42%;height:400px;"></div>
         </ul>
@@ -61,21 +61,24 @@
             </form>
         <% end %>
         </br></br>
+        <hr>
 
-        <p> 리뷰 </p>
-        <% @review.each do |reviews| %>
-            <p>작성자 :<%= reviews.user_name %></p>
-            <p>내용 : <%= reviews.content %></p>
-            <p>별점 : <%= reviews.star_point %></p>
-            <p>이미지 : <img src="<%= reviews.image.url %>" width="200"></p>
-            <% if user_signed_in? %>
-                <% if reviews.user_email == current_user.email or current_user.has_role? :admin %>
-                    <a href = '/detail_item/index/<%=@bread.id%>/reviews/edit/<%=reviews.id%>'>[수정]</a>
-                    <a href = '/detail_item/index/<%=@bread.id%>/reviews/destroy/<%=reviews.id%>'>[삭제]</a>
+        <div class="reviews">
+            <li> 리뷰 </li>
+            <% @review.each do |reviews| %>
+                <li><%= reviews.user_name %> 님의 리뷰</li>
+                <li>내용 : <%= reviews.content %></li>
+                <li>별점 : <%= reviews.star_point %></li>
+                <li><img src="<%= reviews.image.url %>" width="400"></li>
+                <% if user_signed_in? %>
+                    <% if reviews.user_email == current_user.email or current_user.has_role? :admin %>
+                        <a href = '/detail_item/index/<%=@bread.id%>/reviews/edit/<%=reviews.id%>'>[수정]</a>
+                        <a href = '/detail_item/index/<%=@bread.id%>/reviews/destroy/<%=reviews.id%>'>[삭제]</a>
+                    <% end %>
                 <% end %>
+                <br><hr>
             <% end %>
-            <br><hr>
-        <% end %>
+        </div>
     </div>
 </div>
 
