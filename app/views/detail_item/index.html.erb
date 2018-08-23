@@ -1,3 +1,4 @@
+
 <div class="detail-item-wrap">
     <%= @bread.bread_name %> 상세보기 페이지입니당~~
 
@@ -6,8 +7,6 @@
         <%= image_tag 'scon.png' %>
     </div>
 
-    
-    
     <ul class="info-detail">
         <li class="b-bread-name"><%= @bread.bread_name %> <span class="b-bakery-name">(<%= @bread.bakery_name %>)</span></li>
         <li> 빵 종류 : <span><%= @bread.category %></span></li>
@@ -112,6 +111,21 @@
 </script>
 
 
+<script>
+    function isAble(){
+        var bookable_num = <%= @bread.bookable_num %>;
+        var reservation = document.getElementById('reservation').value;
+        console.log(bookable_num);
+        console.log(reservation);
+        if (bookable_num >= reservation){
+            return true;
+        }
+        else{
+            alert("예약가능수량을 초과하였습니다.");
+            return false;
+        }   
+    }
+</script>
 <script>
     function isCorrect(){
         var sp = parseInt(document.getElementById('star').value);
