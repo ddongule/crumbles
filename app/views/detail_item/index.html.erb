@@ -1,41 +1,40 @@
 <div class="detail-item-wrap">
     <%= @bread.bread_name %> 상세보기 페이지입니당~~
 
+    <div class="bread-info-wrap">
+        <div class = "bread-img">
+            <%= image_tag 'scon.png' %>
+        </div>
+        
+        <ul class="info-detail">
+            <li class="b-bread-name"><%= @bread.bread_name %> <span class="b-bakery-name">(<%= @bread.bakery_name %>)</span></li>
+            <li> 빵 종류 : <span><%= @bread.category %></span></li>
+            <li> 잔여 개수 : <span><%= @bread.amount %></span></li>
+            <li> 예약 가능 : <span><%= @bread.bookable_num %></span></li>
+            <li> 가격 : <span><%= @bread.price %></span></li>
+            <li id = "address"> 주소 : <%= @bakery.address %></li>
+            <li> 별점 : <span class="star"><%= @bread.star_point %></span></li>
 
-    <div class = "bread-img">
-        <%= image_tag 'scon.png' %>
-    </div>
-
-    
-    
-    <ul class="info-detail">
-        <li class="b-bread-name"><%= @bread.bread_name %> <span class="b-bakery-name">(<%= @bread.bakery_name %>)</span></li>
-        <li> 빵 종류 : <span><%= @bread.category %></span></li>
-        <li> 잔여 개수 : <span><%= @bread.amount %></span></li>
-        <li> 예약 가능 : <span><%= @bread.bookable_num %></span></li>
-        <li> 가격 : <span><%= @bread.price %></span></li>
-        <li id = "address"> 주소 : <%= @bakery.address %></li>
-        <li> 별점 : <span class="star"><%= @bread.star_point %></span></li>
-
-        <% if user_signed_in? %>
-            <% if isExist(@bread.id) %>
-                <button class="reservation">
-                    <a href = "/detail_item/cancle/<%=@bread.id%>">취소하기</a></br>
-                </button>
-            <% else %>
-                <button class="reservation">
-                    <a href = "/detail_item/reservation/<%=@bread.id%>" onclick = "return confirm('<%=@bread.bread_name%>을(를) 예약하시겠습니까?');">예약하기!</a>
-                </button>
+            <% if user_signed_in? %>
+                <% if isExist(@bread.id) %>
+                    <button class="reservation">
+                        <a href = "/detail_item/cancle/<%=@bread.id%>">취소하기</a></br>
+                    </button>
+                <% else %>
+                    <button class="reservation">
+                        <a href = "/detail_item/reservation/<%=@bread.id%>" onclick = "return confirm('<%=@bread.bread_name%>을(를) 예약하시겠습니까?');">예약하기!</a>
+                    </button>
+                <% end %>
             <% end %>
-        <% end %>
 
-        <button class="reservation"><a href = "/search/bakery/<%=@bread.bakery_name%>">빵집 상세보기</a></button>
-        </br></br>
-    </ul>
+            <button class="reservation"><a href = "/search/bakery/<%=@bread.bakery_name%>">빵집 상세보기</a></button>
+            </br></br>
+        </ul>
+    </div>
 
     <div class="write-reviews">
         <ul class="detail">
-            <div id="map" style="width:42%;height:400px;"></div>
+            <div id="map" style="width:46%;height:400px;"></div>
         </ul>
         <% if user_signed_in? %>
         <br><br><hr>

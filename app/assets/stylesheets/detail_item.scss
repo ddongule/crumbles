@@ -3,16 +3,18 @@
 }
 
 .bread-img img{
-    width: 42%;
+    width: 44%;
     padding: 2%;
     float: left;
+    margin-left: 2%;
 }
 
 .detail-item-wrap .info-detail{
-    width: 42%;
+    width: 44%;
     padding: 2%;
     float: left;
     color: #777;
+    margin-right: 2%
 }
 .detail-item-wrap .info-detail ul{
     // list-style: none;
@@ -25,6 +27,8 @@
     float: left;
     color: #777;
 }
+
+
 
 .info-detail li{
     list-style: none;
@@ -83,6 +87,7 @@
 
 .write-reviews .detail #map {
     width: 100%;
+    margin-left: 2%;
 }
 .write-reviews form label {
     color: #000;
