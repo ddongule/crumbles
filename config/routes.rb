@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   devise_for :owners, skip: [:registrations]
   devise_scope :owner do
     get '/owners/sign_up' => 'owner/registers#new', as: :new_owner_registration #회원가입
-    post 'owners' => 'owner/registers#create', as: :owner_registration #회원가입(POST)
+    post '/owners' => 'owner/registers#create', as: :owner_registration #회원가입(POST)
+    get '/owners' => 'owner/registers#create'
     get 'owner/registers/bakery/:owner_id' => 'owner/registers#bakery'
     get 'owner/registers/bakery_create/:owner_id' => 'owner/registers#bakery_create'
   end
@@ -52,6 +53,8 @@ Rails.application.routes.draw do
   get 'info_user/reviews' => 'info_user#reviews'
 
   get 'info_owner/index' => 'info_owner#index'
+
+  post 'info_owner/save/:bakery_id' => 'info_owner#save'
 
   get 'itemlist/bakery_detail' => 'itemlist#bakery_detail'
 
