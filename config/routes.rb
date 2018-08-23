@@ -64,8 +64,13 @@ Rails.application.routes.draw do
 
   get 'info_owner/bread_edit/:bread_id' => 'info_owner#bread_edit' 
 
-  post '/info_owner/bread_update/:bread_id' => 'info_owner#bread_update' 
+  post '/info_owner/bread_update/:bread_id' => 'info_owner#bread_update'
+  
+  get '/info_owner/reservation' => 'info_owner#reservation'
 
+  get '/info_owner/reservation_end/:reservation_id' => 'info_owner#reservation_end'
+
+  get '/info_owner/reservation_cancle/:reservation_id' => 'info_owner#reservation_cancle'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 end

@@ -1,0 +1,2 @@
+class Endreservation < ApplicationRecord
+end

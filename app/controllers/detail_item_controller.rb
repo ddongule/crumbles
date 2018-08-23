@@ -9,6 +9,7 @@ class DetailItemController < ApplicationController
   def reservation
     bread = Bread.find(params[:bread_id])
     new_order = Reservation.new
+    new_order.bakery_id = bread.bakery_id
     new_order.bread_id = bread.id
     new_order.user_id = current_user.id
     new_order.amount = 1

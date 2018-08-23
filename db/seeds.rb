@@ -43,3 +43,9 @@ Bread.create(bakery_name: "달콤살벌", bread_name: "히잉", category: "케�
 
 admin_user = User.create( name: "관리자", email: 'admin@email.com', password: '12345678' )
 admin_user.add_role :admin
+
+test_user = User.create( name: "유저테스트", email: 'test@naver.com', password: '111111')
+test_user.add_role :user
+
+test_owner = Owner.create( name: "점주테스트", email: 'ehdrbchd@naver.com', password: '111111')
+test_owner.add_role :owner
