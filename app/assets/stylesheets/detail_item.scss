@@ -1,9 +1,8 @@
 .detail-item-wrap{
-    padding: 0px 0px 0px 50px;
+    padding: 0 2%;
 }
 
-
-.bread_img img{
+.bread-img img{
     width: 42%;
     padding: 2%;
     float: left;
@@ -32,24 +31,157 @@
     padding: 1.5% 0;
     width: 100%
 }
-
-.info-detail .bread-name{
+.info-detail li span{
+    color: #000;
+} 
+.info-detail li .star{
+    color: red;
+    font-size: 20px;
+} 
+.info-detail .b-bread-name{
+    width: 100%;
     font-size: 22px;
     color: #000;
+}
+.info-detail .b-bread-name .b-bakery-name {
+    color: #777;
 }
 
 .info-detail .reservation{
     width: 100%;
     margin: 3% 0;
+    // background-color: #e36a00;
+    border-radius: 10px;
+}
+.info-detail .reservation a{
+    font-size: 1.3rem;
+}
+
+
+// reviews
+
+.reviews li{
+    list-style: none;
+    padding: 1.5% 0;
+    width: 100%;
+}
+
+.reviews .detail #map {
+    width: 100%;
+}
+.reviews form label {
+    color: #000;
+    font-size: 1.1em;
+}
+
+.reviews .detail input, textarea {
+	display: block;
+	border: 1px solid #ddd;
+	border-radius: .5rem;
+	padding: .5rem;
+	color: #666;
+	font-size: 1rem;
+	margin-bottom: .3125rem;
+	min-width: 95%;
+    min-height: 5rem;
+    margin: 1% ;
+	&:focus {
+		outline: none;
+		border-color: #666;
+		box-shadow: 0 0 0 .25rem #eee;
+	}
+}
+
+// 별점
+
+
+// 이미지 input file
+.hide {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+    z-index: -1;
+    margin: 1%;
+}
+
+label[for="upload"] {
+	display: inline-block;
+	cursor:pointer;
+	padding: 10px 30px;
+	background-color: #ffffff;
+	color:#ffffff;
+	border-radius: .5rem;
+    transition: all 0.3s;
+    border: 1px solid #ddd;
+    margin: 0;
+}
+
+// submit button
+
+label[for="submit"] {
+	display: inline-block;
+	cursor:pointer;
+	padding: 10px 30px;
+	background-color: #ffffff;
+	color:#ffffff;
+	border-radius: .5rem;
+    transition: all 0.3s;
+    border: 1px solid #ddd;
+    margin: 0;
+}
+.file-star-submit-wrap{
+    float: left;
+    min-width: 100%;
+    margin: 1%;
+    display: flex;
+}
+
+.file-img{
+    float: left;
+    width: 26.333333%;
+    text-align: left;
+    margin: 0 5% 0 0;
+}
+.star-point{
+    float: left;
+    width: 26.333333%;
+    text-align: left;
+    margin: 0 5% 0 0;
+}
+.submit-button{
+    float: right;
+    width: 34%;
+    text-align: right;
+
 }
 
 
 
 @media screen and (max-width: 979px){
-    .bread_img {
-        width: 100%;
+    .bread-img {
+        width: 92%;
         padding: 2%;
-        max-width: 500px;
+        max-width: 550px;
+        margin: 0px auto !important;
+        float: none;
+    }
+    .bread-img img{
+        width: 92%;
+        padding: 2%;
+    }
+
+    .detail-item-wrap .info-detail{
+        width: 56%;
+        padding: 2% 22%;
+    }
+
+    #map {
+        width: 92%;
+        height: 92%;
+        padding: 2%;
+        max-width: 550px;
         margin: 0px auto !important;
         float: none;
     }

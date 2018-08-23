@@ -2,21 +2,20 @@
     <%= @bread.bread_name %> 상세보기 페이지입니당~~
 
 
-    <div class = "bread_img">
+    <div class = "bread-img">
         <%= image_tag 'scon.png' %>
     </div>
 
     
     
     <ul class="info-detail">
-        <li> 빵집 : <%= @bread.bakery_name %></li>
-        <li class="bread-name"> 빵 이름 : <%= @bread.bread_name %></li>
-        <li> 빵 종류 : <%= @bread.category %></li>
-        <li> 잔여 개수 : <%= @bread.amount %></li>
-        <li> 예약 가능 : <%= @bread.bookable_num %></li>
-        <li> 가격 : <%= @bread.price %></p>
+        <li class="b-bread-name"><%= @bread.bread_name %> <span class="b-bakery-name">(<%= @bread.bakery_name %>)</span></li>
+        <li> 빵 종류 : <span><%= @bread.category %></span></li>
+        <li> 잔여 개수 : <span><%= @bread.amount %></span></li>
+        <li> 예약 가능 : <span><%= @bread.bookable_num %></span></li>
+        <li> 가격 : <span><%= @bread.price %></span></li>
         <li id = "address"> 주소 : <%= @bakery.address %></li>
-        <li> 별점 : <%= @bread.star_point %></li>
+        <li> 별점 : <span class="star"><%= @bread.star_point %></span></li>
 
         <% if user_signed_in? %>
             <% if isExist(@bread.id) %>
@@ -35,16 +34,30 @@
     </ul>
 
     <div class="reviews">
-        <div id="map" style="width:42%;height:400px;"></div>
+        <ul class="detail">
+            <div id="map" style="width:42%;height:400px;"></div>
+        </ul>
         <% if user_signed_in? %>
-            <h1>리뷰 작성!</h1>
+        <br><br><hr>
+            <li>리뷰를 작성해 주세요.</li>
             <form enctype="multipart/form-data" action='/detail_item/index/<%= @bread.id %>/reviews/create' method='post' onsubmit = "return isCorrect()">
                 <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-                작성자: <label name='input_user'><%= current_user.name%></label></br>
-                내용 : <textarea name="input_content" cols="80" rows="1"></textarea> <br/>
-                별점 : <input type = 'number' name = 'input_starPoint' id = "star"></input></br>
-                이미지 : <input type = 'file' name = "input_img"></input></br>
-                <input type='submit' value='작성'></input>
+                <label name='input_user'><%= current_user.name%></label>
+                 님의 리뷰 <textarea name="input_content" cols="80" rows="5" minlength="30"></textarea>
+                <%# 이미지 : <input type = 'file' name = "input_img"></input></br> %>
+                <div class="file-star-submit-wrap">
+                    <div class="file-img">
+                        <label for="upload"><span>이미지 추가하기</span></label>
+                        <input type='file' class="hide inputfile" name ="input_img" id="upload"></input>
+                    </div>
+                    <div class="star-point">
+                        별점 : <input type='number' name='input_starPoint' id = "star" ></input>
+                    </div>
+                    <div class="submit-button">
+                        <label for="submit"><span>리뷰 등록하기</span></label>
+                        <input type='submit' class="hide inputfile" id="submit"></input>
+                    </div>
+                </div>
             </form>
         <% end %>
         </br></br>
@@ -83,6 +96,11 @@
 
 
 
+<script>
+    $(':radio').change(function() {
+    console.log('New star rating: ' + this.value);
+    });
+</script>
 
 
 <script>
