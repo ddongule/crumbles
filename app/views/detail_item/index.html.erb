@@ -6,11 +6,11 @@
         
         <ul class="info-detail">
             <li class="b-bread-name"><%= @bread.bread_name %> <span class="b-bakery-name">(<%= @bread.bakery_name %>)</span></li>
-            <li> 빵 종류 : <span><%= @bread.category %></span></li>
-            <li> 잔여 개수 : <span><%= @bread.amount %></span></li>
-            <li> 예약 가능 : <span><%= @bread.bookable_num %></span></li>
-            <li> 가격 : <span><%= @bread.price %></span></li>
-            <li id = "address"> 주소 : <%= @bakery.address %></li>
+            <li> 종류 : <span><%= @bread.category %></span></li>
+            <li> 가격 : <span><%= @bread.price %>원</span></li>
+            <li> 잔여 개수 : <span><%= @bread.amount %></span>개</li>
+            <li> 예약 가능 : <span><%= @bread.bookable_num %></span>개</li>
+            <li id = "address"> 주소 : <span><%= @bakery.address %></span></li>
             <li> 별점 : <span class="star"><%= @bread.star_point %></span></li>
 
             <% if user_signed_in? %>
@@ -29,7 +29,7 @@
                 <button class="reservation">빵집 상세보기</button>
             </a>
             </br></br>
-            
+
         </ul>
     </div>
 
