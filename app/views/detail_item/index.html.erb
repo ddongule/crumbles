@@ -1,3 +1,4 @@
+
 <div class="detail-item-wrap">
     <%= @bread.bread_name %> 상세보기 페이지입니당~~
 
@@ -10,7 +11,7 @@
     <p> 빵 이름 : <%= @bread.bread_name %></p>
     <p> 빵 종류 : <%= @bread.category %></p>
     <p> 잔여 개수 : <%= @bread.amount %></p>
-    <p> 예약 가능 : <%= @bread.bookable_num %></p>
+    예약 가능 : <p id = "bookalbe_num"><%= @bread.bookable_num %></p>
     <p> 가격 : <%= @bread.price %></p>
     <p id = "address"> 주소 : <%= @bakery.address %></p>
     <p> 별점 : <%= @bread.star_point %></p>
@@ -18,7 +19,11 @@
         <% if isExist(@bread.id) %>
             <a href = "/detail_item/cancle/<%=@bread.id%>">취소하기</a></br>
         <% else %>
-            <a href = "/detail_item/reservation/<%=@bread.id%>" onclick = "return confirm('<%=@bread.bread_name%>을(를) 예약하시겠습니까?');">예약하기!</a>
+            <form action = '/detail_item/reservation/<%=@bread.id%>' method = 'post' onsubmit = 'return isAble();'>
+            <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+            예약 수량 : <input type = "number" name = "reservation_amount" id = "reservation"></input>
+                <input type = "submit" value = "예약하기"></input>
+            </form>
         <% end %>
     <% end %>
     <a href = "/search/bakery/<%=@bread.bakery_name%>">빵집 상세보기</a>
@@ -26,7 +31,7 @@
 
     <% if user_signed_in? %>
         <h1>리뷰 작성!</h1>
-        <form enctype="multipart/form-data" action='/detail_item/index/<%= @bread.id %>/reviews/create' method='post' onsubmit = "return isCorrect()">
+        <form enctype="multipart/form-data" action='/detail_item/index/<%= @bread.id %>/reviews/create' method='post' onsubmit = "return isCorrect();">
             <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
             작성자: <label name='input_user'><%= current_user.name%></label></br>
             내용 : <textarea name="input_content" cols="80" rows="1"></textarea> <br/>
@@ -52,6 +57,20 @@
         <br><hr>
     <% end %>
 </div>
+<script>
+    function isAble(){
+        var bookable_num = parseInt(document.getElementById('bookable_num').value);
+        var reservation = document.getElementById('reservation').value;
+
+        if (bookable_num >= reservation){
+            return true;
+        }
+        else{
+            alert("예약가능수량을 초과하였습니다.");
+            return false;
+        }   
+    }
+</script>
 <script>
     function isCorrect(){
         var sp = parseInt(document.getElementById('star').value);

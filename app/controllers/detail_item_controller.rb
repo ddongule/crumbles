@@ -12,10 +12,10 @@ class DetailItemController < ApplicationController
     new_order.bakery_id = bread.bakery_id
     new_order.bread_id = bread.id
     new_order.user_id = current_user.id
-    new_order.amount = 1
+    new_order.amount = params[:reservation_amount]
     new_order.save
 
-    bread.bookable_num -= 1
+    bread.bookable_num = bread.bookable_num.to_i - params[:reservation_amount].to_i
     bread.save
 
     redirect_to "/detail_item/index/#{bread.bread_name}"
@@ -24,7 +24,7 @@ class DetailItemController < ApplicationController
   def cancle
     reservation_arr = Array.new()
     bread = Bread.find(params[:bread_id])
-
+    reservation_id = 0
     reservation = Reservation.all
     reservation.each do |r|
       if r.bread_id == bread.id
@@ -34,14 +34,14 @@ class DetailItemController < ApplicationController
     
     reservation_arr.each do |ra|
       if ra.user_id == current_user.id
-        ra.destroy
+        reservation_id = ra.id
         break;
       end
     end
-
-    bread.bookable_num += 1
+    temp = Reservation.find(reservation_id)
+    bread.bookable_num += temp.amount
     bread.save
-
+    temp.destroy
 
     redirect_back(fallback_location: root_path)
   end

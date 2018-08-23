@@ -36,7 +36,7 @@ Rails.application.routes.draw do
 
   post '/detail_item/index/:bread_id/reviews/update/:review_id' => "reviews#update"
 
-  get 'detail_item/reservation/:bread_id' => 'detail_item#reservation'
+  post '/detail_item/reservation/:bread_id' => 'detail_item#reservation'
 
   get '/detail_item/cancle/:bread_id' => 'detail_item#cancle'
 
