@@ -3,15 +3,15 @@
 }
 
 .bread-img img{
-    width: 44%;
-    padding: 2%;
+    width: 46%;
+    padding: 1%;
     float: left;
     margin-left: 2%;
 }
 
 .detail-item-wrap .info-detail{
-    width: 44%;
-    padding: 2%;
+    width: 42%;
+    padding: 3%;
     float: left;
     color: #777;
     margin-right: 2%
@@ -27,6 +27,9 @@
     float: left;
     color: #777;
 }
+.detail-item-wrap .bread-info-wrap{
+    width: 100%;
+}
 
 
 
@@ -37,6 +40,7 @@
 }
 .info-detail li span{
     color: #000;
+    font-size: 18px;
 } 
 .info-detail li .star{
     color: red;
@@ -44,9 +48,11 @@
 } 
 .info-detail .b-bread-name{
     width: 100%;
-    font-size: 22px;
+    font-size: 1.6rem;
     color: #000;
+    padding-bottom: 3%;
 }
+
 .info-detail .b-bread-name .b-bakery-name {
     color: #777;
 }
@@ -57,20 +63,19 @@
     // background-color: #e36a00;
     border-radius: 10px;
 }
-.info-detail .reservation {
+.info-detail a .reservation {
     display: inline-block;
-    padding: 10px 30px;
+    padding: 3.2%;
     background-color: #ffffff;
-    color: #ffffff;
+    color: #000000;
     border-radius: .5rem;
     transition: all 0.3s;
     border: 1px solid #ddd;
-    margin: 2% 0;
+    margin-top: 5%;
 }
 
-.info-detail .reservation a{
+.info-detail a {
     font-size: 1.2rem;
-    color: #000000;
     text-decoration: none;
 }
 
@@ -91,7 +96,7 @@
 }
 .write-reviews form label {
     color: #000;
-    font-size: 1.1em;
+    font-size: 1em;
 }
 
 .write-reviews .detail input, textarea {
@@ -153,46 +158,65 @@ label[for="submit"] {
 }
 .file-star-submit-wrap{
     float: left;
-    min-width: 100%;
+    min-width: 98%;
     margin: 1%;
     display: flex;
 }
 
 .file-img{
     float: left;
-    width: 26.333333%;
     text-align: left;
-    margin: 0 5% 0 0;
+    margin: 0;
+    width: 20%;
 }
 .star-point{
     float: left;
-    width: 26.333333%;
     text-align: left;
-    margin: 0 5% 0 0;
+    margin: 0;
+    width: 30%;
 }
 .submit-button{
     float: right;
-    width: 34%;
+    width: 50%;
     text-align: right;
-
+    margin-right: 1.5%;
 }
 .reviews .review-btns{
     text-align: right;
+    width: 99%;
 }
-.reviews .review-btn {
+.reviews .review-btns a .review-btn {
     display: inline-block;
-    padding: 10px 30px;
+    padding: 5px 30px;
     background-color: #ffffff;
-    color: #ffffff;
+    color: #000000;
     border-radius: .5rem;
     transition: all 0.3s;
     border: 1px solid #ddd;
     margin: 0 1% 0 0 ;
 }
 
-.reviews .review-btn a{
-    font-size: 1.2rem;
-    color: #000000;
+.reviews li .review-person{
+    color: #000;
+    font-size: 1em;
+}
+
+.reviews .review-content-li {
+    border: 1px solid #ddd;
+    border-radius: .5rem;
+    width: 96.8%;
+    margin: 1%;
+}
+
+.reviews .review-content-li .review-content-span{
+    color: #000;
+    font-size: 1.1em;
+    margin: 1%;
+}
+
+
+.reviews a {
+    font-size: 1em;
     text-decoration: none;
 }
 

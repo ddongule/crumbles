@@ -1,6 +1,4 @@
 <div class="detail-item-wrap">
-    <%= @bread.bread_name %> 상세보기 페이지입니당~~
-
     <div class="bread-info-wrap">
         <div class = "bread-img">
             <%= image_tag 'scon.png' %>
@@ -17,18 +15,21 @@
 
             <% if user_signed_in? %>
                 <% if isExist(@bread.id) %>
-                    <button class="reservation">
-                        <a href = "/detail_item/cancle/<%=@bread.id%>">취소하기</a></br>
-                    </button>
+                    <a href = "/detail_item/cancle/<%=@bread.id%>">
+                        <button class="reservation">취소하기</button>
+                    </a></br>
                 <% else %>
-                    <button class="reservation">
-                        <a href = "/detail_item/reservation/<%=@bread.id%>" onclick = "return confirm('<%=@bread.bread_name%>을(를) 예약하시겠습니까?');">예약하기!</a>
-                    </button>
+                    <a href = "/detail_item/reservation/<%=@bread.id%>" onclick = "return confirm('<%=@bread.bread_name%>을(를) 예약하시겠습니까?');">
+                        <button class="reservation">예약하기</button>
+                    </a>
+                    
                 <% end %>
             <% end %>
-
-            <button class="reservation"><a href = "/search/bakery/<%=@bread.bakery_name%>">빵집 상세보기</a></button>
+            <a href = "/search/bakery/<%=@bread.bakery_name%>">
+                <button class="reservation">빵집 상세보기</button>
+            </a>
             </br></br>
+            
         </ul>
     </div>
 
@@ -65,19 +66,22 @@
         <div class="reviews">
             <li> 리뷰 </li>
             <% @review.each do |reviews| %>
-                <li><%= reviews.user_name %> 님의 리뷰</li>
-                <li>내용 : <%= reviews.content %></li>
+                <li><span class="review-person"><%= reviews.user_name %></span> 님의 리뷰</li>
+                <li class="review-content-li">
+                    <span class="review-content-span"><%= reviews.content %></span>
+                </li>
                 <li>별점 : <%= reviews.star_point %></li>
                 <li><img src="<%= reviews.image.url %>" width="400"></li>
                 <% if user_signed_in? %>
                     <% if reviews.user_email == current_user.email or current_user.has_role? :admin %>
                         <div class="review-btns">
-                            <button class="review-btn">
-                                <a href = '/detail_item/index/<%=@bread.id%>/reviews/edit/<%=reviews.id%>'>수정</a>
-                            </button>
-                            <button class="review-btn">
-                                <a href = '/detail_item/index/<%=@bread.id%>/reviews/destroy/<%=reviews.id%>'>삭제</a>
-                            </button>
+                            <a href = '/detail_item/index/<%=@bread.id%>/reviews/edit/<%=reviews.id%>'>
+                                <button class="review-btn">수정</button>
+                            </a>
+
+                            <a href = '/detail_item/index/<%=@bread.id%>/reviews/destroy/<%=reviews.id%>'>
+                                <button class="review-btn">삭제</button>
+                            </a>
                         </div>
                     <% end %>
                 <% end %>
