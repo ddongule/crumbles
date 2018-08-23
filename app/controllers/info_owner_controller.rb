@@ -10,7 +10,21 @@ class InfoOwnerController < ApplicationController
         @breads.push(b)
       end
     end
+  end
+
+  def save
+    bakery = Bakery.find(params[:bakery_id])
+    bakery.name = params[:name]
+    bakery.address = params[:address]
+    bakery.telephone_number = params[:phone]
+    bakery.business_license = params[:business]
+    bakery.open_time = params[:open_time]
+    bakery.close_time = params[:close_time]
+    bakery.seat = params[:seat]
+    bakery.image = params[:img]
+    bakery.save
     
+    redirect_to "/info_owner/index"
   end
 
   def bread_regist
@@ -48,5 +62,40 @@ class InfoOwnerController < ApplicationController
     bread.save
 
     redirect_to '/info_owner/index'
+  end
+
+  def reservation
+    @reservations_arr = Array.new()
+    reservation_all = Reservation.all
+
+    reservation_all.each do |r|
+      if Bakery.find(r.bakery_id).owner_id == current_owner.id
+        @reservations_arr.push(r)
+      end 
+    end
+  end
+
+  def reservation_end
+    reservation = Reservation.find(params[:reservation_id])
+    end_reservation = Endreservation.new()
+    end_reservation.bakery_id = reservation.bakery_id
+    end_reservation.bread_id = reservation.bread_id
+    end_reservation.user_id = reservation.user_id
+    end_reservation.amount = reservation.amount
+    end_reservation.save
+
+    reservation.destroy
+
+    redirect_to '/info_owner/reservation'
+  end
+
+  def reservation_cancle
+    reservation = Reservation.find(params[:reservation_id])
+    bread = Bread.find(reservation.bread_id)
+    bread.bookable_num += 1
+    bread.save
+    reservation.destroy
+
+    redirect_to '/info_owner/reservation'
   end
 end

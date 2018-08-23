@@ -4,7 +4,21 @@
   이름 : <%= current_owner.name %></br>
   이메일 : <%= current_owner.email %></br></br>
   
-  빵집 정보
+  빵집 정보</br>
+  <form enctype="multipart/form-data" action='/info_owner/save/<%=@bakery.id%>' method='post'>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    이름 : <input type = "string" name = "name" value = <%=@bakery.name%>></input></br>
+    주소 : <input type = "string" name = "address" value = <%=@bakery.address%>></input></br>
+    전화번호 : <input type = "string" name = "phone" value = <%=@bakery.telephone_number%>></input></br>
+    사업자등록 : <input type = "string" name = "business" value = <%=@bakery.business_license%>></input></br>
+    오픈시간 : <input type = "time" name = "open_time" value = <%=@bakery.open_time%>></input></br>
+    닫는시간 : <input type = "time" name = "close_time" value = <%=@bakery.close_time%>></input></br>
+    좌석수 : <input type = "number" name = "seat" value = <%=@bakery.seat%>></input></br>
+    이미지 : <img src = "<%=@bakery.image.url%>"></img></br>
+    <input type = "file" name = "img"></input><br>
+    <input type = "submit" value = "저장하기"></input><br>
+  </form>
+  </br>
 
   빵 관리</br>
   <% @breads.each do |x| %>
@@ -15,12 +29,12 @@
     가격 : <%= x.price %></br>
     별점 : <%= x.star_point %></br>
     <% if x.image.url != nil %>
-    이미지 : <img src = "<%= x.image.url %>" width = "200"></br>
+      이미지 : <img src = "<%= x.image.url %>" width = "200"></br>
     <% end %>
     <a href = "/info_owner/bread_edit/<%=x.id%>">수정</a>
     </br></br></br>
 
   <% end %>
   <a href = "/info_owner/bread_regist">빵 등록하기</a>
-  
+  <a href = "/info_owner/reservation">예약관리하기</a>
 </div>
