@@ -2,61 +2,115 @@
 <div class="detail-item-wrap">
     <%= @bread.bread_name %> 상세보기 페이지입니당~~
 
-    <div class = "bread_img">
-        <%= image_tag 'defult_bakery.jpg' %>
+
+    <div class = "bread-img">
+        <%= image_tag 'scon.png' %>
     </div>
-    <div id="map" style="width:300px;height:200px;"></div>
 
-    <p> 빵집 : <%= @bread.bakery_name %></p>
-    <p> 빵 이름 : <%= @bread.bread_name %></p>
-    <p> 빵 종류 : <%= @bread.category %></p>
-    <p> 잔여 개수 : <%= @bread.amount %></p>
-    <p> 예약 가능 : <%= @bread.bookable_num %></p>
-    <p> 가격 : <%= @bread.price %></p>
-    <p id = "address"> 주소 : <%= @bakery.address %></p>
-    <p> 별점 : <%= @bread.star_point %></p>
-    <% if user_signed_in? %>
-        <% if isExist(@bread.id) %>
-            <a href = "/detail_item/cancle/<%=@bread.id%>">취소하기</a></br>
-        <% else %>
-            <form action = '/detail_item/reservation/<%=@bread.id%>' method='post' onsubmit="return isAble();">
-            <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-            예약 수량 : <input type = "number" name = "reservation_amount" id = "reservation"></input>
-                <input type = "submit" value = "예약하기"></input>
-            </form>
-        <% end %>
-    <% end %>
-    <a href = "/search/bakery/<%=@bread.bakery_name%>">빵집 상세보기</a>
-    </br></br>
+    <ul class="info-detail">
+        <li class="b-bread-name"><%= @bread.bread_name %> <span class="b-bakery-name">(<%= @bread.bakery_name %>)</span></li>
+        <li> 빵 종류 : <span><%= @bread.category %></span></li>
+        <li> 잔여 개수 : <span><%= @bread.amount %></span></li>
+        <li> 예약 가능 : <span><%= @bread.bookable_num %></span></li>
+        <li> 가격 : <span><%= @bread.price %></span></li>
+        <li id = "address"> 주소 : <%= @bakery.address %></li>
+        <li> 별점 : <span class="star"><%= @bread.star_point %></span></li>
 
-    <% if user_signed_in? %>
-        <h1>리뷰 작성!</h1>
-        <form enctype="multipart/form-data" action='/detail_item/index/<%= @bread.id %>/reviews/create' method='post' onsubmit = "return isCorrect();">
-            <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-            작성자: <label name='input_user'><%= current_user.name%></label></br>
-            내용 : <textarea name="input_content" cols="80" rows="1"></textarea> <br/>
-            별점 : <input type = 'number' name = 'input_starPoint' id = "star"></input></br>
-            이미지 : <input type = 'file' name = "input_img"></input></br>
-            <input type='submit' value='작성'></input>
-        </form>
-    <% end %>
-    </br></br>
-
-    <p> 리뷰 </p>
-    <% @review.each do |reviews| %>
-        <p>작성자 :<%= reviews.user_name %></p>
-        <p>내용 : <%= reviews.content %></p>
-        <p>별점 : <%= reviews.star_point %></p>
-        <p>이미지 : <img src="<%= reviews.image.url %>" width="200"></p>
         <% if user_signed_in? %>
-            <% if reviews.user_email == current_user.email or current_user.has_role? :admin %>
-                <a href = '/detail_item/index/<%=@bread.id%>/reviews/edit/<%=reviews.id%>'>[수정]</a>
-                <a href = '/detail_item/index/<%=@bread.id%>/reviews/destroy/<%=reviews.id%>'>[삭제]</a>
+            <% if isExist(@bread.id) %>
+                <button class="reservation">
+                    <a href = "/detail_item/cancle/<%=@bread.id%>">취소하기</a></br>
+                </button>
+            <% else %>
+                <button class="reservation">
+                    <a href = "/detail_item/reservation/<%=@bread.id%>" onclick = "return confirm('<%=@bread.bread_name%>을(를) 예약하시겠습니까?');">예약하기!</a>
+                </button>
             <% end %>
         <% end %>
-        <br><hr>
-    <% end %>
+
+        <button class="reservation"><a href = "/search/bakery/<%=@bread.bakery_name%>">빵집 상세보기</a></button>
+        </br></br>
+    </ul>
+
+    <div class="write-reviews">
+        <ul class="detail">
+            <div id="map" style="width:42%;height:400px;"></div>
+        </ul>
+        <% if user_signed_in? %>
+        <br><br><hr>
+            <li>리뷰를 작성해 주세요.</li>
+            <form enctype="multipart/form-data" action='/detail_item/index/<%= @bread.id %>/reviews/create' method='post' onsubmit = "return isCorrect()">
+                <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                <label name='input_user'><%= current_user.name%></label>
+                 님의 리뷰 <textarea name="input_content" cols="80" rows="5" minlength="30"></textarea>
+                <%# 이미지 : <input type = 'file' name = "input_img"></input></br> %>
+                <div class="file-star-submit-wrap">
+                    <div class="file-img">
+                        <label for="upload"><span>이미지 추가하기</span></label>
+                        <input type='file' class="hide inputfile" name ="input_img" id="upload"></input>
+                    </div>
+                    <div class="star-point">
+                        별점 : <input type='number' name='input_starPoint' id = "star" ></input>
+                    </div>
+                    <div class="submit-button">
+                        <label for="submit"><span>리뷰 등록하기</span></label>
+                        <input type='submit' class="hide inputfile" id="submit"></input>
+                    </div>
+                </div>
+            </form>
+        <% end %>
+        </br></br>
+        <hr>
+
+        <div class="reviews">
+            <li> 리뷰 </li>
+            <% @review.each do |reviews| %>
+                <li><%= reviews.user_name %> 님의 리뷰</li>
+                <li>내용 : <%= reviews.content %></li>
+                <li>별점 : <%= reviews.star_point %></li>
+                <li><img src="<%= reviews.image.url %>" width="400"></li>
+                <% if user_signed_in? %>
+                    <% if reviews.user_email == current_user.email or current_user.has_role? :admin %>
+                        <div class="review-btns">
+                            <button class="review-btn">
+                                <a href = '/detail_item/index/<%=@bread.id%>/reviews/edit/<%=reviews.id%>'>수정</a>
+                            </button>
+                            <button class="review-btn">
+                                <a href = '/detail_item/index/<%=@bread.id%>/reviews/destroy/<%=reviews.id%>'>삭제</a>
+                            </button>
+                        </div>
+                    <% end %>
+                <% end %>
+                <br><hr>
+            <% end %>
+        </div>
+    </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    $(':radio').change(function() {
+    console.log('New star rating: ' + this.value);
+    });
+</script>
+
+
 <script>
     function isAble(){
         var bookable_num = <%= @bread.bookable_num %>;
