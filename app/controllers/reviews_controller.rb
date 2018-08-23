@@ -21,7 +21,7 @@ class ReviewsController < ApplicationController
         review.save
 
         star_avg = star_cal(params[:bread_id].to_i)
-        bread_r.star_point = star_avg
+        bread_r.star_point = star_avg.round(1)
         bread_r.save
 
         redirect_to "/detail_item/index/#{bread_r.bread_name}"
@@ -41,7 +41,7 @@ class ReviewsController < ApplicationController
 
         bread = Bread.find(params[:bread_id])
         star_avg = star_cal(params[:bread_id].to_i)
-        bread.star_point = star_avg
+        bread.star_point = star_avg.round(1)
         bread.save
 
         redirect_to "/detail_item/index/#{review.bread_name}"
@@ -52,7 +52,7 @@ class ReviewsController < ApplicationController
         review = Review.find(params[:review_id])
         review.destroy
         star_avg = star_cal(params[:bread_id].to_i)
-        bread.star_point = star_avg
+        bread.star_point = star_avg.round(1)
         bread.save
         
         redirect_to "/detail_item/index/#{bread.bread_name}"
