@@ -41,8 +41,14 @@
   padding: 2px 0px;
   display: contents;
 }
-
-
+.recom-bread-list .bread-item .item .collapsible ul li .bread-name {
+  font-size: 1.1rem;
+  color: #000;
+}
+.recom-bread-list .bread-item .item .collapsible ul li .bakery-name {
+  font-size: 0.9rem;
+  color: #777;
+}
 
 
 
@@ -196,8 +202,14 @@
   .recom-bread-list > section > div > button > ul > li > img{
     // height: 350px;
     // width: 400px;
-    height: 60%;
+    // height: 60%;
+    // width: 100%;
+    height: 250px;
     width: 100%;
+    margin: 0 5%;
+    overflow: auto;
+    object-fit: cover;
+
   }
   .recom-bread-list{
     width: 95%;
@@ -234,6 +246,8 @@
 //   }
 // }
 
+
+
 /* 만약 브라우저의 크기가 1366px 이상이라면 */
 @media (min-width: 1366px) {
   .recom-bread-list .bread-item {
@@ -242,16 +256,19 @@
     padding: 0 0.25%;
     margin-left: auto;
     margin-right: auto;
+    // object-fit: cover;
   }
    .recom-bread-list > section > div > button > ul > li > img{
     // height: 350px;
     // width: 400px;
-    height: 100%;
+    height: 300px;
     width: 100%;
+
     // height: 225px;
     // width: 220px;
     margin: 0 5%;
     overflow: auto;
+    object-fit: cover;
   }
   .recom-bread-list{
     // position: relative;

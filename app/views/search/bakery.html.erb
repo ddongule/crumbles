@@ -21,12 +21,13 @@
             <section class="bread-item">
                 <div class = "item">
                     <button class="collapsible">
-                        <%= count %>번 빵
+                        <%# <%= count %>
                         <ul>
-                            <li><%= image_tag 'scon.png' %></li>
+                            <%# <li><%= image_tag 'scon.png' %>
+                            <li><%= image_tag(image_path("#{result.image}"))%></li>
                             <li>
-                                <p> 빵집 : <%= result.bakery_name %></p>
-                                <p> 빵 이름 : <%= result.bread_name %></p>
+                                <span class="bread-name"><%= result.bread_name %></span><br>
+                                <span class="bakery-name"><%= result.bakery_name %></span>
                             </li>
                         </ul>
                     </button>

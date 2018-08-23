@@ -1,7 +1,7 @@
 <div class="item-list-wrap">
     <% count = 0 %>
 
-    우리 같이 빵을 찾아보아요~~~
+    빵집 둘러보기 <br><br><br>
 
     <form action = '/itemlist/bakery/' method = "get">
         지역명으로 검색하고 싶으시면 입력해주세요 : <input type = "text" name = "place"></input>
@@ -14,14 +14,17 @@
             <% @bakery.each do |result| %>
                 <% count += 1 %>
                 <section class="bread-item">
-                    <div class = "item">
+                    <div class="item">
                         <button class="collapsible">
                             <%# <%= count %><%#번 빵집 %>
                             <ul>
-                                <li><%= image_tag 'scon.png' %></li>
+                                <%# <li><%= image_tag(image_path("#{result.image}")) %>
+                                <%# 아직 bakery 사진 없음 %>
+                                <li><%= image_tag ("scon.png") %></li>
                                 <li>
-                                    <p> 빵집 : <%= result.name %></p>
-                                    <p> 빵 개수 : <%= result.breads.length %>
+                                    <span class="bakery-name"><%= result.name %><span><br>
+                                    <span class="bread-name"><%= result.breads.name%></span>
+                                    <span class="bread-num"> 빵 개수 : <%= result.breads.length %></span>
                                 </li>
                             </ul>
                         </button>

@@ -25,11 +25,11 @@
                         <div class = "item">
                             <button class="collapsible">
                                 <ul>
-                                    <li><%= image_tag 'scon.png' %></li>
+                                    <li><%= image_tag(image_path("#{result.image}"))%></li>
                                     <li>
-                                        <p> 빵 이름 : <%= result.bread_name %> </p>
-                                        <p> 종류 : <%= result.category %></p>
-                                        <p> 가격 : <%= result.price %></p>
+                                        <span class="bread-name"><%= result.bread_name %></span>
+                                        <span class="bread-cat">[<%= result.category %>]</span><br>
+                                        <span class="bread-price"><%= result.price %>원</span>
                                     </li>
                                 </ul>
                             </button>
