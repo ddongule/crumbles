@@ -1,3 +1,4 @@
+
 <div class="detail-item-wrap">
     <div class="bread-info-wrap">
         <div class = "bread-img">
@@ -115,6 +116,21 @@
 </script>
 
 
+<script>
+    function isAble(){
+        var bookable_num = <%= @bread.bookable_num %>;
+        var reservation = document.getElementById('reservation').value;
+        console.log(bookable_num);
+        console.log(reservation);
+        if (bookable_num >= reservation){
+            return true;
+        }
+        else{
+            alert("예약가능수량을 초과하였습니다.");
+            return false;
+        }   
+    }
+</script>
 <script>
     function isCorrect(){
         var sp = parseInt(document.getElementById('star').value);
