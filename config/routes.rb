@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   devise_for :owners, skip: [:registrations]
   devise_scope :owner do
     get '/owners/sign_up' => 'owner/registers#new', as: :new_owner_registration #회원가입
-    post 'owners' => 'owner/registers#create', as: :owner_registration #회원가입(POST)
+    post '/owners' => 'owner/registers#create', as: :owner_registration #회원가입(POST)
+    get '/owners' => 'owner/registers#create'
     get 'owner/registers/bakery/:owner_id' => 'owner/registers#bakery'
     get 'owner/registers/bakery_create/:owner_id' => 'owner/registers#bakery_create'
   end
@@ -53,6 +54,8 @@ Rails.application.routes.draw do
 
   get 'info_owner/index' => 'info_owner#index'
 
+  post 'info_owner/save/:bakery_id' => 'info_owner#save'
+
   get 'itemlist/bakery_detail' => 'itemlist#bakery_detail'
 
   get 'info_owner/bread_regist' => 'info_owner#bread_regist' 
@@ -61,8 +64,13 @@ Rails.application.routes.draw do
 
   get 'info_owner/bread_edit/:bread_id' => 'info_owner#bread_edit' 
 
-  post '/info_owner/bread_update/:bread_id' => 'info_owner#bread_update' 
+  post '/info_owner/bread_update/:bread_id' => 'info_owner#bread_update'
+  
+  get '/info_owner/reservation' => 'info_owner#reservation'
 
+  get '/info_owner/reservation_end/:reservation_id' => 'info_owner#reservation_end'
+
+  get '/info_owner/reservation_cancle/:reservation_id' => 'info_owner#reservation_cancle'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 end
