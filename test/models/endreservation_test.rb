@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class EndReservationTest < ActiveSupport::TestCase
+class EndreservationTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

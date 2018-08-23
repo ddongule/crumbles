@@ -1,0 +1,10 @@
+모든 예약 목록</br></br>
+
+<% @reservations_arr.each do |r| %>
+    예약자 : <%= User.find(r.user_id).name %></br>
+    예약한 빵 : <%= Bread.find(r.bread_id).bread_name %></br>
+    개수 : <%= r.amount %></br>
+    예약한 시간 : <%= r.updated_at%></br>
+    <a href = "/info_owner/reservation_end/<%=r.id%>">완료</a>
+    <a href = "/info_owner/reservation_cancle/<%=r.id%>">취소</a></br></br>
+<% end %>
