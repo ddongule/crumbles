@@ -12,7 +12,6 @@
 
 // 메인 사진
 
-
 // .containerFlexi {
 //     overflow: hidden;
 //     margin: 0px auto;
@@ -45,22 +44,16 @@
   font-size: 1.1rem;
   color: #000;
 }
+.recom-bread-list .bread-item .item .collapsible ul li,
 .recom-bread-list .bread-item .item .collapsible ul li .bakery-name {
   font-size: 0.9rem;
   color: #777;
 }
 
 
-
-
-
-
-
-
 .main-wrap{
   padding: 20px 0px 50px 0px;
 }
-
   
 .catbread{
   text-align: center;  
@@ -106,20 +99,35 @@
 
 .content {
   padding: 0px 30px;
-  max-height: 0;
+  max-height: 300px;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
   background-color: #fff;
 }
 
-.content p {
+.content ul li {
   padding: 13px;
+}
+
+.content ul a .bakery-btn {
+  display: inline-block;
+  padding: 3.2%;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: .5rem;
+  transition: all 0.3s;
+  border: 1px solid #ddd;
+  margin: 5%;
+  width: 90%;
+  font-size: 1rem;
 }
 
 .qa .item{
   text-align: collapsible;
   justify-content: center;
 }
+
+
 
 .font-list {
   justify-content: center;

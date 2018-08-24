@@ -89,18 +89,22 @@
                             <%# <li><%= image_tag 'scon.png' %><%#=</li> %>
                             <li><%= image_tag(image_path("#{rb.image}")) %></li><br>
                             <li>
-                                <span class="bread-name"><%= rb.bread_name %></span><br>
+                                <span class="bread-name"><%= rb.bread_name %></span>[<%= rb.category %>]<br>
                                 <span class="bakery-name"><%= rb.bakery_name %></span>
                             </li>
                         </ul>
                     </button>
+
                     <div class = "content">
-                        <p> 빵 종류 : <%= rb.category %></p>
-                        <p> 잔여 개수 : <%= rb.amount %></p>
-                        <p> 예약 가능 : <%= rb.bookable_num %></p>
-                        <p> 가격 : <%= rb.price %></p>
-                        <p> 별점 : <%= rb.star_point.round(1) %></p>
-                        <a href = "/detail_item/index/<%=rb.bread_name%>">빵 더보기...</a>
+                        <ul>
+                            <li> 잔여 개수 : <%= rb.amount %></li><br>
+                            <li> 예약 가능 : <%= rb.bookable_num %></li><br>
+                            <li> 가격 : <%= rb.price %>원</li>
+                            <li> 별점 : <%= rb.star_point.round(1) %></li><br>
+                            <a href = "/detail_item/index/<%=rb.bread_name%>">
+                                <button class="bakery-btn">상세보기</button>
+                            </a>
+                        </ul>
                     </div>
                 </div>
             </section>
