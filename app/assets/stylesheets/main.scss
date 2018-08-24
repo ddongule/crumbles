@@ -50,7 +50,6 @@
   color: #777;
 }
 
-
 .main-wrap{
   padding: 20px 0px 50px 0px;
 }
@@ -104,6 +103,15 @@
   transition: max-height 0.2s ease-out;
   background-color: #fff;
 }
+.content ul li .con{
+  font-size: 1.1rem;
+  color: #000;
+}
+.content ul li .con-num{
+  font-size: 1.1rem;
+  color: red;
+}
+
 
 .content ul li {
   padding: 13px;

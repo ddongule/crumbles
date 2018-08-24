@@ -97,10 +97,10 @@
 
                     <div class = "content">
                         <ul>
-                            <li> 잔여 개수 : <%= rb.amount %></li><br>
-                            <li> 예약 가능 : <%= rb.bookable_num %></li><br>
-                            <li> 가격 : <%= rb.price %>원</li>
-                            <li> 별점 : <%= rb.star_point.round(1) %></li><br>
+                            <li> 잔여 개수 : <span class="con-num"><%= rb.amount %></span></li><br>
+                            <li> 예약 가능 : <span class="con-num"><%= rb.bookable_num %></span></li><br>
+                            <li> 가격 : <span class="con"><%= rb.price %>원</span></li><br>
+                            <li> 별점 : <span class="con"><%= rb.star_point.round(1) %></span></li><br>
                             <a href = "/detail_item/index/<%=rb.bread_name%>">
                                 <button class="bakery-btn">상세보기</button>
                             </a>
