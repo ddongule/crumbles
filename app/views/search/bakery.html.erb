@@ -1,21 +1,33 @@
 <div class="search-wrap">
     <% count = 0 %>
 
-    <p>빵집에서 <%= @search_itm %>(으)로 검색한 결과입니다.</p></br>
+    <li class="bakery-results">빵집에서 <span><%= @search_itm %></span>(으)로 검색한 결과입니다.</li></br>
 
-    <p>빵집 이름 : <%= @bakery_info.name %></p>
-    <p>빵집 주소 : <%= @bakery_info.address %></p>
-    <p>빵집 번호 : <%= @bakery_info.telephone_number %></p>
-    <p>빵집 이메일 : <%= @bakery_info.email %></p>
-    <p>빵집 오픈시간 : <%= @bakery_info.open_time %></p>
-    <p>빵집 닫는시간 : <%= @bakery_info.close_time %></p>
-    <p>빵집 좌석수 : <%= @bakery_info.seat %></p>
-    <%= image_tag 'bakery.jpg' %>
-    <div id="map" style="width:300px;height:200px;"></div>
+
+    <div class="bakery-info-list-left">
+        <%= image_tag 'bakery.jpg' %>
+    </div>
+
+    <div class="bakery-info-list-right">
+        <li class="bakery-name"><%= @bakery_info.name %></li><br>
+        <li>주소 : <span><%= @bakery_info.address %></span></li><br>
+        <li>전화번호 : <span><%= @bakery_info.telephone_number %></span></li><br>
+        <li>이메일 : <span><%= @bakery_info.email %></span></li><br>
+        <li>오픈 시간 : <span><%= @bakery_info.open_time %></span></li><br>
+        <li>닫는 시간 : <span><%= @bakery_info.close_time %></span></li><br>
+        <li class="last-li">좌석 수 : <%= @bakery_info.seat %></li><br>
+        <div class="map-map">
+            <div id="map" style="width:100%;height:250px;"></div>
+        </div>
+    </div>
+
+
+
+
     </br></br>
 
 <div class="search-bread-list">
-    <p>이 집의 따끈따끈 대표 빵들</p></br>
+    <li class="bakery-lists"><%= @bakery_info.name %>의 빵들</li></br><br>
         <% @bakery_search_result.each do |result| %>
             <% count += 1 %>
             <section class="bread-item">
@@ -43,7 +55,8 @@
                 </div>
             </section>
         <% end %>
-
+    </div>
+</div>
 
     <script>
         var item = document.getElementsByClassName("collapsible");
@@ -66,33 +79,32 @@
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1aff35522df41932aff1641ceb4b8039&libraries=services"></script>
 
     <script>
-    var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-        mapOption = {
-            center: new daum.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-            level: 3 // 지도의 확대 레벨
-        };  
-    // 지도를 생성합니다    
-    var map = new daum.maps.Map(mapContainer, mapOption); 
-    // 주소-좌표 변환 객체를 생성합니다
-    var geocoder = new daum.maps.services.Geocoder();
-    // 주소로 좌표를 검색합니다
-    geocoder.addressSearch("<%= @bakery_info.address %>", function(result, status) {
-        // 정상적으로 검색이 완료됐으면 
-        if (status === daum.maps.services.Status.OK) {
-            var coords = new daum.maps.LatLng(result[0].y, result[0].x);
-            // 결과값으로 받은 위치를 마커로 표시합니다
-            var marker = new daum.maps.Marker({
-                map: map,
-                position: coords
-            });
-            // 인포윈도우로 장소에 대한 설명을 표시합니다
-            var infowindow = new daum.maps.InfoWindow({
-                content: '<div style="width:150px;text-align:center;padding:6px 0;"><%= @bakery_info.name %></div>'
-            });
-            infowindow.open(map, marker);
-            // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
-            map.setCenter(coords);
-        } 
-    });    
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+            mapOption = {
+                center: new daum.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+                level: 3 // 지도의 확대 레벨
+            };  
+        // 지도를 생성합니다    
+        var map = new daum.maps.Map(mapContainer, mapOption); 
+        // 주소-좌표 변환 객체를 생성합니다
+        var geocoder = new daum.maps.services.Geocoder();
+        // 주소로 좌표를 검색합니다
+        geocoder.addressSearch("<%= @bakery_info.address %>", function(result, status) {
+            // 정상적으로 검색이 완료됐으면 
+            if (status === daum.maps.services.Status.OK) {
+                var coords = new daum.maps.LatLng(result[0].y, result[0].x);
+                // 결과값으로 받은 위치를 마커로 표시합니다
+                var marker = new daum.maps.Marker({
+                    map: map,
+                    position: coords
+                });
+                // 인포윈도우로 장소에 대한 설명을 표시합니다
+                var infowindow = new daum.maps.InfoWindow({
+                    content: '<div style="width:150px;text-align:center;padding:6px 0;"><%= @bakery_info.name %></div>'
+                });
+                infowindow.open(map, marker);
+                // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+                map.setCenter(coords);
+            } 
+        });    
     </script>
-</div>
