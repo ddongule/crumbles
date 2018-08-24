@@ -1,3 +1,4 @@
+
 .item-list-wrap{
   padding: 0px 0px 0px 50px;
 }
@@ -42,6 +43,18 @@
 
 .item {
     text-align: center;
+}
+
+.collapsible ul li .bakery-name {
+  display: inline-block;
+  padding: 2%;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: .5rem;
+  border: 1px solid #ddd;
+  margin: 5%;
+  width: 90%;
+  font-size: 1rem;
 }
   
 // .collapsible:after {
@@ -211,5 +224,4 @@
     margin-right: auto;
   }
 }
-
 

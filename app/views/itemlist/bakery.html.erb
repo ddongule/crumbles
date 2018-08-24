@@ -1,8 +1,6 @@
 <div class="item-list-wrap">
     <% count = 0 %>
     <div class="item-list-title">
-        빵집 둘러보기 <br><br><br>
-
         <form action = '/itemlist/bakery/' method = "get">
             지역명으로 검색: <input class="search-text" type = "text" name = "place"></input>
             <input type = "submit" value = "검색" class=""></input>
@@ -15,26 +13,17 @@
                 <% count += 1 %>
                 <section class="bread-item">
                     <div class="item">
-                        <button class="collapsible">
-                            <%# <%= count %><%#번 빵집 %>
-                            <ul>
-                                <li><%= image_tag(image_path("#{result.image}")) %>
-                                </li>
-                                <li>
-                                    <span class="bakery-name"><%= result.name %><span><br>
-                                    <span class="bread-name"><%= result.breads.name%></span>
-                                    <span class="bread-num"> 빵 개수 : <%= result.breads.length %></span>
-                                </li>
-                            </ul>
-                        </button>
-                        <div class = "content">
-                            <p> 주소 : <%= result.address %></p>
-                            <p> 오픈시간 : <%= result.open_time %></p>
-                            <p> 닫는시간 : <%= result.close_time %></p>
-                            <p> 좌석 : <%= result.seat %></p>
-                            <a href = "/search/bakery/<%=result.name%>">빵 더보기...</a>
-                            </br>
-                        </div>
+                        <a href = "/search/bakery/<%=result.name%>">
+                            <button class="collapsible">
+                                <%# <%= count %><%#번 빵집 %>
+                                <ul>
+                                    <li><%= image_tag(image_path("#{result.image}")) %></li>
+                                    <li>
+                                        <span class="bakery-name"><%= result.name %></span><br>
+                                    </li>
+                                </ul>
+                            </button>
+                        </a>
                     </div>
                 </section>
             <% end %>
