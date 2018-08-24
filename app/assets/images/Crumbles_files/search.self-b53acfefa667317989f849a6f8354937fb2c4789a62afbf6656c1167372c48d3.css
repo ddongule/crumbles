@@ -1,0 +1,255 @@
+@charset "UTF-8";
+/* line 2, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/search.scss */
+.search-wrap {
+  padding: 0 2%;
+  width: 96%;
+  margin: 0 0 2% 2%;
+  float: left;
+}
+
+/* line 9, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/search.scss */
+.search-wrap .bakery-results {
+  width: 96%;
+  padding: 2% 0;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #777;
+}
+
+/* line 17, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/search.scss */
+.search-wrap .bakery-results span {
+  width: 96%;
+  text-align: center;
+  font-size: 1.4rem;
+  color: #000;
+}
+
+/* line 24, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/search.scss */
+.search-wrap .bakery-info-list-left {
+  margin: 2%;
+  width: 46%;
+  float: left;
+}
+
+/* line 30, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/search.scss */
+.search-wrap .bakery-info-list-left img {
+  width: 100%;
+  float: left;
+}
+
+/* line 35, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/search.scss */
+.search-wrap .bakery-info-list-left #map {
+  margin: 2% 0;
+}
+
+/* line 39, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/search.scss */
+.search-wrap .bakery-info-list-right {
+  width: 38%;
+  padding: 3% 5%;
+  float: left;
+  color: #777;
+  margin-right: 2%;
+}
+
+/* line 47, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/search.scss */
+.search-wrap .bakery-info-list-right .map-map {
+  margin: 3% 0;
+}
+
+/* line 51, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/search.scss */
+.search-wrap .bakery-info-list-right li {
+  list-style: none;
+  padding: 1.5% 0;
+  width: 100%;
+}
+
+/* line 57, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/search.scss */
+.search-wrap .bakery-info-list-right li span {
+  color: #000;
+  font-size: 18px;
+}
+
+/* line 62, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/search.scss */
+.search-wrap .bakery-info-list-right .bakery-name {
+  width: 100%;
+  font-size: 1.6rem;
+  color: #000;
+  padding-bottom: 3%;
+}
+
+/* line 68, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/search.scss */
+.search-wrap .bakery-info-list-right .last-li {
+  padding-bottom: 7%;
+}
+
+/* line 74, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/search.scss */
+.collapsible:after {
+  color: black;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+/* line 81, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/search.scss */
+.collapsible img {
+  max-width: 400px;
+  min-height: 50px;
+}
+
+/* line 86, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/search.scss */
+.item {
+  text-align: center;
+}
+
+/* line 91, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/search.scss */
+.content {
+  padding: 0px 30px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #fff;
+}
+
+/* line 99, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/search.scss */
+.content p {
+  padding: 13px;
+}
+
+@media (max-width: 1024px) {
+  /* line 107, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/search.scss */
+  .search-bread-list .bread-item {
+    float: left;
+    width: 100%;
+    position: inherit;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+  }
+
+  /* line 115, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/search.scss */
+  .search-bread-list > section > div > button > ul > li > img {
+    height: 100%;
+    width: 100%;
+  }
+
+  /* line 121, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/search.scss */
+  .search-bread-list {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* line 128, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/search.scss */
+  .search-wrap .bakery-info-list-left,
+  .search-wrap .bakery-info-list-right {
+    width: 46%;
+    padding: 2% 22%;
+  }
+
+  /* line 134, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/search.scss */
+  #map {
+    width: 92%;
+    height: 92%;
+    padding: 2%;
+    max-width: 550px;
+    margin: 0px auto !important;
+    float: none;
+  }
+}
+/* line 144, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/search.scss */
+.search-bread-list .bakery-lists {
+  width: 96%;
+  padding: 2%;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+/* line 150, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/search.scss */
+.search-bread-list .bread-item .item .collapsible ul li .bread-name {
+  font-size: 1.1rem;
+  color: #000;
+}
+
+/* line 154, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/search.scss */
+.search-bread-list .bread-item .item .collapsible ul li .bakery-name {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* 만약 브라우저의 크기가 768px 이상이라면 */
+@media (min-width: 1024px) {
+  /* line 163, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/search.scss */
+  .search-bread-list .bread-item {
+    float: left;
+    width: 33.333333%;
+    position: inherit;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+  }
+
+  /* line 171, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/search.scss */
+  .search-bread-list > section > div > button > ul > li > img {
+    height: 200px;
+    width: 100%;
+    margin: 0 5%;
+    overflow: auto;
+    object-fit: cover;
+  }
+
+  /* line 178, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/search.scss */
+  .search-bread-list {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+/* line 188, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/search.scss */
+.search-bread-list ul {
+  width: 100%;
+  list-style: none;
+  margin: auto;
+  padding: 0px;
+  display: block;
+  float: left;
+  overflow: hidden;
+}
+
+/* line 197, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/search.scss */
+.search-bread-list ul li {
+  list-style: none;
+  margin: auto;
+  padding: 0px;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 2px 0px;
+  display: contents;
+}
+
+/* 만약 브라우저의 크기가 1366px 이상이라면 */
+@media (min-width: 1366px) {
+  /* line 211, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/search.scss */
+  .search-bread-list .bread-item {
+    width: 15.333333%;
+    padding: 0 0.5%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* line 219, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/search.scss */
+  .search-bread-list > section > div > button > ul > li > img {
+    height: 200px;
+    width: 100%;
+    margin: 0 5%;
+    overflow: auto;
+    object-fit: cover;
+  }
+
+  /* line 232, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/search.scss */
+  .search-bread-list {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

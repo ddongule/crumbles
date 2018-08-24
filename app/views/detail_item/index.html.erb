@@ -50,7 +50,7 @@
             <form enctype="multipart/form-data" action='/detail_item/index/<%= @bread.id %>/reviews/create' method='post' onsubmit = "return isCorrect()">
                 <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
                 <label name='input_user'><%= current_user.name%></label>
-                 님의 리뷰 <textarea name="input_content" cols="80" rows="5" minlength="30"></textarea>
+                 님의 리뷰 <textarea name="input_content" cols="80" rows="5" minlength="30" id = "review"></textarea>
                 <%# 이미지 : <input type = 'file' name = "input_img"></input></br> %>
                 <div class="file-star-submit-wrap">
                     <div class="file-img">
@@ -134,9 +134,13 @@
 <script>
     function isCorrect(){
         var sp = parseInt(document.getElementById('star').value);
-
+        var text = parseInt(document.getElementById('review').value.length);
         if (sp > 6 || sp < 0){
             alert("별점은 0~5까지만 매길 수 있습니다.");
+            return false;
+        }
+        if (text == 0){
+            alert("review pls");
             return false;
         }
     }

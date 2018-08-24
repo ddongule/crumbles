@@ -1,0 +1,178 @@
+@charset "UTF-8";
+/* line 1, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/itemlist.scss */
+.item-list-wrap {
+  padding: 0px 0px 0px 50px;
+}
+
+/* line 5, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/itemlist.scss */
+.item-list-wrap a .bakery-btn,
+.item-list-wrap a .bread-btn {
+  display: inline-block;
+  padding: 3.2%;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: .5rem;
+  transition: all 0.3s;
+  border: 1px solid #ddd;
+  margin: 5%;
+  width: 90%;
+  font-size: 1.5rem;
+}
+
+/* line 18, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/itemlist.scss */
+.item-list-wrap a .bakery-btn:hover,
+.item-list-wrap a .bread-btn:hover {
+  background-color: #f4f4f4;
+}
+
+/* line 26, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/itemlist.scss */
+.item-list .bread-item .item .collapsible ul li .bread-name,
+.item-list .bread-item .item .collapsible ul li .bread-price {
+  font-size: 1.1rem;
+  color: #000;
+}
+
+/* line 31, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/itemlist.scss */
+.item-list .bread-item .item .collapsible ul li .bread-cat {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* line 39, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/itemlist.scss */
+.item {
+  text-align: center;
+}
+
+/* line 43, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/itemlist.scss */
+.collapsible:after {
+  color: black;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+/* line 50, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/itemlist.scss */
+.collapsible img {
+  max-width: 400px;
+  min-height: 50px;
+}
+
+/* line 55, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/itemlist.scss */
+.content {
+  padding: 0px 30px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #fff;
+}
+
+/* line 63, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/itemlist.scss */
+.content p {
+  padding: 13px;
+}
+
+@media (max-width: 1024px) {
+  /* line 70, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/itemlist.scss */
+  .bread-item {
+    float: left;
+    width: 100%;
+    position: inherit;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+  }
+
+  /* line 78, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/itemlist.scss */
+  .search-bread-list > section > div > button > ul > li > img {
+    height: 200px;
+    width: 100%;
+    margin: 0 5%;
+    overflow: auto;
+    object-fit: cover;
+  }
+
+  /* line 87, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/itemlist.scss */
+  .search-bread-list {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+/* 만약 브라우저의 크기가 768px 이상이라면 */
+@media (min-width: 1024px) {
+  /* line 99, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/itemlist.scss */
+  .item-list .bread-item {
+    float: left;
+    width: 32.333333%;
+    position: inherit;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    padding: 0 0.25%;
+  }
+
+  /* line 108, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/itemlist.scss */
+  .item-list > section > div > button > ul > li > img {
+    height: 200px;
+    width: 100%;
+    margin: 0 5%;
+    overflow: auto;
+    object-fit: cover;
+  }
+
+  /* line 115, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/itemlist.scss */
+  .item-list {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+/* line 124, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/itemlist.scss */
+.item-list ul {
+  width: 100%;
+  list-style: none;
+  margin: auto;
+  padding: 0px;
+  display: block;
+  float: left;
+  overflow: hidden;
+}
+
+/* line 133, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/itemlist.scss */
+.item-list ul li {
+  list-style: none;
+  margin: auto;
+  padding: 0px;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 2px 0px;
+  display: contents;
+}
+
+/* 만약 브라우저의 크기가 1366px 이상이라면 */
+@media (min-width: 1366px) {
+  /* line 147, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/itemlist.scss */
+  .item-list .bread-item {
+    width: 19.333333%;
+    padding: 0 0.25%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* line 155, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/itemlist.scss */
+  .item-list > section > div > button > ul > li > img {
+    height: 200px;
+    width: 100%;
+    margin: 0 5%;
+    overflow: auto;
+    object-fit: cover;
+  }
+
+  /* line 164, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/itemlist.scss */
+  .item-list {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

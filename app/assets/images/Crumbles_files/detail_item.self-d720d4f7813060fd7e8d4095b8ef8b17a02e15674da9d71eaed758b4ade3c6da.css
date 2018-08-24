@@ -1,0 +1,282 @@
+/* line 1, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/detail_item.scss */
+.detail-item-wrap {
+  padding: 0 2%;
+}
+
+/* line 5, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/detail_item.scss */
+.bread-img img {
+  width: 46%;
+  padding: 1%;
+  float: left;
+  margin-left: 2%;
+}
+
+/* line 12, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/detail_item.scss */
+.detail-item-wrap .info-detail {
+  width: 38%;
+  padding: 3% 5%;
+  float: left;
+  color: #777;
+  margin-right: 2%;
+}
+
+/* line 19, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/detail_item.scss */
+.detail-item-wrap .info-detail ul {
+  margin: 0px;
+}
+
+/* line 24, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/detail_item.scss */
+.detail-item-wrap .write-reviews {
+  width: 96%;
+  padding: 2%;
+  float: left;
+  color: #777;
+}
+
+/* line 30, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/detail_item.scss */
+.detail-item-wrap .bread-info-wrap {
+  width: 100%;
+}
+
+/* line 36, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/detail_item.scss */
+.info-detail li {
+  list-style: none;
+  padding: 1.5% 0;
+  width: 100%;
+}
+
+/* line 41, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/detail_item.scss */
+.info-detail li span {
+  color: #000;
+  font-size: 18px;
+}
+
+/* line 45, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/detail_item.scss */
+.info-detail li .star {
+  color: red;
+  font-size: 20px;
+}
+
+/* line 49, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/detail_item.scss */
+.info-detail .b-bread-name {
+  width: 100%;
+  font-size: 1.6rem;
+  color: #000;
+  padding-bottom: 3%;
+}
+
+/* line 56, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/detail_item.scss */
+.info-detail .b-bread-name .b-bakery-name {
+  color: #777;
+}
+
+/* line 60, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/detail_item.scss */
+.info-detail .reservation {
+  width: 100%;
+  margin: 3% 0;
+  border-radius: 10px;
+}
+
+/* line 66, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/detail_item.scss */
+.info-detail a .reservation {
+  display: inline-block;
+  padding: 3.2%;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: .5rem;
+  transition: all 0.3s;
+  border: 1px solid #ddd;
+  margin-top: 5%;
+}
+
+/* line 77, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/detail_item.scss */
+.info-detail a {
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+/* line 87, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/detail_item.scss */
+.write-reviews li {
+  list-style: none;
+  padding: 1.5% 0;
+  width: 100%;
+}
+
+/* line 93, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/detail_item.scss */
+.write-reviews .detail #map {
+  width: 100%;
+  margin-left: 2%;
+}
+
+/* line 97, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/detail_item.scss */
+.write-reviews form label {
+  color: #000;
+  font-size: 1em;
+}
+
+/* line 102, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/detail_item.scss */
+.write-reviews .detail input, textarea {
+  display: block;
+  border: 1px solid #ddd;
+  border-radius: .5rem;
+  padding: .5rem;
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: .3125rem;
+  min-width: 95%;
+  min-height: 5rem;
+  margin: 1%;
+}
+/* line 113, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/detail_item.scss */
+.write-reviews .detail input:focus, textarea:focus {
+  outline: none;
+  border-color: #666;
+  box-shadow: 0 0 0 .25rem #eee;
+}
+
+/* line 124, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/detail_item.scss */
+.hide {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+  margin: 1%;
+}
+
+/* line 134, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/detail_item.scss */
+label[for="upload"] {
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px 30px;
+  background-color: #ffffff;
+  color: #ffffff;
+  border-radius: .5rem;
+  transition: all 0.3s;
+  border: 1px solid #ddd;
+  margin: 0;
+}
+
+/* line 148, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/detail_item.scss */
+label[for="submit"] {
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px 30px;
+  background-color: #ffffff;
+  color: #ffffff;
+  border-radius: .5rem;
+  transition: all 0.3s;
+  border: 1px solid #ddd;
+  margin: 0;
+}
+
+/* line 159, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/detail_item.scss */
+.file-star-submit-wrap {
+  float: left;
+  min-width: 98%;
+  margin: 1%;
+  display: flex;
+}
+
+/* line 166, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/detail_item.scss */
+.file-img {
+  float: left;
+  text-align: left;
+  margin: 0;
+  width: 20%;
+}
+
+/* line 172, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/detail_item.scss */
+.star-point {
+  float: left;
+  text-align: left;
+  margin: 0;
+  width: 30%;
+}
+
+/* line 178, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/detail_item.scss */
+.submit-button {
+  float: right;
+  width: 50%;
+  text-align: right;
+  margin-right: 1.5%;
+}
+
+/* line 184, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/detail_item.scss */
+.reviews .review-btns {
+  text-align: right;
+  width: 99%;
+}
+
+/* line 188, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/detail_item.scss */
+.reviews .review-btns a .review-btn {
+  display: inline-block;
+  padding: 5px 30px;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: .5rem;
+  transition: all 0.3s;
+  border: 1px solid #ddd;
+  margin: 0 1% 0 0;
+}
+
+/* line 199, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/detail_item.scss */
+.reviews li .review-person {
+  color: #000;
+  font-size: 1em;
+}
+
+/* line 204, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/detail_item.scss */
+.reviews .review-content-li {
+  border: 1px solid #ddd;
+  border-radius: .5rem;
+  width: 96.8%;
+  margin: 1%;
+}
+
+/* line 211, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/detail_item.scss */
+.reviews .review-content-li .review-content-span {
+  color: #000;
+  font-size: 1.1em;
+  margin: 1%;
+}
+
+/* line 218, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/detail_item.scss */
+.reviews a {
+  font-size: 1em;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 979px) {
+  /* line 224, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/detail_item.scss */
+  .bread-img {
+    width: 92%;
+    padding: 2%;
+    max-width: 550px;
+    margin: 0px auto !important;
+    float: none;
+  }
+
+  /* line 231, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/detail_item.scss */
+  .bread-img img {
+    width: 92%;
+    padding: 2%;
+  }
+
+  /* line 236, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/detail_item.scss */
+  .detail-item-wrap .info-detail {
+    width: 56%;
+    padding: 2% 22%;
+  }
+
+  /* line 241, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/detail_item.scss */
+  #map {
+    width: 92%;
+    height: 92%;
+    padding: 2%;
+    max-width: 550px;
+    margin: 0px auto !important;
+    float: none;
+  }
+}

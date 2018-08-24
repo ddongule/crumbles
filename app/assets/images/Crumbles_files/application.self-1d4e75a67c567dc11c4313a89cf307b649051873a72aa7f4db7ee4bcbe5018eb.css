@@ -1,0 +1,376 @@
+@charset "UTF-8";
+/*
+
+
+ */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Poppins");
+@import url("https://fonts.googleapis.com/css?family=Black+Han+Sans");
+@font-face {
+  font-family: 'KoPubDotumMedium';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/KoPubDotumMedium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+/* line 12, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+* {
+  font-family: 'Poppins', 'KoPubDotumMedium' !important;
+  line-height: 1.8rem;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+}
+
+/* line 21, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 41, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 45, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+body {
+  margin: 120px 50px;
+  padding: 50px 50px 50px 10px;
+  line-height: 1;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+/* line 52, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 55, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 58, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 63, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 68, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.2em;
+}
+
+/* 여기까지 reset css  */
+/* 민경 css */
+/* line 78, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+body {
+  margin: 120px 0px;
+  padding: 50px 0px 50px 0px;
+  background-color: #ffffff;
+}
+
+/* line 85, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+body .container {
+  margin-right: -0.75rem;
+  margin-left: -0.75rem;
+}
+
+/* line 90, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+.link {
+  color: #000;
+  text-decoration: none;
+}
+/* line 94, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+.link:hover {
+  background: none;
+  color: #b1003c;
+}
+
+/* navigation bar with header */
+/* line 102, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: #ffffff;
+  border-bottom: 1px solid gainsboro;
+  z-index: 9999999;
+}
+
+/* header div 안의 item */
+/* line 117, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+.header .logo .logo-link {
+  margin: 30px 0px 0px 70px;
+  float: left;
+  width: 110px;
+  height: 35px;
+  position: inherit;
+  display: table;
+}
+
+/* line 126, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+.header .logo .logo-link:hover {
+  background: none;
+}
+
+/* line 130, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+.header .header-item-container {
+  margin: 20px 50px;
+  vertical-align: middle;
+  justify-content: center;
+}
+
+/* line 136, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+.header .header-item-container .nav {
+  padding-left: 0;
+  position: relative;
+  display: -webkit-box;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+/* line 147, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+.header .header-item-container .nav .search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75%;
+}
+/* line 152, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+.header .header-item-container .nav .search-bar form {
+  width: 100%;
+}
+
+/* line 159, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+.header .header-item-container .nav .navigation {
+  position: relative;
+  display: block;
+  float: right;
+}
+
+/* line 168, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+.header .header-item-container .nav .navigation a {
+  float: right;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* line 175, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+.header .header-item-container .nav .navigation .item-right .nav-up {
+  display: block;
+  padding: 0;
+  position: absolute;
+  top: 8px;
+  right: 15px;
+  font-size: 14px;
+}
+
+/* line 186, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+.header .header-item-container .nav .navigation .item-right {
+  float: right;
+  font-size: 20px;
+  height: 70px;
+  padding: 10px;
+}
+
+/* line 201, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+.header .header-item-container .nav .navigation .item-right ul {
+  display: block;
+  padding: 0;
+  position: relative;
+  top: 40px;
+  right: 15px;
+  font-size: 18px;
+}
+
+/* line 211, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+.header .header-item-container .nav .navigation .nav-link {
+  padding: 0px 5px 0px 10px;
+  color: black;
+}
+
+/* line 217, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+#menu-icon {
+  display: none;
+  width: 25px;
+  height: 25px;
+  padding: 0 0 5px 0;
+}
+
+/* line 224, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+li {
+  display: inline-block;
+  float: left;
+  padding: 5px;
+}
+
+/* line 230, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+.item-right li {
+  font-size: 1.1em;
+}
+
+/* line 242, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+.sign-up-layout {
+  padding: 50px 100px;
+  text-align: left;
+}
+
+/* line 249, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+.container-4 {
+  overflow: hidden;
+  width: 100%;
+  vertical-align: middle;
+  white-space: nowrap;
+  border: none;
+  position: relative;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+/* line 261, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+.container-4 input#search {
+  width: 70%;
+  height: 40px;
+  background: #ffffff;
+  border-radius: 6rem;
+  border: 1px solid #a0a0a0;
+  font-size: 1.2em;
+  float: left;
+  color: #232833;
+  padding-left: 15px;
+  -webkit-border-radius: 6rem;
+  -moz-border-radius: 6rem;
+}
+
+/* line 275, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+.container-4 input#search::-webkit-input-placeholder {
+  color: #65737e;
+}
+
+/* line 279, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+.container-4 input#search:-moz-placeholder {
+  /* Firefox 18- */
+  color: #65737e;
+}
+
+/* line 283, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+.container-4 input#search::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #65737e;
+}
+
+/* line 287, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+.container-4 input#search:-ms-input-placeholder {
+  color: #65737e;
+}
+
+/* line 292, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+.container-4 button.icon {
+  -webkit-border-top-right-radius: 6rem;
+  -webkit-border-bottom-right-radius: 6rem;
+  -moz-border-radius-topright: 6rem;
+  -moz-border-radius-bottomright: 6rem;
+  border-top-right-radius: 6rem;
+  border-bottom-right-radius: 6rem;
+  border: none;
+  background: #232833;
+  height: 40px;
+  width: 50px;
+  color: #4f5b66;
+  opacity: 0;
+  font-size: 10pt;
+}
+
+/* line 328, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+.container-4 button.icon,
+.container-4:active button.icon,
+.container-4:focus button.icon {
+  outline: none;
+  opacity: 1;
+  margin-left: -50px;
+  border: none;
+}
+
+/* line 337, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+.container-4:hover button.icon:hover {
+  border: none;
+}
+
+@media (min-width: 768px) {
+  /* line 358, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+  .font-item {
+    float: left;
+    width: 48%;
+  }
+}
+@media only screen and (max-width: 720px) {
+  /* line 374, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+  nav ul, nav:active ul {
+    display: none;
+  }
+
+  /* line 385, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+  nav li {
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+    margin: 0;
+  }
+
+  /* line 392, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+  nav:hover ul {
+    display: block;
+  }
+
+  /* line 396, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+  #menu-icon {
+    position: absolute;
+    height: 35px;
+    top: 40px;
+    right: 40px;
+    display: block;
+  }
+
+  /* line 404, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+  .header .header-item-container .navigation a {
+    overflow: hidden;
+    display: none;
+  }
+}
+@media only screen and (max-width: 400px) {
+  /* line 411, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/application.scss */
+  #menu-icon {
+    display: none;
+  }
+}

@@ -1,6 +1,14 @@
 .item-list-wrap{
   padding: 0px 0px 0px 50px;
 }
+.item-list-wrap .item-list-title{
+  font-size: 1.6rem;
+  text-align: center;
+  margin-bottom: 4%;
+}
+.item-list-wrap .iten-list-title .form{
+  margin: 2%;
+}
 
 .item-list-wrap a .bakery-btn,
 .item-list-wrap a .bread-btn {
@@ -21,8 +29,6 @@
 
 }
 
-
-
 .item-list .bread-item .item .collapsible ul li .bread-name,
 .item-list .bread-item .item .collapsible ul li .bread-price{
   font-size: 1.1rem;
@@ -32,8 +38,6 @@
   font-size: 0.9rem;
   color: #777;
 }
-
-
 
 
 .item {
