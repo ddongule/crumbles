@@ -1,9 +1,15 @@
 <div class="main-wrap">
     <div class = "main-text">
-        식빵 고양이가 추천해주는 오늘의 추천 빵!<br>
     </div>
 
-
+    <div class = "catbread-1">
+        <% @recommend_category.each do |r| %>
+            <form action = "/search/index" method = "get">
+                <input type = "hidden" name = "keyword" value = <%= r %>></input>
+                <input class="hash-tags" type = "submit" value = #<%= r %>></input>
+            </form>
+        <% end %>
+    </div>
 
 <div id="jssor_2" style="position: relative; margin: 0px auto; top: 0px; left: 0px; width: 1350px; height: 306px; overflow: hidden; visibility: visible;" jssor-slider="true">
                 
@@ -90,7 +96,7 @@
                                 <%# <li><%= image_tag 'scon.png' %>
                                 <li><%= image_tag(image_path("#{rb.image}")) %></li><br>
                                 <li>
-                                    <span class="bread-name"><%= rb.bread_name %></span>[<%= rb.category %>]<br>
+                                    <span class="bread-name"><%= rb.bread_name %></span><br>
                                     <span class="bakery-name"><%= rb.bakery_name %></span>
                                 </li>
                             </ul>
@@ -103,22 +109,10 @@
                             <li> 가격 : <span class="con"><%= rb.price %>원</span></li><br>
                             <li> 별점 : <span class="con"><%= rb.star_point.round(1) %></span></li><br>
                             <%# <a href = "/detail_item/index/<%=rb.bread_name"></a> %>
-                                <button class="bakery-btn">상세보기</button>
                         </ul>
                     </div>
                 </div>
             </section>
-        <% end %>
-    </div>
-
-
-
-    <div class = "catbread-1">
-        <% @recommend_category.each do |r| %>
-            <form action = "/search/index" method = "get">
-                <input type = "hidden" name = "keyword" value = <%= r %>></input>
-                <input type = "submit" value = #<%= r %>></input>
-            </form>
         <% end %>
     </div>
 </div>
