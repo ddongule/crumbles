@@ -2,5 +2,87 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .info-user-wrap{
-  padding: 0px 0px 0px 50px;
+  padding: 6% 3% 3% 3%;
+}
+
+// .info-user-wrap .reviews {
+//   margin: 1%;
+// }
+.reviews .review-btns{
+    text-align: right;
+    width: 99%;
+}
+.reviews .review-btns a .review-btn {
+    display: inline-block;
+    padding: 5px 30px;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: .5rem;
+    transition: all 0.3s;
+    border: 1px solid #ddd;
+    margin: 0 1% 0 0 ;
+}
+
+.reviews li .review-person{
+    color: #000;
+    font-size: 1em;
+}
+
+.reviews .review-content-li {
+    border: 1px solid #ddd;
+    border-radius: .5rem;
+    width: 94.8%;
+    margin: 1%;
+    padding: 1%;
+}
+
+.reviews .review-content-li .review-content-span{
+    color: #000;
+    font-size: 1.1em;
+    margin: 1%;
+}
+
+.reviews a {
+    font-size: 1em;
+    text-decoration: none;
+}
+
+.see-edit-pop-wrap{
+    float: left;
+    min-width: 99.5%;
+    margin: 1%;
+    display: flex;
+}
+
+
+.edit{
+    float: right;
+    width:  100%;
+    text-align: right;
+    margin-right: 1.5%;
+}
+
+.see-edit-pop-wrap .edit {
+    text-align: right;
+    width: 99%;
+}
+.edit a .review-btn {
+    display: inline-block;
+    padding: 5px 30px;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: .5rem;
+    transition: all 0.3s;
+    border: 1px solid #ddd;
+    margin: 0 1% 0 0 ;
+}
+
+.my-review {
+  font-size: 1.6rem;
+  text-align: center;
+  width: 100%;
+}
+
+.info-user-wrap .reviews .review-bread-user {
+  
 }
