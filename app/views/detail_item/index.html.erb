@@ -99,20 +99,11 @@
 </div>
 
 
-
-
-
-
-
-
-
-
 <script>
     $(':radio').change(function() {
     console.log('New star rating: ' + this.value);
     });
 </script>
-
 
 <script>
     function isAble(){
@@ -120,7 +111,7 @@
         var reservation = document.getElementById('reservation').value;
         console.log(bookable_num);
         console.log(reservation);
-        if (bookable_num >= reservation){
+        if (bookable_num >= reservation && reservation > 0){
             return true;
         }
         else{
@@ -136,7 +127,7 @@
         var reservation = document.getElementById('reservation').value;
         console.log(bookable_num);
         console.log(reservation);
-        if (bookable_num >= reservation){
+        if (bookable_num >= reservation && reservation > 0){
             document.getElementById('basket_num').value = reservation;
             return true;
         }

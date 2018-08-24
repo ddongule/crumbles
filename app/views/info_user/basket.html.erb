@@ -1,8 +1,8 @@
-장바구니입니다!
+장바구니입니다!</br></br>
 
 내가 찜한 빵 </br>
-<%= @my_basket.each do |b| %>
-    빵이름 : <%= Bread.find(b.bread_id) %></br>
+<% @my_basket.each do |b| %>
+    빵이름 : <%= Bread.find(b.bread_id).bread_name %></br>
     수량 : <%= b.amount %></br></br>
-    <a href = "/info_user/basket_cancle/:basket_id">취소</a>
+    <a href = "/info_user/basket_cancle/<%=b.id%>">취소</a></br>
 <% end %>
