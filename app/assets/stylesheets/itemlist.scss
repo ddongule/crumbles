@@ -1,7 +1,27 @@
 .item-list-wrap{
   padding: 0px 0px 0px 50px;
 }
-  
+
+.item-list-wrap a .bakery-btn,
+.item-list-wrap a .bread-btn {
+    display: inline-block;
+    padding: 3.2%;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: .5rem;
+    transition: all 0.3s;
+    border: 1px solid #ddd;
+    margin: 5%;
+    width: 90%;
+    font-size: 1.5rem;
+}
+.item-list-wrap a .bakery-btn:hover,
+.item-list-wrap a .bread-btn:hover {
+    background-color: rgb(244, 244, 244);
+
+}
+
+
 
 .item-list .bread-item .item .collapsible ul li .bread-name,
 .item-list .bread-item .item .collapsible ul li .bread-price{
