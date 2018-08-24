@@ -1,3 +1,7 @@
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
 
 <div class="detail-item-wrap">
     <div class="bread-info-wrap">
@@ -58,7 +62,14 @@
                         <input type='file' class="hide inputfile" name ="input_img" id="upload"></input>
                     </div>
                     <div class="star-point">
-                        별점 : <input type='number' name='input_starPoint' id = "star" ></input>
+                        <div class="starRev">
+                            <span class="starR" id = "1">별1</span>
+                            <span class="starR" id = "2">별2</span>
+                            <span class="starR" id = "3">별3</span>
+                            <span class="starR" id = "4">별4</span>
+                            <span class="starR" id = "5">별5</span>
+                        </div>
+                        <input type='hidden' name='input_starPoint' id = "star" ></input>
                     </div>
                     <div class="submit-button">
                         <label for="submit"><span>리뷰 등록하기</span></label>
@@ -97,6 +108,30 @@
         </div>
     </div>
 </div>
+
+<script>
+$('.starRev span').click(function(){
+  $(this).parent().children('span').removeClass('on');
+  $(this).addClass('on').prevAll('span').addClass('on');
+  return false;
+});
+
+$("#1").click(function(){
+    $("#star").val(1);
+});
+$("#2").click(function(){
+    $("#star").val(2);
+});
+$("#3").click(function(){
+    $("#star").val(3);
+});
+$("#4").click(function(){
+    $("#star").val(4);
+});
+$("#5").click(function(){
+    $("#star").val(5);
+});
+</script>
 
 <script>
     function isAble(){
