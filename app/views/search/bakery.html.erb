@@ -1,7 +1,7 @@
 <div class="search-wrap">
     <% count = 0 %>
 
-    <li>빵집에서 <%= @search_itm %>(으)로 검색한 결과입니다.</li></br>
+    <li class="bakery-results">빵집에서 <span><%= @search_itm %></span>(으)로 검색한 결과입니다.</li></br>
 
 
     <div class="bakery-info-list-left">
@@ -15,17 +15,19 @@
         <li>이메일 : <span><%= @bakery_info.email %></span></li><br>
         <li>오픈 시간 : <span><%= @bakery_info.open_time %></span></li><br>
         <li>닫는 시간 : <span><%= @bakery_info.close_time %></span></li><br>
-        <li>좌석 수 : <span><%= @bakery_info.seat %></span></li><br>
+        <li class="last-li">좌석 수 : <%= @bakery_info.seat %></li><br>
+        <div class="map-map">
+            <div id="map" style="width:100%;height:250px;"></div>
+        </div>
     </div>
 
 
 
-    <div id="map" style="width:100%;height:200px;"></div>
 
     </br></br>
 
 <div class="search-bread-list">
-    <li><%= @bakery_info.name %>의 빵들</li></br><br>
+    <li class="bakery-lists"><%= @bakery_info.name %>의 빵들</li></br><br>
         <% @bakery_search_result.each do |result| %>
             <% count += 1 %>
             <section class="bread-item">
