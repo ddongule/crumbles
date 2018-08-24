@@ -17,20 +17,20 @@
             <% if user_signed_in? %>
                 <form action = "/detail_item/reservation/<%=@bread.id%>" method = "post" onsubmit = "return isAble();">
                     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-                    예약 수량 : <input type = "number" name = "reservation_amount" id = "reservation"></input>
+                    예약 수량 : <input type = "number" name = "reservation_amount" id = "reservation"></input></br>
                     <% if isExist(@bread.id) %>
                         <a href = "/detail_item/cancle/<%=@bread.id%>">
                             <button class="reservation">취소하기</button>
                         </a></br>
                     <% else %>
-                        <button class="reservation">예약하기</button>
+                        <span><button class="reservation">예약하기</button></span>
                     <% end %>
                 </form>
                 <form action = "/info_user/basket_create/<%=@bread.id%>" method = "post" onsubmit = "return put();">
-                        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-                        <input type = "hidden" name = "amount" id = "basket_num"></input>
-                        <button class="reservation">장바구니 담기</button> 
-                    </form>
+                    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                    <input type = "hidden" name = "amount" id = "basket_num"></input>
+                    <span><button class="reservation">장바구니 담기</button></span>
+                </form>
             <% end %>
             <a href = "/search/bakery/<%=@bread.bakery_name%>">
                 <button class="reservation">빵집 상세보기</button>
