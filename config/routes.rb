@@ -71,6 +71,12 @@ Rails.application.routes.draw do
   get '/info_owner/reservation_end/:reservation_id' => 'info_owner#reservation_end'
 
   get '/info_owner/reservation_cancle/:reservation_id' => 'info_owner#reservation_cancle'
+
+  get '/info_user/basket' => 'info_user#basket'
+
+  post '/info_user/basket_create/:bread_id' => 'info_user#basket_create'
+
+  get '/info_user/basket_cancle/:basket_id' => 'info_user#basket_cancle'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 end

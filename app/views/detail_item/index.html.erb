@@ -15,16 +15,22 @@
             <li> 별점 : <span class="star"><%= @bread.star_point %></span></li>
 
             <% if user_signed_in? %>
-                <% if isExist(@bread.id) %>
-                    <a href = "/detail_item/cancle/<%=@bread.id%>">
-                        <button class="reservation">취소하기</button>
-                    </a></br>
-                <% else %>
-                    <a href = "/detail_item/reservation/<%=@bread.id%>" onclick = "return confirm('<%=@bread.bread_name%>을(를) 예약하시겠습니까?');">
+                <form action = "/detail_item/reservation/<%=@bread.id%>" method = "post" onsubmit = "return isAble();">
+                    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                    예약 수량 : <input type = "number" name = "reservation_amount" id = "reservation"></input>
+                    <% if isExist(@bread.id) %>
+                        <a href = "/detail_item/cancle/<%=@bread.id%>">
+                            <button class="reservation">취소하기</button>
+                        </a></br>
+                    <% else %>
                         <button class="reservation">예약하기</button>
-                    </a>
-                    
-                <% end %>
+                    <% end %>
+                </form>
+                <form action = "/info_user/basket_create/<%=@bread.id%>" method = "post" onsubmit = "return put();">
+                        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                        <input type = "hidden" name = "amount" id = "basket_num"></input>
+                        <button class="reservation">장바구니 담기</button> 
+                    </form>
             <% end %>
             <a href = "/search/bakery/<%=@bread.bakery_name%>">
                 <button class="reservation">빵집 상세보기</button>
@@ -101,14 +107,6 @@
 
 
 
-
-
-
-
-
-
-
-
 <script>
     $(':radio').change(function() {
     console.log('New star rating: ' + this.value);
@@ -131,6 +129,24 @@
         }   
     }
 </script>
+
+<script>
+    function put(){
+        var bookable_num = <%= @bread.bookable_num %>;
+        var reservation = document.getElementById('reservation').value;
+        console.log(bookable_num);
+        console.log(reservation);
+        if (bookable_num >= reservation){
+            document.getElementById('basket_num').value = reservation;
+            return true;
+        }
+        else{
+            alert("장바구니 가능수량을 초과하였습니다.");
+            return false;
+        }   
+    }
+</script>
+
 <script>
     function isCorrect(){
         var sp = parseInt(document.getElementById('star').value);
