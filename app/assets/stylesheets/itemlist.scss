@@ -44,7 +44,14 @@
     text-align: center;
 }
   
-.collapsible:after {
+// .collapsible:after {
+//     color: black;
+//     font-weight: bold;
+//     float: right;
+//     margin-left: 5px;
+// }
+
+.collapsible .content {
     color: black;
     font-weight: bold;
     float: right;
@@ -67,6 +74,28 @@
 .content p {
     padding: 13px;
 }
+
+.content {
+  padding: 0px 30px;
+  max-height: 300px;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #fff;
+}
+
+.content ul li {
+  padding: 13px;
+}
+
+.content ul li .con{
+  font-size: 1.1rem;
+  color: #000;
+}
+.content ul li .con-num{
+  font-size: 1.1rem;
+  color: red;
+}
+
 
 
 
@@ -171,3 +200,5 @@
     margin-right: auto;
   }
 }
+
+

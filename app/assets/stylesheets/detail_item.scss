@@ -58,11 +58,22 @@
 }
 
 .info-detail .reservation{
-    width: 100%;
-    margin: 3% 0;
+    // width: 100%;
+    // margin: 3% 0;
     // background-color: #e36a00;
     border-radius: 10px;
+    width: 46%;
+    margin: 3% 0;
+    float: left;
 }
+
+.info-detail .reserv-detail-view{
+    border-radius: 10px;
+    width: 94%;
+    margin: 3% 0;
+    float: left;
+}
+
 .info-detail a .reservation {
     display: inline-block;
     padding: 3.2%;
@@ -73,8 +84,7 @@
     border: 1px solid #ddd;
     margin-top: 5%;
 }
-
-.info-detail span .reservation {
+.info-detail a .reserv-detail-view {
     display: inline-block;
     padding: 3.2%;
     background-color: #ffffff;
@@ -82,7 +92,20 @@
     border-radius: .5rem;
     transition: all 0.3s;
     border: 1px solid #ddd;
-    margin-top: 5%;
+    margin: 5% 0.5%;
+}
+
+
+.info-detail span .reservation {
+    font-size: 1.4rem;
+    display: inline-block;
+    padding: 3.2%;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: .5rem;
+    transition: all 0.3s;
+    border: 1px solid #ddd;
+    margin: 5% 0.5%;
 }
 
 .info-detail a {

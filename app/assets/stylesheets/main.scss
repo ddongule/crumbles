@@ -40,12 +40,12 @@
   padding: 2px 0px;
   display: contents;
 }
-.recom-bread-list .bread-item .item .collapsible ul li .bread-name {
+.recom-bread-list .bread-item .item a .collapsible ul li .bread-name {
   font-size: 1.1rem;
   color: #000;
 }
-.recom-bread-list .bread-item .item .collapsible ul li,
-.recom-bread-list .bread-item .item .collapsible ul li .bakery-name {
+.recom-bread-list .bread-item .item a .collapsible ul li,
+.recom-bread-list .bread-item .item a .collapsible ul li .bakery-name {
   font-size: 0.9rem;
   color: #777;
 }
@@ -85,24 +85,42 @@
 //   margin-left: 5px;
 // }
 
-.collapsible img {
-  max-width: 400px;
-  min-height:50px;
-  
+////////////////////////////////바꾼거 여기//
+// .collapsible img {
+//   max-width: 400px;
+//   min-height:50px;
+// }
+.bread-item .item a .collapsible ul li img{
+  height: 200px;
+  width: 100%;
+  margin: 0 5%;
+  overflow: auto;
+  object-fit: cover;
 }
+//////////////////////////////////
+
 
 // .collapsible li{
 //   float: left;
 //   display: contents;
 // }
 
+
+
+
+///////////////////////////////바뀐거 여기
 .content {
   padding: 0px 30px;
-  max-height: 300px;
+  // max-height: 300px;
   overflow: hidden;
-  transition: max-height 0.2s ease-out;
+  // transition: max-height 0.2s ease-out;
   background-color: #fff;
 }
+
+.content ul li {
+  padding: 13px;
+}
+
 .content ul li .con{
   font-size: 1.1rem;
   color: #000;
@@ -110,11 +128,6 @@
 .content ul li .con-num{
   font-size: 1.1rem;
   color: red;
-}
-
-
-.content ul li {
-  padding: 13px;
 }
 
 .content ul a .bakery-btn {
