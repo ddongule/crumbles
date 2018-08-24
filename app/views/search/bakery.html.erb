@@ -3,9 +3,8 @@
 
     <li class="bakery-results">빵집에서 <span><%= @search_itm %></span>(으)로 검색한 결과입니다.</li></br>
 
-
     <div class="bakery-info-list-left">
-        <%= image_tag 'bakery.jpg' %>
+        <%= image_tag(image_path("#{@bakery_info.image}")) %>
     </div>
 
     <div class="bakery-info-list-right">

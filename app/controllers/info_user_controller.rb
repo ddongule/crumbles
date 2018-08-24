@@ -42,7 +42,7 @@ class InfoUserController < ApplicationController
     basket = Basket.new()
     basket.bread_id = bread.id
     basket.amount = amount
-    basket.user_id = current_user
+    basket.user_id = current_user.id
     basket.save
 
     redirect_to "/detail_item/index/#{bread.bread_name}"
@@ -53,6 +53,6 @@ class InfoUserController < ApplicationController
     bread_id = basket.bread_id
     basket.destroy
 
-    redirect_to "/info_user/basket/#{bread_id}"
+    redirect_to "/info_user/basket"
   end
 end
