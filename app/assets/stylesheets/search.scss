@@ -2,9 +2,51 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .search-wrap{
-    padding: 0px 0px 0px 50px;
+  padding: 0 2%;
+  width: 96%;
+  margin: 0 0 2% 2%;
+  float: left;
 }
-  
+
+.search-wrap .bakery-info-list-left {
+  margin: 2%;
+  width: 46%;
+  float: left;
+}
+
+.search-wrap .bakery-info-list-left img{
+  width: 100%;
+  float: left;
+}
+.search-wrap .bakery-info-list-left #map{
+  margin: 2% 0;
+}
+
+.search-wrap .bakery-info-list-right {
+  width: 38%;
+  padding: 3% 5%;
+  float: left;
+  color: #777;
+  margin-right: 2%;
+}
+.search-wrap .bakery-info-list-right li {
+  list-style: none;
+  padding: 1.5% 0;
+  width: 100%;
+}
+.search-wrap .bakery-info-list-right li span {
+  color: #000;
+  font-size: 18px;
+}
+.search-wrap .bakery-info-list-right .bakery-name{
+  width: 100%;
+  font-size: 1.6rem;
+  color: #000;
+  padding-bottom: 3%;
+}
+
+
+
 .collapsible:after {
     color: black;
     font-weight: bold;
@@ -31,9 +73,8 @@
 }
   
 .content p {
-    padding: 13px;
+  padding: 13px;
 }
-
 
 
 
