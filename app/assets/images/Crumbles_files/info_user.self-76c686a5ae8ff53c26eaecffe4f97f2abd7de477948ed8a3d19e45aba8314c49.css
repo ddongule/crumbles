@@ -1,0 +1,66 @@
+/* line 4, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/info_user.scss */
+.info-user-wrap {
+  padding: 0px 0px 0px 50px;
+}
+
+/* line 8, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/info_user.scss */
+.reviews .review-btns {
+  text-align: right;
+  width: 99%;
+}
+
+/* line 12, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/info_user.scss */
+.reviews .review-btns a .review-btn {
+  display: inline-block;
+  padding: 5px 30px;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: .5rem;
+  transition: all 0.3s;
+  border: 1px solid #ddd;
+  margin: 0 1% 0 0;
+}
+
+/* line 23, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/info_user.scss */
+.reviews li .review-person {
+  color: #000;
+  font-size: 1em;
+}
+
+/* line 28, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/info_user.scss */
+.reviews .review-content-li {
+  border: 1px solid #ddd;
+  border-radius: .5rem;
+  width: 94.8%;
+  margin: 1%;
+  padding: 1%;
+}
+
+/* line 36, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/info_user.scss */
+.reviews .review-content-li .review-content-span {
+  color: #000;
+  font-size: 1.1em;
+  margin: 1%;
+}
+
+/* line 42, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/info_user.scss */
+.reviews a {
+  font-size: 1em;
+  text-decoration: none;
+}
+
+/* line 48, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/info_user.scss */
+.see-edit-pop-wrap {
+  float: left;
+  min-width: 98%;
+  margin: 1%;
+  display: flex;
+}
+
+/* line 56, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/info_user.scss */
+.edit {
+  float: right;
+  width: 95%;
+  text-align: right;
+  margin-right: 1.5%;
+}

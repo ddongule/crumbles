@@ -1,5 +1,14 @@
+
 .item-list-wrap{
   padding: 0px 0px 0px 50px;
+}
+.item-list-wrap .item-list-title{
+  font-size: 1.6rem;
+  text-align: center;
+  margin-bottom: 4%;
+}
+.item-list-wrap .iten-list-title .form{
+  margin: 2%;
 }
 
 .item-list-wrap a .bakery-btn,
@@ -21,8 +30,6 @@
 
 }
 
-
-
 .item-list .bread-item .item .collapsible ul li .bread-name,
 .item-list .bread-item .item .collapsible ul li .bread-price{
   font-size: 1.1rem;
@@ -34,13 +41,33 @@
 }
 
 
-
-
 .item {
     text-align: center;
 }
+
+.collapsible ul li .bakery-name {
+  display: inline-block;
+  padding: 2%;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: .5rem;
+  border: 1px solid #ddd;
+  margin: 5%;
+  width: 90%;
+  font-size: 1rem;
+}
+
+
+
   
-.collapsible:after {
+// .collapsible:after {
+//     color: black;
+//     font-weight: bold;
+//     float: right;
+//     margin-left: 5px;
+// }
+
+.collapsible .content {
     color: black;
     font-weight: bold;
     float: right;
@@ -63,6 +90,39 @@
 .content p {
     padding: 13px;
 }
+
+.content {
+  padding: 0px 30px;
+  max-height: 300px;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #fff;
+}
+
+.content ul li {
+  padding: 13px;
+}
+
+.content ul li .con{
+  font-size: 1.1rem;
+  color: #000;
+}
+.content ul li .con-num{
+  font-size: 1.1rem;
+  color: red;
+}
+
+.item-list-wrap .item-list-title form .search-text {
+    width: 20%;
+    background: #ffffff;
+    border-radius: 6rem;
+    border: 1px solid #a0a0a0;
+    font-size: 1.2em;
+    color: #232833;
+    padding-left: 15px;
+    -webkit-border-radius: 6rem;
+}
+
 
 
 
@@ -167,3 +227,4 @@
     margin-right: auto;
   }
 }
+

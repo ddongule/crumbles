@@ -1,0 +1,239 @@
+@charset "UTF-8";
+/* line 4, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/main.scss */
+.main-wrap {
+  padding: 0px 0px 0px 50px;
+}
+
+/* line 7, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/main.scss */
+.main-text {
+  text-align: center;
+  font-size: 1.4rem;
+  padding: 0 0 30px 0;
+}
+
+/* line 25, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/main.scss */
+.recom-bread-list ul {
+  width: 100%;
+  list-style: none;
+  margin: auto;
+  padding: 0px;
+  display: block;
+  float: left;
+  overflow: hidden;
+}
+
+/* line 34, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/main.scss */
+.recom-bread-list ul li {
+  list-style: none;
+  margin: auto;
+  padding: 0px;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 2px 0px;
+  display: contents;
+}
+
+/* line 44, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/main.scss */
+.recom-bread-list .bread-item .item .collapsible ul li .bread-name {
+  font-size: 1.1rem;
+  color: #000;
+}
+
+/* line 48, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/main.scss */
+.recom-bread-list .bread-item .item .collapsible ul li .bakery-name {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* line 60, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/main.scss */
+.main-wrap {
+  padding: 20px 0px 50px 0px;
+}
+
+/* line 65, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/main.scss */
+.catbread {
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 20px;
+}
+
+/* line 72, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/main.scss */
+.wrap {
+  margin: 60px 30px;
+  padding: 50px;
+}
+
+/* line 96, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/main.scss */
+.collapsible img {
+  max-width: 400px;
+  min-height: 50px;
+}
+
+/* line 107, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/main.scss */
+.content {
+  padding: 0px 30px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #fff;
+}
+
+/* line 115, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/main.scss */
+.content p {
+  padding: 13px;
+}
+
+/* line 119, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/main.scss */
+.qa .item {
+  text-align: collapsible;
+  justify-content: center;
+}
+
+/* line 124, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/main.scss */
+.font-list {
+  justify-content: center;
+  text-align: center;
+}
+
+/* line 130, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/main.scss */
+.recom-bread-list {
+  margin: 2rem auto;
+  position: inherit;
+  display: table;
+  align-items: center;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* line 140, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/main.scss */
+.bread-item {
+  /* 각 아이템의 기본 폰트사이즈를 사전에 정해둔다. */
+  font-size: 1em;
+  /* 16px */
+  line-height: 1.2em;
+  /* 19.2px */
+  padding: 10px 0;
+  position: relative;
+  justify-content: center;
+  display: flex;
+  margin: 20px 0px;
+}
+
+/* line 151, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/main.scss */
+.btn-add {
+  position: absolute;
+  /* 절대 좌표 이동, 좌표의 기준점 */
+  top: 10px;
+  right: 10px;
+}
+
+/* line 157, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/main.scss */
+.catbread-1 {
+  display: block;
+}
+
+/*
+* 해상도 따라서 아이템이 2개였따가 3개였다가 4개였다기
+* 미디어쿼리
+*/
+@media (max-width: 1024px) {
+  /* line 166, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/main.scss */
+  .bread-item {
+    float: left;
+    width: 100%;
+    position: inherit;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+  }
+
+  /* line 174, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/main.scss */
+  .recom-bread-list > section > div > button > ul > li > img {
+    height: 100%;
+    width: 100%;
+  }
+
+  /* line 180, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/main.scss */
+  .recom-bread-list {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+/* 만약 브라우저의 크기가 768px 이상이라면 */
+@media (min-width: 1024px) {
+  /* line 192, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/main.scss */
+  .recom-bread-list .bread-item {
+    float: left;
+    width: 32.333333%;
+    position: inherit;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    padding: 0 0.25%;
+  }
+
+  /* line 202, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/main.scss */
+  .recom-bread-list > section > div > button > ul > li > img {
+    height: 250px;
+    width: 100%;
+    margin: 0 5%;
+    overflow: auto;
+    object-fit: cover;
+  }
+
+  /* line 214, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/main.scss */
+  .recom-bread-list {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+/* 만약 브라우저의 크기가 1024px 이상이라면 */
+/* 만약 브라우저의 크기가 1366px 이상이라면 */
+@media (min-width: 1366px) {
+  /* line 253, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/main.scss */
+  .recom-bread-list .bread-item {
+    width: 16%;
+    padding: 0 0.25%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* line 261, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/main.scss */
+  .recom-bread-list > section > div > button > ul > li > img {
+    height: 300px;
+    width: 100%;
+    margin: 0 5%;
+    overflow: auto;
+    object-fit: cover;
+  }
+
+  /* line 273, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/main.scss */
+  .recom-bread-list {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+/* line 290, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/main.scss */
+button {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  outline: none;
+  background: transparent;
+  /* inherit font & color from ancestor */
+  color: inherit;
+  font: inherit;
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
+}

@@ -7,7 +7,12 @@
     padding: 1%;
     float: left;
     margin-left: 2%;
+    
+    max-height: 600px;
+    overflow: auto;
+    object-fit: cover;
 }
+
 
 .detail-item-wrap .info-detail{
     width: 38%;
@@ -58,11 +63,22 @@
 }
 
 .info-detail .reservation{
-    width: 100%;
-    margin: 3% 0;
+    // width: 100%;
+    // margin: 3% 0;
     // background-color: #e36a00;
     border-radius: 10px;
+    width: 46%;
+    margin: 3% 0;
+    float: left;
 }
+
+.info-detail .reserv-detail-view{
+    border-radius: 10px;
+    width: 94%;
+    margin: 3% 0;
+    float: left;
+}
+
 .info-detail a .reservation {
     display: inline-block;
     padding: 3.2%;
@@ -73,12 +89,34 @@
     border: 1px solid #ddd;
     margin-top: 5%;
 }
+.info-detail a .reserv-detail-view {
+    display: inline-block;
+    padding: 3.2%;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: .5rem;
+    transition: all 0.3s;
+    border: 1px solid #ddd;
+    margin: 0.5%;
+}
+
+
+.info-detail span .reservation {
+    font-size: 1.4rem;
+    display: inline-block;
+    padding: 3.2%;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: .5rem;
+    transition: all 0.3s;
+    border: 1px solid #ddd;
+    margin: 5% 0.5%;
+}
 
 .info-detail a {
     font-size: 1.2rem;
     text-decoration: none;
 }
-
 
 
 
@@ -247,3 +285,15 @@ label[for="submit"] {
         float: none;
     }
 }
+
+
+.starR{
+    background: url('http://miuu227.godohosting.com/images/icon/ico_review.png') no-repeat right 0;
+    background-size: auto 100%;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    text-indent: -9999px;
+    cursor: pointer;
+  }
+  .starR.on{background-position:0 0;}

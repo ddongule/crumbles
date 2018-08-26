@@ -1,9 +1,15 @@
 <div class="main-wrap">
     <div class = "main-text">
-        식빵 고양이가 추천해주는 오늘의 추천 빵!<br>
     </div>
 
-
+    <div class = "catbread-1">
+        <% @recommend_category.each do |r| %>
+            <form action = "/search/index" method = "get">
+                <input type = "hidden" name = "keyword" value = <%= r %>></input>
+                <input class="hash-tags" type = "submit" value = #<%= r %>></input>
+            </form>
+        <% end %>
+    </div>
 
 <div id="jssor_2" style="position: relative; margin: 0px auto; top: 0px; left: 0px; width: 1350px; height: 306px; overflow: hidden; visibility: visible;" jssor-slider="true">
                 
@@ -84,37 +90,29 @@
         <% @recommend_bread_arr.each do |rb| %>
             <section class="bread-item">
                 <div class="item">
-                    <button class="collapsible">
-                        <ul>
-                            <%# <li><%= image_tag 'scon.png' %><%#=</li> %>
-                            <li><%= image_tag(image_path("#{rb.image}")) %></li>
-                            <li>
-                                <span class="bread-name"><%= rb.bread_name %></span><br>
-                                <span class="bakery-name"><%= rb.bakery_name %></span>
-                            </li>
-                        </ul>
-                    </button>
+                    <a href = "/detail_item/index/<%=rb.bread_name%>">
+                        <button class="collapsible">
+                            <ul>
+                                <%# <li><%= image_tag 'scon.png' %>
+                                <li><%= image_tag(image_path("#{rb.image}")) %></li><br>
+                                <li>
+                                    <span class="bread-name"><%= rb.bread_name %></span><br>
+                                    <span class="bakery-name"><%= rb.bakery_name %></span>
+                                </li>
+                            </ul>
+                        </button>
+                    </a>
                     <div class = "content">
-                        <p> 빵 종류 : <%= rb.category %></p>
-                        <p> 잔여 개수 : <%= rb.amount %></p>
-                        <p> 예약 가능 : <%= rb.bookable_num %></p>
-                        <p> 가격 : <%= rb.price %></p>
-                        <p> 별점 : <%= rb.star_point.round(1) %></p>
-                        <a href = "/detail_item/index/<%=rb.bread_name%>">빵 더보기...</a>
+                        <ul>
+                            <li> 잔여 개수 : <span class="con-num"><%= rb.amount %></span>개</li><br>
+                            <li> 예약 가능 : <span class="con-num"><%= rb.bookable_num %></span>개</li><br>
+                            <li> 가격 : <span class="con"><%= rb.price %>원</span></li><br>
+                            <li> 별점 : <span class="con"><%= rb.star_point.round(1) %></span></li><br>
+                            <%# <a href = "/detail_item/index/<%=rb.bread_name"></a> %>
+                        </ul>
                     </div>
                 </div>
             </section>
-        <% end %>
-    </div>
-
-
-
-    <div class = "catbread-1">
-        <% @recommend_category.each do |r| %>
-            <form action = "/search/index" method = "get">
-                <input type = "hidden" name = "keyword" value = <%= r %>></input>
-                <input type = "submit" value = #<%= r %>></input>
-            </form>
         <% end %>
     </div>
 </div>

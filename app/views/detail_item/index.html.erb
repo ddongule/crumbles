@@ -1,8 +1,12 @@
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
 
 <div class="detail-item-wrap">
     <div class="bread-info-wrap">
         <div class = "bread-img">
-            <%= image_tag 'scon.png' %>
+            <%= image_tag(image_path("#{@bread.image}"))%>
         </div>
         
         <ul class="info-detail">
@@ -15,19 +19,25 @@
             <li> 별점 : <span class="star"><%= @bread.star_point %></span></li>
 
             <% if user_signed_in? %>
-                <% if isExist(@bread.id) %>
-                    <a href = "/detail_item/cancle/<%=@bread.id%>">
-                        <button class="reservation">취소하기</button>
-                    </a></br>
-                <% else %>
-                    <a href = "/detail_item/reservation/<%=@bread.id%>" onclick = "return confirm('<%=@bread.bread_name%>을(를) 예약하시겠습니까?');">
-                        <button class="reservation">예약하기</button>
-                    </a>
-                    
-                <% end %>
+                <form action = "/detail_item/reservation/<%=@bread.id%>" method = "post" onsubmit = "return isAble();">
+                    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                    예약 수량 : <input type = "number" name = "reservation_amount" id = "reservation"></input></br>
+                    <% if isExist(@bread.id) %>
+                        <a href = "/detail_item/cancle/<%=@bread.id%>">
+                            <button class="reservation">취소하기</button>
+                        </a></br>
+                    <% else %>
+                        <span><button class="reservation">예약하기</button></span>
+                    <% end %>
+                </form>
+                <form action = "/info_user/basket_create/<%=@bread.id%>" method = "post" onsubmit = "return put();">
+                    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                    <input type = "hidden" name = "amount" id = "basket_num"></input>
+                    <span><button class="reservation">장바구니 담기</button></span>
+                </form>
             <% end %>
             <a href = "/search/bakery/<%=@bread.bakery_name%>">
-                <button class="reservation">빵집 상세보기</button>
+                <button class="reserv-detail-view">빵집 상세보기</button>
             </a>
             </br></br>
 
@@ -44,7 +54,7 @@
             <form enctype="multipart/form-data" action='/detail_item/index/<%= @bread.id %>/reviews/create' method='post' onsubmit = "return isCorrect()">
                 <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
                 <label name='input_user'><%= current_user.name%></label>
-                 님의 리뷰 <textarea name="input_content" cols="80" rows="5" minlength="30"></textarea>
+                 님의 리뷰 <textarea name="input_content" cols="80" rows="5" minlength="30" id = "review"></textarea>
                 <%# 이미지 : <input type = 'file' name = "input_img"></input></br> %>
                 <div class="file-star-submit-wrap">
                     <div class="file-img">
@@ -52,7 +62,14 @@
                         <input type='file' class="hide inputfile" name ="input_img" id="upload"></input>
                     </div>
                     <div class="star-point">
-                        별점 : <input type='number' name='input_starPoint' id = "star" ></input>
+                        <div class="starRev">
+                            <span class="starR" id = "1">별1</span>
+                            <span class="starR" id = "2">별2</span>
+                            <span class="starR" id = "3">별3</span>
+                            <span class="starR" id = "4">별4</span>
+                            <span class="starR" id = "5">별5</span>
+                        </div>
+                        <input type='hidden' name='input_starPoint' id = "star" ></input>
                     </div>
                     <div class="submit-button">
                         <label for="submit"><span>리뷰 등록하기</span></label>
@@ -92,29 +109,29 @@
     </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <script>
-    $(':radio').change(function() {
-    console.log('New star rating: ' + this.value);
-    });
-</script>
+$('.starRev span').click(function(){
+  $(this).parent().children('span').removeClass('on');
+  $(this).addClass('on').prevAll('span').addClass('on');
+  return false;
+});
 
+$("#1").click(function(){
+    $("#star").val(1);
+});
+$("#2").click(function(){
+    $("#star").val(2);
+});
+$("#3").click(function(){
+    $("#star").val(3);
+});
+$("#4").click(function(){
+    $("#star").val(4);
+});
+$("#5").click(function(){
+    $("#star").val(5);
+});
+</script>
 
 <script>
     function isAble(){
@@ -122,7 +139,7 @@
         var reservation = document.getElementById('reservation').value;
         console.log(bookable_num);
         console.log(reservation);
-        if (bookable_num >= reservation){
+        if (bookable_num >= reservation && reservation > 0){
             return true;
         }
         else{
@@ -131,12 +148,34 @@
         }   
     }
 </script>
+
+<script>
+    function put(){
+        var bookable_num = <%= @bread.bookable_num %>;
+        var reservation = document.getElementById('reservation').value;
+        console.log(bookable_num);
+        console.log(reservation);
+        if (bookable_num >= reservation && reservation > 0){
+            document.getElementById('basket_num').value = reservation;
+            return true;
+        }
+        else{
+            alert("장바구니 가능수량을 초과하였습니다.");
+            return false;
+        }   
+    }
+</script>
+
 <script>
     function isCorrect(){
         var sp = parseInt(document.getElementById('star').value);
-
+        var text = parseInt(document.getElementById('review').value.length);
         if (sp > 6 || sp < 0){
             alert("별점은 0~5까지만 매길 수 있습니다.");
+            return false;
+        }
+        if (text == 0){
+            alert("review pls");
             return false;
         }
     }

@@ -1,7 +1,7 @@
 
 .search-wrap{
   padding: 0 2%;
-  width: 96%;
+  width: 94%;
   margin: 0 0 2% 2%;
   float: left;
 }
@@ -90,7 +90,7 @@
   
 .content {
     padding: 0px 30px;
-    max-height: 0;
+    // max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
     background-color: #fff;
