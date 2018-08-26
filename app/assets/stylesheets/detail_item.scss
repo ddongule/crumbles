@@ -7,7 +7,12 @@
     padding: 1%;
     float: left;
     margin-left: 2%;
+    
+    max-height: 600px;
+    overflow: auto;
+    object-fit: cover;
 }
+
 
 .detail-item-wrap .info-detail{
     width: 38%;
