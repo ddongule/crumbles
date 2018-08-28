@@ -17,7 +17,7 @@
                             <button class="collapsible">
                                 <%# <%= count %><%#번 빵집 %>
                                 <ul>
-                                    <li><%= image_tag(image_path("#{result.image}"))%></li>
+                                    <li><%= image_tag(image_path("#{result.image}"), :class => "list-image" )%></li><br>
                                     <li>
                                         <span class="bakery-name"><%= result.name %></span><br>
                                     </li>

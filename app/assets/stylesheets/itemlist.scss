@@ -30,12 +30,12 @@
 
 }
 
-.item-list .bread-item .item .collapsible ul li .bread-name,
-.item-list .bread-item .item .collapsible ul li .bread-price{
+.item-list .bread-item .item .content ul li .bread-name,
+.item-list .bread-item .item .content ul li .bread-price{
   font-size: 1.1rem;
   color: #000;
 }
-.item-list .bread-item .item .collapsible ul li .bread-cat {
+.item-list .bread-item .item .content ul li .bread-cat {
   font-size: 0.9rem;
   color: #777;
 }
@@ -68,39 +68,39 @@
 // }
 
 .collapsible .content {
-    color: black;
-    font-weight: bold;
-    float: right;
-    margin-left: 5px;
+  color: black;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
 }
  
-.collapsible img {
-    max-width: 400px;
-    min-height:50px;
+.collapsible .list-image {
+  max-width: 270px;
+  min-height: 50px;
 }
 
-.content {
-    padding: 0px 30px;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-    background-color: #fff;
-}
   
 .content p {
-    padding: 13px;
+  padding: 13px;
 }
 
 .content {
   padding: 0px 30px;
   max-height: 300px;
   overflow: hidden;
-  transition: max-height 0.2s ease-out;
   background-color: #fff;
 }
 
 .content ul li {
   padding: 13px;
+  list-style: none;
+  margin: auto;
+  padding: 0px;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 2px 0px;
+  display: contents;
 }
 
 .content ul li .con{
@@ -113,14 +113,14 @@
 }
 
 .item-list-wrap .item-list-title form .search-text {
-    width: 20%;
-    background: #ffffff;
-    border-radius: 6rem;
-    border: 1px solid #a0a0a0;
-    font-size: 1.2em;
-    color: #232833;
-    padding-left: 15px;
-    -webkit-border-radius: 6rem;
+  width: 20%;
+  background: #ffffff;
+  border-radius: 6rem;
+  border: 1px solid #a0a0a0;
+  font-size: 1.2em;
+  color: #232833;
+  padding-left: 15px;
+  -webkit-border-radius: 6rem;
 }
 
 
@@ -148,6 +148,16 @@
     width: 95%;
     margin-left: auto;
     margin-right: auto;
+  }
+  .item-list .bread-item .item a .collapsible ul li {
+    list-style: none;
+    margin: auto;
+    padding: 0px;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding: 2px 0px;
+    display: contents;
   }
 }
 
@@ -190,7 +200,8 @@
   float: left;
   overflow: hidden;
 }
-.item-list ul li{
+
+.item-list .bread-item .item a .collapsible ul li{
   list-style: none;
   margin: auto;
   padding: 0px;
