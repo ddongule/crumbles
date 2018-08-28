@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180824062647) do
+ActiveRecord::Schema.define(version: 20180828065257) do
 
   create_table "bakeries", force: :cascade do |t|
     t.string "name"
@@ -85,6 +85,14 @@ ActiveRecord::Schema.define(version: 20180824062647) do
     t.index ["owner_id", "role_id"], name: "index_owners_roles_on_owner_id_and_role_id"
     t.index ["owner_id"], name: "index_owners_roles_on_owner_id"
     t.index ["role_id"], name: "index_owners_roles_on_role_id"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "reservations", force: :cascade do |t|
