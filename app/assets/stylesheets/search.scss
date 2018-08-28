@@ -25,11 +25,15 @@
   margin: 2%;
   width: 46%;
   float: left;
+  height: 500px;
 }
 
 .search-wrap .bakery-info-list-left img{
   width: 100%;
   float: left;
+  object-fit: cover;
+  height: 100%;
+
 }
 
 .search-wrap .bakery-info-list-left #map{
@@ -129,6 +133,8 @@
   .search-wrap .bakery-info-list-right{
       width: 46%;
       padding: 2% 22%;
+      height: 100%;
+      margin: 0 2%;
   }
 
   #map {

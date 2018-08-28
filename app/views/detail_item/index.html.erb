@@ -27,13 +27,13 @@
                             <button class="reservation">취소하기</button>
                         </a></br>
                     <% else %>
-                        <span><button class="reservation">예약하기</button></span>
+                        <button class="reservation">예약하기</button>
                     <% end %>
                 </form>
                 <form action = "/info_user/basket_create/<%=@bread.id%>" method = "post" onsubmit = "return put();">
                     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
                     <input type = "hidden" name = "amount" id = "basket_num"></input>
-                    <span><button class="reservation">장바구니 담기</button></span>
+                    <button class="reservation">장바구니 담기</button>
                 </form>
             <% end %>
             <a href = "/search/bakery/<%=@bread.bakery_name%>">
@@ -85,26 +85,27 @@
             <li> 리뷰 </li>
             <% @review.each do |reviews| %>
                 <li><span class="review-person"><%= reviews.user_name %></span> 님의 리뷰</li>
-                <li class="review-content-li">
-                    <span class="review-content-span"><%= reviews.content %></span>
-                </li>
-                <li>별점 : <%= reviews.star_point %></li>
-                <li><img src="<%= reviews.image.url %>" width="400"></li>
-                <% if user_signed_in? %>
-                    <% if reviews.user_email == current_user.email or current_user.has_role? :admin %>
-                        <div class="review-btns">
-                            <a href = '/detail_item/index/<%=@bread.id%>/reviews/edit/<%=reviews.id%>'>
-                                <button class="review-btn">수정</button>
-                            </a>
+                <%# <div class="review-contents-wrap"> %>
+                    <li class="review-content-li">
+                        <span class="review-content-span"><%= reviews.content %></span>
+                    </li>
+                    <li>별점 : <%= reviews.star_point %></li>
+                    <li><img src="<%= reviews.image.url %>" width="400"></li>
+                    <% if user_signed_in? %>
+                        <% if reviews.user_email == current_user.email or current_user.has_role? :admin %>
+                            <div class="review-btns">
+                                <a href = '/detail_item/index/<%=@bread.id%>/reviews/edit/<%=reviews.id%>'>
+                                    <button class="review-btn">수정</button>
+                                </a>
 
-                            <a href = '/detail_item/index/<%=@bread.id%>/reviews/destroy/<%=reviews.id%>'>
-                                <button class="review-btn">삭제</button>
-                            </a>
-                        </div>
+                                <a href = '/detail_item/index/<%=@bread.id%>/reviews/destroy/<%=reviews.id%>'>
+                                    <button class="review-btn">삭제</button>
+                                </a>
+                            </div>
+                        <% end %>
                     <% end %>
+                    <br><hr>
                 <% end %>
-                <br><hr>
-            <% end %>
         </div>
     </div>
 </div>
