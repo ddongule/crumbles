@@ -2,15 +2,25 @@
     padding: 0 2%;
 }
 
-.bread-img img{
+.bread-img {
+    margin: 2%;
     width: 46%;
-    padding: 1%;
     float: left;
-    margin-left: 2%;
+    height: 550px;
+}
+.bread-img img{
+    // width: 46%;
+    // padding: 1%;
+    // float: left;
+    // margin-left: 2%;
     
-    max-height: 600px;
-    overflow: auto;
+    // max-height: 600px;
+    // overflow: auto;
+    // object-fit: cover;
+    width: 100%;
+    float: left;
     object-fit: cover;
+    height: 100%;
 }
 
 
@@ -62,15 +72,30 @@
     color: #777;
 }
 
-.info-detail .reservation{
-    // width: 100%;
-    // margin: 3% 0;
-    // background-color: #e36a00;
-    border-radius: 10px;
-    width: 46%;
-    margin: 3% 0;
-    float: left;
+.info-detail input {
+    border: 1px solid #ddd;
+    border-radius: 5rem;
+    padding: 0 0.5rem;
 }
+
+// .info-detail .reservation{
+//     // width: 100%;
+//     // margin: 3% 0;
+//     // background-color: #e36a00;
+//     border-radius: 10px;
+//     width: 46%;
+//     margin: 3% 0;
+//     float: left;
+// }
+// .info-detail a .reservation{
+//     // width: 100%;
+//     // margin: 3% 0;
+//     // background-color: #e36a00;
+//     border-radius: 10px;
+//     width: 46%;
+//     margin: 3% 0;
+//     float: left;
+// }
 
 .info-detail .reserv-detail-view{
     border-radius: 10px;
@@ -79,16 +104,55 @@
     float: left;
 }
 
-.info-detail a .reservation {
+// .info-detail a .reservation {
+//     display: inline-block;
+//     padding: 3.2%;
+//     background-color: #ffffff;
+//     color: #000000;
+//     border-radius: .5rem;
+//     border: 1px solid #ddd;
+//     // margin-top: 5%;
+
+//     width: 46%;
+//     margin: 3% 0.5%;
+//     float: left;
+// }
+
+// .info-detail a {
+//     font-size: 1.2rem;
+//     text-decoration: none;
+// }
+
+.info-detail .reservation {
+    // font-size: 1.0rem;
+    // display: inline-block;
+    // padding: 3.2%;
+    // background-color: #ffffff;
+    // color: #000000;
+    // border-radius: .5rem;
+    // border: 1px solid #ddd;
+    // margin: 1% 0.5%;
+    // width: 46%;
+    // float: left;
+    // font-size: 1.2rem;
     display: inline-block;
     padding: 3.2%;
     background-color: #ffffff;
     color: #000000;
     border-radius: .5rem;
-    transition: all 0.3s;
     border: 1px solid #ddd;
-    margin-top: 5%;
+    // margin-top: 5%;
+
+    width: 46%;
+    margin: 3% 0.5%;
+    float: left;
+    font-size: 1.2rem;
 }
+
+
+
+// 빵집 상세보기
+
 .info-detail a .reserv-detail-view {
     display: inline-block;
     padding: 3.2%;
@@ -100,22 +164,6 @@
     margin: 0.5%;
 }
 
-.info-detail .reservation {
-    font-size: 1.0rem;
-    display: inline-block;
-    padding: 3.2%;
-    background-color: #ffffff;
-    color: #000000;
-    border-radius: .5rem;
-    transition: all 0.3s;
-    border: 1px solid #ddd;
-    margin: 5% 0.5%;
-}
-
-.info-detail a {
-    font-size: 1.2rem;
-    text-decoration: none;
-}
 
 
 
@@ -233,6 +281,13 @@ label[for="submit"] {
     margin: 0 1% 0 0 ;
 }
 
+.reviews .no-review{
+    text-align: center;
+    color: #000;
+    font-size: 1.1em;
+    margin-bottom: 5%;
+}
+
 .reviews li .review-person{
     color: #000;
     font-size: 1em;
@@ -282,6 +337,17 @@ label[for="submit"] {
         max-width: 550px;
         margin: 0px auto !important;
         float: none;
+    }
+
+    .info-detail a .reserv-detail-view {
+    display: inline-block;
+    padding: 3.2%;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: .5rem;
+    transition: all 0.3s;
+    border: 1px solid #ddd;
+    margin: 3% 0.5%;
     }
 }
 
