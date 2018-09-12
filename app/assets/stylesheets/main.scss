@@ -48,6 +48,7 @@
 .recom-bread-list .bread-item .item a .collapsible ul li .bread-name {
   font-size: 1.1rem;
   color: #000;
+  cursor: pointer;
 }
 .recom-bread-list .bread-item .item a .collapsible ul li{
   font-size: 0.9rem;
@@ -63,6 +64,7 @@
   transition: all 0.3s;
   border: 1px solid #ddd;
   margin: 0.5%;
+  cursor: pointer;
 }
 
 .main-wrap{
@@ -108,9 +110,10 @@
 .bread-item .item a .collapsible ul li img{
   height: 200px;
   width: 100%;
-  margin: 0 5%;
+  margin: 0;
   overflow: auto;
   object-fit: cover;
+  cursor: pointer;
 }
 //////////////////////////////////
 
@@ -207,7 +210,7 @@
     margin: 2%;
 }
 .catbread-1 form {
-    width: 10%;
+    width: 15%;
     text-align: center;
 }
 /*
