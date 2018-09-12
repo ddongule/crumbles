@@ -73,8 +73,16 @@
 /* line 60, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/detail_item.scss */
 .info-detail .reservation {
   width: 100%;
-  margin: 3% 0;
-  border-radius: 10px;
+
+  font-size: 1.0rem;
+  display: inline-block;
+  padding: 3.2%;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: .5rem;
+  border: 1px solid #ddd;
+  margin: 0% 1%;
+
 }
 
 /* line 66, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/detail_item.scss */
@@ -86,7 +94,7 @@
   border-radius: .5rem;
   transition: all 0.3s;
   border: 1px solid #ddd;
-  margin-top: 5%;
+  margin-top: 4%;
 }
 
 /* line 77, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/detail_item.scss */

@@ -1,0 +1,25 @@
+.registrations-form-wrap,
+.sessions-form-wrap {
+  margin: 0 5%;
+  padding: 0 20%;
+  text-align: center;
+}
+
+.registrations-form-wrap .login-span,
+.sessions-form-wrap .login-span {
+  font-size: 1.2rem;
+}
+
+.registrations-form-wrap .form-inputs label,
+.sessions-form-wrap .form-inputs label {
+  display: block;
+}
+
+.registrations-form-wrap .form-inputs #user_email,
+.sessions-form-wrap .form-inputs #user_email {
+  width: 50%;
+  border: 1px solid black;
+  border-radius: 5rem;
+  height: 40px;
+  margin: 3%;
+}

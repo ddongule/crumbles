@@ -42,15 +42,21 @@ class SearchController < ApplicationController
   end
 
   def bread_category
-    @search_itm = params[:keyword]
-    @bread_search_result = Array.new() # 검색한 빵 담을 틀
-    search_bread = Bread.all
-    search_bread.each do |b|
-      if b.category == @search_itm # 빵 종류 (ex, 도넛 등으로 검색하면 여러개가 출력되야함)
-        @bread_search_result.push(Bread.find(b.id))
-      end
-    end
+      @search_itm = params[:keyword]
+      # @bread_search_result = Array.new() # 검색한 빵 담을 틀
+      # search_bread = Bread.all
+      # search_bread.each do |b|
+      #   if b.category == @search_itm # 빵 종류 (ex, 도넛 등으로 검색하면 여러개가 출력되야함)
+      #     @bread_search_result.push(Bread.find(b.id))
+      #   end
+      # end
+    @bread_search_result = Bread.where(category: @search_itm)
   end
+
+
+
+
+
 
   def bread_name
     @search_itm = params[:keyword]
@@ -67,3 +73,4 @@ class SearchController < ApplicationController
     @keyword = params[:keyword]
   end
 end
+

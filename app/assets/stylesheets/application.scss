@@ -245,99 +245,144 @@ li {
 }
 
 
-.container-4{
-  overflow: hidden;
-  width: 100%;
-  vertical-align: middle;
-  white-space: nowrap;
-  border: none;
-  position: relative;
-  justify-content: center;
-  display: flex;
-  align-items: center;
-}
+// .container-4{
+//   overflow: hidden;
+//   width: 100%;
+//   vertical-align: middle;
+//   white-space: nowrap;
+//   border: none;
+//   position: relative;
+//   justify-content: center;
+//   display: flex;
+//   align-items: center;
+// }
 
-.container-4 input#search{
-  width: 70%;
-  height: 40px;
-  background: #ffffff;
-  border-radius: 6rem;
-  border: 1px solid rgb(160, 160, 160);
-  font-size: 1.2em;
-  float: left;
-  color: #232833;
-  padding-left: 15px;
-  -webkit-border-radius: 6rem;
-  -moz-border-radius: 6rem;
-}
+// .container-4 input#search{
+//   width: 70%;
+//   height: 40px;
+//   background: #ffffff;
+//   border-radius: 6rem;
+//   border: 1px solid rgb(160, 160, 160);
+//   font-size: 1.2em;
+//   float: left;
+//   color: #232833;
+//   padding-left: 15px;
+//   -webkit-border-radius: 6rem;
+//   -moz-border-radius: 6rem;
+// }
 
-.container-4 input#search::-webkit-input-placeholder {
-color: #65737e;
-}
+// .container-4 input#search::-webkit-input-placeholder {
+// color: #65737e;
+// }
 
-.container-4 input#search:-moz-placeholder { /* Firefox 18- */
-color: #65737e;  
-}
+// .container-4 input#search:-moz-placeholder { /* Firefox 18- */
+// color: #65737e;  
+// }
 
-.container-4 input#search::-moz-placeholder {  /* Firefox 19+ */
-color: #65737e;  
-}
+// .container-4 input#search::-moz-placeholder {  /* Firefox 19+ */
+// color: #65737e;  
+// }
 
-.container-4 input#search:-ms-input-placeholder {  
-color: #65737e;  
-}
+// .container-4 input#search:-ms-input-placeholder {  
+// color: #65737e;  
+// }
 
 
-.container-4 button.icon{
--webkit-border-top-right-radius: 6rem;
--webkit-border-bottom-right-radius: 6rem;
--moz-border-radius-topright: 6rem;
--moz-border-radius-bottomright: 6rem;
-border-top-right-radius: 6rem;
-border-bottom-right-radius: 6rem;
+// .container-4 button.icon{
+// -webkit-border-top-right-radius: 6rem;
+// -webkit-border-bottom-right-radius: 6rem;
+// -moz-border-radius-topright: 6rem;
+// -moz-border-radius-bottomright: 6rem;
+// border-top-right-radius: 6rem;
+// border-bottom-right-radius: 6rem;
 
-border: none;
-background: #232833;
-height: 40px;
-width: 50px;
-color: #4f5b66;
-opacity: 0;
-font-size: 10pt;
-
-// -webkit-transition: all .55s ease;
-// -moz-transition: all .55s ease;
-// -ms-transition: all .55s ease;
-// -o-transition: all .55s ease;
-// transition: all .55s ease;
-}
-
-// .container-4:hover button.icon, .container-4:active button.icon, .container-4:focus button.icon{
-// outline: none;
-// opacity: 1;
-// margin-left: -50px;
 // border: none;
+// background: #232833;
+// height: 40px;
+// width: 50px;
+// color: #4f5b66;
+// opacity: 0;
+// font-size: 10pt;
+
+// // -webkit-transition: all .55s ease;
+// // -moz-transition: all .55s ease;
+// // -ms-transition: all .55s ease;
+// // -o-transition: all .55s ease;
+// // transition: all .55s ease;
+// }
+
+// // .container-4:hover button.icon, .container-4:active button.icon, .container-4:focus button.icon{
+// // outline: none;
+// // opacity: 1;
+// // margin-left: -50px;
+// // border: none;
+// // }
+
+// // .container-4:hover button.icon:hover{
+// // // background: red;
+// // border: none;
+// // }
+
+
+// .container-4 button.icon, 
+// .container-4:active button.icon,
+// .container-4:focus button.icon{
+//   outline: none;
+//   opacity: 1;
+//   margin-left: -50px;
+//   border: none;
 // }
 
 // .container-4:hover button.icon:hover{
 // // background: red;
 // border: none;
 // }
-
-
-.container-4 button.icon, 
-.container-4:active button.icon,
-.container-4:focus button.icon{
-  outline: none;
-  opacity: 1;
-  margin-left: -50px;
-  border: none;
+.search {
+  width: 100%;
+  position: relative
 }
 
-.container-4:hover button.icon:hover{
-// background: red;
-border: none;
+.searchTerm {
+  // position: absolute;
+  z-index: 10;
+  background-color: transparent;
+  border-color: transparent;
+  // margin: 0 0 0 10px;
+  float: left;
+  width: 100%;
+  border-bottom: 1px solid black;
+  padding: 5px;
+  height: 46px;
+  // border-radius: 5px;
+  // outline: none;
+  // color: #000;
 }
 
+.searchTerm:focus{
+  color: #000; 
+}
+
+.searchButton {
+  position: absolute;  
+  right: -5px;
+  width: 40px;
+  height: 46px;
+  border: 1px solid transparent;
+  background: transparent;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.search-wrap{
+  width: 60%;
+  position: absolute;
+  left: 30%;
+  transform: translate(-50%, -50%);
+}
 
 
 

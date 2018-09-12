@@ -21,21 +21,23 @@
             <% if user_signed_in? %>
                 <form action = "/detail_item/reservation/<%=@bread.id%>" method = "post" onsubmit = "return isAble();">
                     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-                    예약 수량 : <input type = "number" name = "reservation_amount" id = "reservation"></input></br>
+                    예약 수량 : <input type = "number" name = "reservation_amount" id = "reservation"></input>
                     <% if isExist(@bread.id) %>
-                        <a href = "/detail_item/cancle/<%=@bread.id%>">
+                        <a href = "/detail_item/cancle/<%=@bread.id%>" >
                             <button class="reservation">취소하기</button>
-                        </a></br>
+                        </a>
+                        </br>
                     <% else %>
-                        <span><button class="reservation">예약하기</button></span>
+                        <button class="reservation">예약하기</button>
                     <% end %>
-                </form>
+
                 <form action = "/info_user/basket_create/<%=@bread.id%>" method = "post" onsubmit = "return put();">
                     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
                     <input type = "hidden" name = "amount" id = "basket_num"></input>
-                    <span><button class="reservation">장바구니 담기</button></span>
+                    <button class="reservation">장바구니 담기</button>
                 </form>
             <% end %>
+
             <a href = "/search/bakery/<%=@bread.bakery_name%>">
                 <button class="reserv-detail-view">빵집 상세보기</button>
             </a>
@@ -46,7 +48,7 @@
 
     <div class="write-reviews">
         <ul class="detail">
-            <div id="map" style="width:46%;height:400px;"></div>
+            <div id="map" style="width:92%;height:200px;"></div>
         </ul>
         <% if user_signed_in? %>
         <br><br><hr>
@@ -83,54 +85,59 @@
 
         <div class="reviews">
             <li> 리뷰 </li>
-            <% @review.each do |reviews| %>
-                <li><span class="review-person"><%= reviews.user_name %></span> 님의 리뷰</li>
-                <li class="review-content-li">
-                    <span class="review-content-span"><%= reviews.content %></span>
-                </li>
-                <li>별점 : <%= reviews.star_point %></li>
-                <li><img src="<%= reviews.image.url %>" width="400"></li>
-                <% if user_signed_in? %>
-                    <% if reviews.user_email == current_user.email or current_user.has_role? :admin %>
-                        <div class="review-btns">
-                            <a href = '/detail_item/index/<%=@bread.id%>/reviews/edit/<%=reviews.id%>'>
-                                <button class="review-btn">수정</button>
-                            </a>
-
-                            <a href = '/detail_item/index/<%=@bread.id%>/reviews/destroy/<%=reviews.id%>'>
-                                <button class="review-btn">삭제</button>
-                            </a>
-                        </div>
+            <% if @review.exists? %>
+                <% @review.each do |reviews| %>
+                    <li><span class="review-person"><%= reviews.user_name %></span> 님의 리뷰</li>
+                    <%# <div class="review-contents-wrap"> %>
+                        <li class="review-content-li">
+                            <span class="review-content-span"><%= reviews.content %></span>
+                        </li>
+                        <li>별점 : <%= reviews.star_point %></li>
+                        <li><img src="<%= reviews.image.url %>" width="400"></li>
+                        <% if user_signed_in? %>
+                            <% if reviews.user_email == current_user.email or current_user.has_role? :admin %>
+                                <div class="review-btns">
+                                    <a href = '/detail_item/index/<%=@bread.id%>/reviews/edit/<%=reviews.id%>'>
+                                        <button class="review-btn">수정</button>
+                                    </a>
+                                    <a href = '/detail_item/index/<%=@bread.id%>/reviews/destroy/<%=reviews.id%>'>
+                                        <button class="review-btn">삭제</button>
+                                    </a>
+                                </div>
+                            <% end %>
+                        <% end %>
+                        <br><hr>
                     <% end %>
-                <% end %>
-                <br><hr>
-            <% end %>
+            <% else %>
+                <li class="no-review"> 아직 등록된 리뷰가 없습니다. 첫 번째 리뷰를 작성해주세요! </li>
+                <hr>
+            <% end%>
         </div>
     </div>
 </div>
 
 <script>
-$('.starRev span').click(function(){
-  $(this).parent().children('span').removeClass('on');
-  $(this).addClass('on').prevAll('span').addClass('on');
-  return false;
-});
+    $('.starRev span').click(function(){
+    $(this).parent().children('span').removeClass('on');
+    $(this).addClass('on').prevAll('span').addClass('on');
+    return false;
+    });
 
-$("#1").click(function(){
-    $("#star").val(1);
-});
-$("#2").click(function(){
-    $("#star").val(2);
-});
-$("#3").click(function(){
-    $("#star").val(3);
-});
-$("#4").click(function(){
-    $("#star").val(4);
-});
-$("#5").click(function(){
-    $("#star").val(5);
-});
+    $("#1").click(function(){
+        $("#star").val(1);
+    });
+    $("#2").click(function(){
+        $("#star").val(2);
+    });
+    $("#3").click(function(){
+        $("#star").val(3);
+    });
+    $("#4").click(function(){
+        $("#star").val(4);
+    });
+    $("#5").click(function(){
+        $("#star").val(5);
+    });
 </script>
 
 <script>
@@ -184,32 +191,32 @@ $("#5").click(function(){
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1aff35522df41932aff1641ceb4b8039&libraries=services"></script>
 
 <script>
-var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-    mapOption = {
-        center: new daum.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-        level: 3 // 지도의 확대 레벨
-    };  
-// 지도를 생성합니다    
-var map = new daum.maps.Map(mapContainer, mapOption); 
-// 주소-좌표 변환 객체를 생성합니다
-var geocoder = new daum.maps.services.Geocoder();
-// 주소로 좌표를 검색합니다
-geocoder.addressSearch("<%= @bakery.address %>", function(result, status) {
-    // 정상적으로 검색이 완료됐으면 
-    if (status === daum.maps.services.Status.OK) {
-        var coords = new daum.maps.LatLng(result[0].y, result[0].x);
-        // 결과값으로 받은 위치를 마커로 표시합니다
-        var marker = new daum.maps.Marker({
-            map: map,
-            position: coords
-        });
-        // 인포윈도우로 장소에 대한 설명을 표시합니다
-        var infowindow = new daum.maps.InfoWindow({
-            content: '<div style="width:150px;text-align:center;padding:6px 0;"><%= @bread.bakery_name %></div>'
-        });
-        infowindow.open(map, marker);
-        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
-        map.setCenter(coords);
-    } 
-});    
+    var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+        mapOption = {
+            center: new daum.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+            level: 3 // 지도의 확대 레벨
+        };  
+    // 지도를 생성합니다    
+    var map = new daum.maps.Map(mapContainer, mapOption); 
+    // 주소-좌표 변환 객체를 생성합니다
+    var geocoder = new daum.maps.services.Geocoder();
+    // 주소로 좌표를 검색합니다
+    geocoder.addressSearch("<%= @bakery.address %>", function(result, status) {
+        // 정상적으로 검색이 완료됐으면 
+        if (status === daum.maps.services.Status.OK) {
+            var coords = new daum.maps.LatLng(result[0].y, result[0].x);
+            // 결과값으로 받은 위치를 마커로 표시합니다
+            var marker = new daum.maps.Marker({
+                map: map,
+                position: coords
+            });
+            // 인포윈도우로 장소에 대한 설명을 표시합니다
+            var infowindow = new daum.maps.InfoWindow({
+                content: '<div style="width:150px;text-align:center;padding:6px 0;"><%= @bread.bakery_name %></div>'
+            });
+            infowindow.open(map, marker);
+            // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+            map.setCenter(coords);
+        } 
+    });    
 </script>

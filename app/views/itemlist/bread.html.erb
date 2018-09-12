@@ -25,16 +25,16 @@
                         <div class = "item">
                             <button class="collapsible">
                                 <ul>
-                                    <li><%= image_tag(image_path("#{result.image}"))%></li>
-                                    <li>
-                                        <span class="bread-name"><%= result.bread_name %></span>
-                                        <span class="bread-cat">[<%= result.bakery_name %>]</span><br>
-                                        <span class="bread-price"><%= result.price %>원</span>
-                                    </li>
+                                    <li><%= image_tag(image_path("#{result.image}"), :class=> "list-image")%></li>
                                 </ul>
                             </button>
                             <div class = "content">
                                 <ul>
+                                    <li>
+                                        <span class="bread-name"><%= result.bread_name %></span><br>
+                                        <span class="bread-cat">[<%= result.bakery_name %>]</span><br>
+                                        <span class="bread-price"><%= result.price %>원</span><br>
+                                    </li>
                                     <li> 예약 가능 : <span class="con-num"><%= result.bookable_num %></span>개</li><br>
                                     <li> 별점 : <span class="con"><%= result.star_point.round(1) %></span></li><br>
                                     <a href = "/detail_item/index/<%=result.bread_name%>">

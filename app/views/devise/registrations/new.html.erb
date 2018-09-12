@@ -1,25 +1,28 @@
-<% address = request.fullpath %>
-<% if address.include? "users" %>
-  <% sign_case = "고객" %>
-<% else %>
-  <% sign_case = "점주" %>
-<% end %>
+<div class="registrations-form-wrap">
 
-<h2><%=sign_case%> 회원가입</h2>
+  <% address = request.fullpath %>
+  <% if address.include? "users" %>
+    <% sign_case = "고객" %>
+  <% else %>
+    <% sign_case = "점주" %>
+  <% end %>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+  <span class="login-span"><%=sign_case%> 회원가입</span><br><br>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :name, required: true, autofocus: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
-  </div>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
 
-  <div class="form-actions">
-    <%= f.button :submit, "회원가입" %>
-  </div>
-<% end %>
+      <div class="form-inputs">
+        <%= f.input :email, required: true, autofocus: true, class: "input-label"%>
+        <%= f.input :name, required: true, autofocus: true %>
+        <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), class: "input-label"%>
+        <%= f.input :password_confirmation, required: true %>
+      </div>
 
-<%= render "devise/shared/links" %>
+      <div class="form-actions">
+        <%= f.button :submit, "회원가입" %>
+      </div>
+    <% end %>
+
+  <%= render "devise/shared/links" %>
+</div>

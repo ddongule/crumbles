@@ -25,11 +25,15 @@
   margin: 2%;
   width: 46%;
   float: left;
+  height: 550px;
 }
 
 .search-wrap .bakery-info-list-left img{
   width: 100%;
   float: left;
+  object-fit: cover;
+  height: 100%;
+
 }
 
 .search-wrap .bakery-info-list-left #map{
@@ -129,6 +133,8 @@
   .search-wrap .bakery-info-list-right{
       width: 46%;
       padding: 2% 22%;
+      height: 100%;
+      margin: 0 2%;
   }
 
   #map {
@@ -148,7 +154,7 @@
   font-size: 1.2rem;
 }
 .search-bread-list .bread-item .item .collapsible ul li .bread-name {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: #000;
 }
 .search-bread-list .bread-item .item .collapsible ul li .bakery-name {

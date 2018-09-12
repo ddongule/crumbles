@@ -24,10 +24,22 @@
       <div class="header-item-container">
         <div class="nav">
           <div class="search-bar">
-            <form action = "/search/index" method = "get">
+
+            <%# <form action = "/search/index" method = "get">
               <div class="container-4">
                 <input type = "search" id = "search" name = "keyword" placeholder = "Search..."></input>
                 <button class="icon"><i class="fa fa-search"></i></button>
+              </div>
+            </form> %>
+
+            <form action = "/search/index" method = "get">
+              <div class="search-wrap">
+                <div class="search">
+                    <input type = "search" class="searchTerm" id = "search" name = "keyword" placeholder = "검색어를 입력해 주세요."></input>
+                    <button type="submit" class="searchButton">
+                      <i class="fa fa-search"></i>
+                  </button>
+                </div>
               </div>
             </form>
           </div>
@@ -36,7 +48,7 @@
               <%= image_tag ('menu.png'), :id => "menu-icon" %>
               
               <ul class="nav-down">
-                <li><%= link_to '빵찾으러 ㄱ',  itemlist_index_path, :class => "link nav-link" %></li>
+                <li><%= link_to '빵찾으러ㄱㅏ자',  itemlist_index_path, :class => "link nav-link" %></li>
                 <li><%= link_to 'FAQ',  '/', :class => "link nav-link" %></li>
                 <li><%= link_to '이용안내',  '/', :class => "link nav-link" %></li>
               </ul>

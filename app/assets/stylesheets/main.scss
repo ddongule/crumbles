@@ -8,14 +8,11 @@
 }
 
 // 메인 사진
-// .containerFlexi {
-//     overflow: hidden;
-//     margin: 0px auto;
-// }
-// .recom-bread-list img{
-//   height: 250px;
-//   width: 250px;
-// }
+.post-container {
+    overflow: hidden;
+    margin: 0px auto;
+}
+
 
 .hash-tags{
     display: inline-block;
@@ -51,6 +48,7 @@
 .recom-bread-list .bread-item .item a .collapsible ul li .bread-name {
   font-size: 1.1rem;
   color: #000;
+  cursor: pointer;
 }
 .recom-bread-list .bread-item .item a .collapsible ul li{
   font-size: 0.9rem;
@@ -66,6 +64,7 @@
   transition: all 0.3s;
   border: 1px solid #ddd;
   margin: 0.5%;
+  cursor: pointer;
 }
 
 .main-wrap{
@@ -78,11 +77,11 @@
   padding: 20px;
 }
 
-// faq 따온거
-.wrap{
-  margin: 60px 30px;
-  padding: 50px;
-}
+// // faq 따온거
+// .wrap{
+//   margin: 60px 30px;
+//   padding: 50px;
+// }
 
 // .qa-wrap{
 //   width:80%;
@@ -111,9 +110,10 @@
 .bread-item .item a .collapsible ul li img{
   height: 200px;
   width: 100%;
-  margin: 0 5%;
+  margin: 0;
   overflow: auto;
   object-fit: cover;
+  cursor: pointer;
 }
 //////////////////////////////////
 
@@ -210,7 +210,7 @@
     margin: 2%;
 }
 .catbread-1 form {
-    width: 10%;
+    width: 15%;
     text-align: center;
 }
 /*

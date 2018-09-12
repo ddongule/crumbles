@@ -3,17 +3,20 @@ class InfoUserController < ApplicationController
     @user = current_user
   end
 
-  def reviews
-    all_reviews = Review.all
-    @my_reviews = Array.new()
+def reviews
+    # all_reviews = Review.all
+    # @my_reviews = Array.new()
 
-    all_reviews.each do |r|
-      if r.user_name == current_user.name
-        @my_reviews.push(r)
-      end
-    end
-
+    # all_reviews.each do |r|
+    #   if r.user_name == current_user.name
+    #     @my_reviews.push(r)
+    #   end
+    # end
+    @my_reviews = Review.where(user_id: current_user.id)
   end
+
+
+
 
   def reservations
     reservations = Reservation.all

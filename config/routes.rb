@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :posts
   devise_for :users
   devise_for :owners, skip: [:registrations]
   devise_scope :owner do
