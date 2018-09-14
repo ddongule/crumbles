@@ -17,12 +17,14 @@
   margin: 5%;
   width: 90%;
   font-size: 1.5rem;
+  cursor: pointer;
 }
 
 /* line 18, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/itemlist.scss */
 .item-list-wrap a .bakery-btn:hover,
 .item-list-wrap a .bread-btn:hover {
   background-color: #f4f4f4;
+  cursor: pointer;
 }
 
 /* line 26, /Users/minkyung/projects/rails-projects/crumbles/app/assets/stylesheets/itemlist.scss */
